@@ -9,8 +9,6 @@
 Copyright (c) 2022 Yoshikawa Teru
 This code is released under the MIT License, see LICENSE.
 
-# IMotor
-
 # Omni
 
 # Mecanum

@@ -10,20 +10,6 @@ struct Pwm {
     return N / (float)M;
   }
   void set(const float power) noexcept {
-    // if(lower_power_limit() < power) {
-    //   // 最低値より大きい時
-    //   pwm_[0] = power;
-    //   pwm_[1] = 0;
-    // } else if(power < -lower_power_limit()) {
-    //   // 負の最低値より小さい時
-    //   pwm_[0] = 0;
-    //   pwm_[1] = -1 * power;
-    // } else {
-    //   // 絶対値が最低値以下のとき
-    //   pwm_[0] = 0;
-    //   pwm_[1] = 0;
-    // }
-
     pwm_[0] = power * (power > lower_power_limit());
     pwm_[1] = -power * (-power > lower_power_limit());
   }
@@ -43,20 +29,6 @@ struct Pwm<0, M> {
     return 0;
   }
   void set(const float power) noexcept {
-    // if(0 < power) {
-    //   // 生の値
-    //   pwm_[0] = power;
-    //   pwm_[1] = 0;
-    // } else if(power < -0) {
-    //   // 負の値
-    //   pwm_[0] = 0;
-    //   pwm_[1] = -1 * power;
-    // } else {
-    //   // 0
-    //   pwm_[0] = 0;
-    //   pwm_[1] = 0;
-    // }
-
     pwm_[0] = power * (power > 0);
     pwm_[1] = -power * (-power > 0);
   }

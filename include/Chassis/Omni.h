@@ -22,10 +22,7 @@ struct Omni {
     float pwms[N];
     for(int i = 0; i < N; ++i) {
       constexpr auto k = 2 * M_PI / N;
-      // sin(x) + cos(x) = 2^(1/2) * sin(x+pi/4)
       const auto pwm = run_power * std::cos(i * k + theta_rad + offset_rad) + vel.ang_rad;
-      // const auto pwm = run_power * std::cos(i * k + theta_rad + offset_rad) +
-      //                  run_power * std::sin(i * k + theta_rad + offset_rad) + vel.ang_rad;
       pwms[i] = pwm;
     }
     f_(pwms);

@@ -18,10 +18,6 @@
   "authors": {
     "name": "Yoshikawa Teru"
   },
-  "build": {
-    "unflags": "-std=gnu++14",
-    "flags": "-std=gnu++17"
-  },
   "examples": [
     {
       "name": "Arduino",
