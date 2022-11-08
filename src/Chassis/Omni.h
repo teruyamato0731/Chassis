@@ -11,12 +11,13 @@ namespace rct {
 
 template<int N>
 struct Omni {
+  static_assert(N > 0);
   template<class F>
   Omni(F&& f) : f_{std::forward<F>(f)} {}
   static constexpr int size() noexcept {
     return N;
   }
-  void calc(const Velocity& vel, const float offset_rad = {}) {
+  void calc(const Velocity& vel, const float offset_rad = 0.0) {
     const float theta_rad = std::atan2(vel.y_milli, vel.x_milli);
     const float run_power = std::hypot(vel.x_milli, vel.y_milli);
     float pwms[N];

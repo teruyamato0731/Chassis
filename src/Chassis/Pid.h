@@ -18,7 +18,7 @@ template<class T, decltype(std::declval<T&>() = std::declval<T>() + std::declval
                            std::declval<T&>() = std::declval<T>() / std::declval<float>(), T{}, nullptr) = nullptr>
 struct Pid {
   Pid(const PidGain& pid_gain) noexcept : pid_gain_{pid_gain} {}
-  T calc(T dst, T now, std::chrono::microseconds delta_time) {
+  T calc(const T& dst, const T& now, const std::chrono::microseconds& delta_time) {
     const float sec = std::chrono::duration<float>{delta_time}.count();
     const T proportional = dst - now;
     integral_ += proportional * sec;

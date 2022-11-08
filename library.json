@@ -23,7 +23,7 @@
       "name": "Arduino",
       "base": "examples/Arduino",
       "files": [
-        "main.cpp"
+        "Omni/Omni.h"
       ]
     },
     {

@@ -9,10 +9,11 @@ namespace rct {
 
 template<int N>
 struct Odom {
+  Odom(const Coodinate& pos = {}) : pos_{pos} {}
   static constexpr int size() noexcept {
     return N;
   }
-  void integrate(const int32_t (&dif_val)[N]) {
+  void integrate(const int (&dif_val)[N]) {
     constexpr float k = 2 * M_PI / N;
     const float tmp_rad = pos_.ang_rad;
     for(int i = 0; i < N; ++i) {
@@ -21,11 +22,17 @@ struct Odom {
       pos_.ang_rad += dif_val[i];
     }
   }
-  const Coodinate& get() const noexcept {
+  const Coodinate& get() const& noexcept {
     return pos_;
   }
+  Coodinate get() const&& noexcept {
+    return pos_;
+  }
+  void set(const Coodinate& pos) noexcept {
+    pos_ = pos;
+  }
  private:
-  Coodinate pos_ = {};
+  Coodinate pos_;
 };
 
 }  // namespace rct
