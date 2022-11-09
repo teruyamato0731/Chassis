@@ -15,7 +15,7 @@ struct Mecanum {
   static constexpr std::size_t size() noexcept {
     return 4;
   }
-  void calc(const Velocity& vel, const float offset_rad = 0,0) {
+  void calc(const Velocity& vel, const float offset_rad = 0.0) {
     const float theta_rad = std::atan2(vel.y_milli, vel.x_milli);
     const float run_power = std::hypot(vel.x_milli, vel.y_milli);
     const float pwmA = run_power * std::cos(M_PI / 4 + theta_rad + offset_rad) + vel.ang_rad;
