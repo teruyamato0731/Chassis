@@ -7,9 +7,17 @@ on:
 
 jobs:
   deploy:
-    concurrency: ci-${{ github.ref }}
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     runs-on: ubuntu-latest
     steps:
-      - uses: DenverCoder1/doxygen-github-pages-action@v1.1.0
+      - uses: actions/checkout@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          submodules: true  # Fetch doxygen-awesome-css themes (true OR recursive)
+      - name: Build
+        uses: mattnotmitt/doxygen-action@v1.9.4
+      - name : Deploy
+        uses: peaceiris/actions-gh-pages@v3
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: ./docs
