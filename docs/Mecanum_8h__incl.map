@@ -1,8 +1,0 @@
-<map id="src/Mecanum.h" name="src/Mecanum.h">
-<area shape="rect" id="node1" title="メカナムの制御を行う Mecanum クラスを提供する。" alt="" coords="149,5,271,32"/>
-<area shape="rect" id="node2" href="$CoodinateUnit_8h.html" title="座標、速度を表す構造体 CoodinateUnit を提供する。" alt="" coords="5,80,132,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="132,155,195,181"/>
-<area shape="rect" id="node5" title=" " alt="" coords="208,80,295,107"/>
-<area shape="rect" id="node6" title=" " alt="" coords="319,80,379,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="35,155,102,181"/>
-</map>
