@@ -1,47 +1,34 @@
-#ifndef CHASSIS_IMOTOR_H_
-#define CHASSIS_IMOTOR_H_
+#ifndef CHASSIS_PWM_H_
+#define CHASSIS_PWM_H_
+/// @file
+/// @brief Pwm クラスを提供する。
 
 namespace rct {
 
-template<int N = 5, int M = 100>
-struct Pwm {
-  static_assert(M != 0);
-  static constexpr float lower_power_limit() noexcept {
-    return N / (float)M;
-  }
-  void set(const float power) noexcept {
-    pwm_[0] = power * (power > lower_power_limit());
-    pwm_[1] = -power * (-power > lower_power_limit());
-  }
-  float& operator[](const int n) {
-    return pwm_[n];
-  }
-  const Pwm& operator=(const float power) noexcept {
-    set(power);
-    return *this;
-  }
-  float pwm_[2];
-};
+/// @addtogroup utility
+/// @{
 
-template<int M>
-struct Pwm<0, M> {
-  static constexpr float lower_power_limit() noexcept {
-    return 0;
+/// @brief モータ出力 -> PWM出力へ変換を行う。
+struct Pwm {
+  Pwm(const float pwm = 0.0) noexcept {
+    set(pwm);
   }
   void set(const float power) noexcept {
     pwm_[0] = power * (power > 0);
     pwm_[1] = -power * (-power > 0);
   }
-  float& operator[](const int n) {
+  float& operator[](const int n) & {
     return pwm_[n];
   }
-  const Pwm& operator=(const float power) noexcept {
+  float operator=(const float power) noexcept {
     set(power);
-    return *this;
+    return power;
   }
   float pwm_[2];
 };
 
+/// @}
+
 }  // namespace rct
 
-#endif  // CHASSIS_IMOTOR_H_
+#endif  // CHASSIS_PWM_H_

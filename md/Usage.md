@@ -1,8 +1,17 @@
-# Usage
-Chassisの使用方法。
+\page Usage Chassisの使用方法
+\todo usage
+\todo example
 
-## Omni \<int N>
-N輪オムニの制御を行うクラス。[More...](./ref/Omni.md)
+# Omniの手動制御
+
+# Odom
+
+# Omniの自動制御
+
+
+# Omni \<int N>
+N輪オムニの制御を行うクラス。
+\ref rct::Omni "More..."
 |返り値|メンバ関数|
 |---|---|
 ||[Omni](Omni.md#omni)(F f)|
@@ -13,8 +22,9 @@ N輪オムニの制御を行うクラス。[More...](./ref/Omni.md)
 ||モータへのPWM出力を計算する。|
 ||その後callback関数にPWM出力を渡す。|
 
-## Mecanum
-メカナムの制御を行うクラス。[More...](./ref/Mecanum.md)
+# Mecanum
+メカナムの制御を行うクラス。
+\ref rct::Mecanum "More..."
 |返り値|メンバ関数|
 |---|---|
 ||Mecanum(F f)|
@@ -25,8 +35,9 @@ N輪オムニの制御を行うクラス。[More...](./ref/Omni.md)
 ||モータへのPWM出力を計算する。|
 ||その後callback関数にPWM出力を渡す。|
 
-## Odom
-N個のエンコーダでオドメトリを行うクラス。[More...](./ref/Odom.md)
+# Odom \<int N>
+N個のエンコーダでオドメトリを行うクラス。
+\ref rct::Odom "More..."
 |返り値|メンバ関数|
 |---|---|
 ||Odom()|
@@ -40,22 +51,24 @@ N個のエンコーダでオドメトリを行うクラス。[More...](./ref/Odo
 |void|set(Coodinate pos)|
 ||自己位置を更新する。|
 
-## Chassis \<class T>
-T型の自動制御を行うクラス。[More...](./ref/Chassis.md)
+# Chassis \<class T>
+T型の自動制御を行うクラス。
 T型はOmni, Mecanumクラス、またはそれらと同じように扱えるクラス。
+\ref rct::Chassis "More..."
 |返り値|メンバ関数|
 |---|---|
 ||Chassis(F f, PidGain vel_gain, PidGain pos_gain)|
-||T型をfで初期化し変位と速度のPIDゲインをセットする。|
-|void|move(Velocity tag_vel, Velocity now_vel, chrono::microseconds delta_time)|
+||T型をfで初期化し、変位と速度のPIDゲインをセットする。|
+|void|pid_move(Velocity tag_vel, Velocity now_vel, chrono::microseconds delta_time)|
 ||手動操縦用。|
 ||速度のPID制御を行い、出力をT型のcalcに渡す|
 |void|auto_move(Coodinate dst, Coodinate pos, chrono::microseconds delta_time)|
 ||自動制御用。|
 ||変位のPID制御を行い、出力をT型のcalcに渡す。|
 
-## Pid \<class T>
-T型のPID制御を行うクラス。[More...](./ref/Pid.md)
+# Pid \<class T>
+T型のPID制御を行うクラス。
+\ref rct::Pid "More..."
 |返り値|メンバ関数|
 |---|---|
 ||Pid(PidGain pid_gain)|
@@ -67,12 +80,22 @@ T型のPID制御を行うクラス。[More...](./ref/Pid.md)
 |void|set_pid_gain(PidGain pid_gain)|
 ||ゲインをセットし、refreshを呼び出す。|
 
-## Coodinate, Velocity
+# Coodinate, Velocity
 座標, 速度を表す構造体。
-```C++:CoodinateUnit.h
+CoodinateUnit同士の加減算とfloatとの乗除算が定義されている。
+\ref rct::CoodinateUnit "More..."
+
+```C++
 CoodinateUnit {
   float x_milli;
   float y_milli;
   float ang_rad;
 };
 ```
+
+---
+
+- \ref index
+- \ref Installation
+
+\tableofcontents
