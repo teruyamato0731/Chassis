@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['odom_0',['Odom',['../structrct_1_1Odom.html',1,'rct']]],
-  ['omni_1',['Omni',['../structrct_1_1Omni.html',1,'rct']]]
+  ['mecanum_0',['Mecanum',['../structrct_1_1Mecanum.html',1,'rct']]]
 ];

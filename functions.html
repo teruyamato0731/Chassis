@@ -20,8 +20,17 @@
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeInteractiveToc.init()
+</script>
 </head>
 <body>
+<!-- https://github.com/tholman/github-corners/blob/master/license.md -->
+<a target="_blank" href="https://github.com/teruyamato0731/Chassis" class="github-corner" aria-label="View source on GitHub">
+  <svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg>
+</a>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -87,22 +96,93 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </div>
 
 <div class="contents">
-<div class="textblock">Here is a list of all documented struct and union fields with links to the struct/union documentation for each field:</div><ul>
-<li>auto_move()&#160;:&#160;<a class="el" href="structrct_1_1Chassis.html#a0eaeea5082000cb1f15fa9bcc67daa75">rct::Chassis&lt; T &gt;</a></li>
-<li>calc()&#160;:&#160;<a class="el" href="structrct_1_1Pid.html#a090210f27296a8c35d9e6e8123adf922">rct::Pid&lt; T, &gt;</a></li>
+<div class="textblock">Here is a list of all documented struct and union fields with links to the struct/union documentation for each field:</div>
+
+<h3><a id="index_a" name="index_a"></a>- a -</h3><ul>
+<li>ang_rad&#160;:&#160;<a class="el" href="structrct_1_1CoodinateUnit.html#a812c374ed3bca21047a559d980cd3515">rct::CoodinateUnit&lt; N &gt;</a></li>
+<li>auto_move()&#160;:&#160;<a class="el" href="structrct_1_1Chassis.html#a0eaeea5082000cb1f15fa9bcc67daa75">rct::Chassis&lt; T &gt;</a>, <a class="el" href="structrct_1_1ChassisAuto.html#ad0876b07dd23d09f20f75bc32bcddf62">rct::ChassisAuto&lt; T &gt;</a></li>
+</ul>
+
+
+<h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
+<li>calc()&#160;:&#160;<a class="el" href="structrct_1_1Pid.html#a9ed66bff08d476a3b55875d1591377d2">rct::Pid&lt; T &gt;</a></li>
 <li>Chassis()&#160;:&#160;<a class="el" href="structrct_1_1Chassis.html#aad9074e0628e691d887031af8f36b266">rct::Chassis&lt; T &gt;</a></li>
+<li>ChassisAuto()&#160;:&#160;<a class="el" href="structrct_1_1ChassisAuto.html#afe3cb230a4253c57ecf97c5a5bd270e3">rct::ChassisAuto&lt; T &gt;</a></li>
+<li>ChassisPid()&#160;:&#160;<a class="el" href="structrct_1_1ChassisPid.html#a925ae1f72e9eec9f7f4b73f3b40db251">rct::ChassisPid&lt; T &gt;</a></li>
+</ul>
+
+
+<h3><a id="index_d" name="index_d"></a>- d -</h3><ul>
+<li>dimention()&#160;:&#160;<a class="el" href="structrct_1_1CoodinateUnit.html#a750ea9ef5bec65d945b170d2c418047d">rct::CoodinateUnit&lt; N &gt;</a></li>
+</ul>
+
+
+<h3><a id="index_g" name="index_g"></a>- g -</h3><ul>
 <li>get()&#160;:&#160;<a class="el" href="structrct_1_1Odom.html#a21b55c2e569b9bff06307c0de8eaab7b">rct::Odom&lt; N &gt;</a></li>
+</ul>
+
+
+<h3><a id="index_i" name="index_i"></a>- i -</h3><ul>
 <li>integrate()&#160;:&#160;<a class="el" href="structrct_1_1Odom.html#aae8a58747abb2940dbb8b9d63a021af4">rct::Odom&lt; N &gt;</a></li>
+</ul>
+
+
+<h3><a id="index_k" name="index_k"></a>- k -</h3><ul>
+<li>kd&#160;:&#160;<a class="el" href="structrct_1_1PidGain.html#ae1be5f7e2dbdd00d571d5ed851b51eb0">rct::PidGain</a></li>
+<li>ki&#160;:&#160;<a class="el" href="structrct_1_1PidGain.html#adfc47a0273907847247ff4ef0f70de66">rct::PidGain</a></li>
+<li>kp&#160;:&#160;<a class="el" href="structrct_1_1PidGain.html#ac53b9ca87cdb6ecebdec24101b8861fb">rct::PidGain</a></li>
+</ul>
+
+
+<h3><a id="index_m" name="index_m"></a>- m -</h3><ul>
 <li>Mecanum()&#160;:&#160;<a class="el" href="structrct_1_1Mecanum.html#ad13c62930fea4e8ea5aefe2e3b15bee1">rct::Mecanum</a></li>
 <li>move()&#160;:&#160;<a class="el" href="structrct_1_1Mecanum.html#aaafe3b39577b9a794e45ddffa18641a6">rct::Mecanum</a>, <a class="el" href="structrct_1_1Omni.html#a111f6795d3b22c4fffd368ccca087ce4">rct::Omni&lt; N &gt;</a></li>
+</ul>
+
+
+<h3><a id="index_o" name="index_o"></a>- o -</h3><ul>
 <li>Odom()&#160;:&#160;<a class="el" href="structrct_1_1Odom.html#af116b5ed407a25e9963580720eca9fec">rct::Odom&lt; N &gt;</a></li>
 <li>Omni()&#160;:&#160;<a class="el" href="structrct_1_1Omni.html#ade5fecb67738281147d22477d8017cb4">rct::Omni&lt; N &gt;</a></li>
-<li>Pid()&#160;:&#160;<a class="el" href="structrct_1_1Pid.html#a8b5b9ea73470353070db9239c17e0ebc">rct::Pid&lt; T, &gt;</a></li>
-<li>pid_move()&#160;:&#160;<a class="el" href="structrct_1_1Chassis.html#a92534b814f457f51c6884b1d0c4f1984">rct::Chassis&lt; T &gt;</a></li>
-<li>refresh()&#160;:&#160;<a class="el" href="structrct_1_1Pid.html#afb2dabc8fa6906e5ded1a6fb577a4952">rct::Pid&lt; T, &gt;</a></li>
-<li>set()&#160;:&#160;<a class="el" href="structrct_1_1Odom.html#ab5a7d91dcbfae308eafe14db99fdd27d">rct::Odom&lt; N &gt;</a></li>
-<li>set_pid_gain()&#160;:&#160;<a class="el" href="structrct_1_1Pid.html#a22baa8910051a4df1ad9a22e22cb3b96">rct::Pid&lt; T, &gt;</a></li>
+<li>operator*=()&#160;:&#160;<a class="el" href="structrct_1_1CoodinateUnit.html#ab98be9ecb7626fa3ba2f74ce4007bb92">rct::CoodinateUnit&lt; N &gt;</a></li>
+<li>operator+=()&#160;:&#160;<a class="el" href="structrct_1_1CoodinateUnit.html#a1fe704c6a5660cb0cdfe44170a67f66c">rct::CoodinateUnit&lt; N &gt;</a></li>
+<li>operator-=()&#160;:&#160;<a class="el" href="structrct_1_1CoodinateUnit.html#ad21f13ce18903739cebdb01acecd1d3a">rct::CoodinateUnit&lt; N &gt;</a></li>
+<li>operator/=()&#160;:&#160;<a class="el" href="structrct_1_1CoodinateUnit.html#a31f3f4872f41ed9e580d8e20a9e7311b">rct::CoodinateUnit&lt; N &gt;</a></li>
+<li>operator=()&#160;:&#160;<a class="el" href="structrct_1_1Pwm.html#af0e043b60476af52c199268320cca44b">rct::Pwm</a></li>
+<li>operator[]()&#160;:&#160;<a class="el" href="structrct_1_1Pwm.html#a579846a8965b715a8045f5012a3997da">rct::Pwm</a></li>
+</ul>
+
+
+<h3><a id="index_p" name="index_p"></a>- p -</h3><ul>
+<li>Pid()&#160;:&#160;<a class="el" href="structrct_1_1Pid.html#a80ded0cb46923d851a563b8e4841500e">rct::Pid&lt; T &gt;</a></li>
+<li>pid_move()&#160;:&#160;<a class="el" href="structrct_1_1Chassis.html#a92534b814f457f51c6884b1d0c4f1984">rct::Chassis&lt; T &gt;</a>, <a class="el" href="structrct_1_1ChassisPid.html#ad7be13ec288b7106e0a714e015414884">rct::ChassisPid&lt; T &gt;</a></li>
+<li>Pwm()&#160;:&#160;<a class="el" href="structrct_1_1Pwm.html#a11cd99075f7db7e822e0b6a783cf1215">rct::Pwm</a></li>
+</ul>
+
+
+<h3><a id="index_r" name="index_r"></a>- r -</h3><ul>
+<li>refresh()&#160;:&#160;<a class="el" href="structrct_1_1Pid.html#a5e53acb2ed5ddc0326f3f1dab97a6673">rct::Pid&lt; T &gt;</a></li>
+</ul>
+
+
+<h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
+<li>set()&#160;:&#160;<a class="el" href="structrct_1_1Odom.html#ab5a7d91dcbfae308eafe14db99fdd27d">rct::Odom&lt; N &gt;</a>, <a class="el" href="structrct_1_1Pwm.html#a8c7c6645dac8c0f1f40925fb409c7734">rct::Pwm</a></li>
+<li>set_pid_gain()&#160;:&#160;<a class="el" href="structrct_1_1Pid.html#a059a7d9693c998e090a37925554ad892">rct::Pid&lt; T &gt;</a></li>
 <li>size()&#160;:&#160;<a class="el" href="structrct_1_1Mecanum.html#a928b1ff7e935f4d53d2d80dca20a385d">rct::Mecanum</a>, <a class="el" href="structrct_1_1Odom.html#aaa38d49784ca19a3bae15b9da6f86256">rct::Odom&lt; N &gt;</a>, <a class="el" href="structrct_1_1Omni.html#ae3534390dde84217e1f0cd7a001db0d1">rct::Omni&lt; N &gt;</a></li>
+</ul>
+
+
+<h3><a id="index_v" name="index_v"></a>- v -</h3><ul>
+<li>value&#160;:&#160;<a class="el" href="classrct_1_1is__pidable.html#a743ea2afddfbdba4f59e038d1732c78c">rct::is_pidable&lt; T &gt;</a></li>
+</ul>
+
+
+<h3><a id="index_x" name="index_x"></a>- x -</h3><ul>
+<li>x_milli&#160;:&#160;<a class="el" href="structrct_1_1CoodinateUnit.html#a1a352d56bb5696504c719c9df357f805">rct::CoodinateUnit&lt; N &gt;</a></li>
+</ul>
+
+
+<h3><a id="index_y" name="index_y"></a>- y -</h3><ul>
+<li>y_milli&#160;:&#160;<a class="el" href="structrct_1_1CoodinateUnit.html#a6b85c01af76d354335b18980da208749">rct::CoodinateUnit&lt; N &gt;</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

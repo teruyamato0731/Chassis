@@ -20,8 +20,17 @@
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeInteractiveToc.init()
+</script>
 </head>
 <body>
+<!-- https://github.com/tholman/github-corners/blob/master/license.md -->
+<a target="_blank" href="https://github.com/teruyamato0731/Chassis" class="github-corner" aria-label="View source on GitHub">
+  <svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg>
+</a>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -92,64 +101,85 @@ $(document).ready(function(){initNavTree('Pid_8h_source.html',''); initResizable
 <div class="contents">
 <a href="Pid_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef CHASSIS_PID_H_</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define CHASSIS_PID_H_</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;chrono&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerct.html">rct</a> {</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="structrct_1_1PidGain.html">   15</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrct_1_1PidGain.html">PidGain</a> {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="keywordtype">float</span> kp;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keywordtype">float</span> ki;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keywordtype">float</span> kd;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>};</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">// @TODO Pidable</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">// @TODO static_assert();</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>template&lt;class T, decltype(std::declval&lt;T&amp;&gt;() = std::declval&lt;T&gt;() + std::declval&lt;T&gt;(),</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                           std::declval&lt;T&amp;&gt;() = std::declval&lt;T&gt;() - std::declval&lt;T&gt;(),</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                           std::declval&lt;T&amp;&gt;() = std::declval&lt;T&gt;() * std::declval&lt;float&gt;(),</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                           std::declval&lt;T&amp;&gt;() = std::declval&lt;T&gt;() / std::declval&lt;float&gt;(), T{}, <span class="keyword">nullptr</span>) = <span class="keyword">nullptr</span>&gt;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structrct_1_1Pid.html">   30</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="structrct_1_1Pid.html">Pid</a> {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="structrct_1_1Pid.html#a8b5b9ea73470353070db9239c17e0ebc">   33</a></span>  <a class="code hl_function" href="structrct_1_1Pid.html#a8b5b9ea73470353070db9239c17e0ebc">Pid</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structrct_1_1PidGain.html">PidGain</a>&amp; pid_gain) noexcept : pid_gain_{pid_gain} {}</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="structrct_1_1Pid.html#a090210f27296a8c35d9e6e8123adf922">   40</a></span>  T <a class="code hl_function" href="structrct_1_1Pid.html#a090210f27296a8c35d9e6e8123adf922">calc</a>(<span class="keyword">const</span> T&amp; dst, <span class="keyword">const</span> T&amp; now, <span class="keyword">const</span> std::chrono::microseconds&amp; delta_time) {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">const</span> <span class="keywordtype">float</span> sec = std::chrono::duration&lt;float&gt;{delta_time}.count();</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">const</span> T proportional = dst - now;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    integral_ += proportional * sec;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">const</span> T differential = pre_ ? (now - *pre_) / sec : T{};</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    pre_ = now;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">return</span> proportional * pid_gain_.kp + integral_ * pid_gain_.ki + differential * pid_gain_.kd;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  }</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="structrct_1_1Pid.html#afb2dabc8fa6906e5ded1a6fb577a4952">   50</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="structrct_1_1Pid.html#afb2dabc8fa6906e5ded1a6fb577a4952">refresh</a>() noexcept {</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    integral_ = T{};</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    pre_ = std::nullopt;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  }</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="structrct_1_1Pid.html#a22baa8910051a4df1ad9a22e22cb3b96">   57</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="structrct_1_1Pid.html#a22baa8910051a4df1ad9a22e22cb3b96">set_pid_gain</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structrct_1_1PidGain.html">PidGain</a>&amp; pid_gain) <span class="keyword">noexcept</span> {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    pid_gain_ = pid_gain;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    refresh();</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  }</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <a class="code hl_struct" href="structrct_1_1PidGain.html">PidGain</a> pid_gain_;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  T integral_{};</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  std::optional&lt;T&gt; pre_{};</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>};</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}  <span class="comment">// namespace rct</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#endif  </span><span class="comment">// CHASSIS_PID_H_</span></div>
-<div class="ttc" id="anamespacerct_html"><div class="ttname"><a href="namespacerct.html">rct</a></div><div class="ttdoc">robot contoroll library</div><div class="ttdef"><b>Definition:</b> <a href="Chassis_8h_source.html#l00013">Chassis.h:13</a></div></div>
-<div class="ttc" id="astructrct_1_1PidGain_html"><div class="ttname"><a href="structrct_1_1PidGain.html">rct::PidGain</a></div><div class="ttdoc">PID制御のゲイン</div><div class="ttdef"><b>Definition:</b> <a href="Pid_8h_source.html#l00015">Pid.h:15</a></div></div>
-<div class="ttc" id="astructrct_1_1Pid_html"><div class="ttname"><a href="structrct_1_1Pid.html">rct::Pid</a></div><div class="ttdoc">T型のPID制御を行うクラス。</div><div class="ttdef"><b>Definition:</b> <a href="Pid_8h_source.html#l00030">Pid.h:30</a></div></div>
-<div class="ttc" id="astructrct_1_1Pid_html_a090210f27296a8c35d9e6e8123adf922"><div class="ttname"><a href="structrct_1_1Pid.html#a090210f27296a8c35d9e6e8123adf922">rct::Pid::calc</a></div><div class="ttdeci">T calc(const T &amp;dst, const T &amp;now, const std::chrono::microseconds &amp;delta_time)</div><div class="ttdoc">目標値、現在値、経過時間からPID制御の計算を行う。</div><div class="ttdef"><b>Definition:</b> <a href="Pid_8h_source.html#l00040">Pid.h:40</a></div></div>
-<div class="ttc" id="astructrct_1_1Pid_html_a22baa8910051a4df1ad9a22e22cb3b96"><div class="ttname"><a href="structrct_1_1Pid.html#a22baa8910051a4df1ad9a22e22cb3b96">rct::Pid::set_pid_gain</a></div><div class="ttdeci">void set_pid_gain(const PidGain &amp;pid_gain) noexcept</div><div class="ttdoc">ゲインをセットし、refreshを呼び出す。</div><div class="ttdef"><b>Definition:</b> <a href="Pid_8h_source.html#l00057">Pid.h:57</a></div></div>
-<div class="ttc" id="astructrct_1_1Pid_html_a8b5b9ea73470353070db9239c17e0ebc"><div class="ttname"><a href="structrct_1_1Pid.html#a8b5b9ea73470353070db9239c17e0ebc">rct::Pid::Pid</a></div><div class="ttdeci">Pid(const PidGain &amp;pid_gain) noexcept</div><div class="ttdoc">コンストラクタ。ゲインをセットする。</div><div class="ttdef"><b>Definition:</b> <a href="Pid_8h_source.html#l00033">Pid.h:33</a></div></div>
-<div class="ttc" id="astructrct_1_1Pid_html_afb2dabc8fa6906e5ded1a6fb577a4952"><div class="ttname"><a href="structrct_1_1Pid.html#afb2dabc8fa6906e5ded1a6fb577a4952">rct::Pid::refresh</a></div><div class="ttdeci">void refresh() noexcept</div><div class="ttdoc">I値をリセットする。</div><div class="ttdef"><b>Definition:</b> <a href="Pid_8h_source.html#l00050">Pid.h:50</a></div></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerct.html">rct</a> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structrct_1_1PidGain.html">   21</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrct_1_1PidGain.html">PidGain</a> {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structrct_1_1PidGain.html#ac53b9ca87cdb6ecebdec24101b8861fb">   22</a></span>  <span class="keywordtype">float</span> <a class="code hl_variable" href="structrct_1_1PidGain.html#ac53b9ca87cdb6ecebdec24101b8861fb">kp</a>;  </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structrct_1_1PidGain.html#adfc47a0273907847247ff4ef0f70de66">   23</a></span>  <span class="keywordtype">float</span> <a class="code hl_variable" href="structrct_1_1PidGain.html#adfc47a0273907847247ff4ef0f70de66">ki</a>;  </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structrct_1_1PidGain.html#ae1be5f7e2dbdd00d571d5ed851b51eb0">   24</a></span>  <span class="keywordtype">float</span> <a class="code hl_variable" href="structrct_1_1PidGain.html#ae1be5f7e2dbdd00d571d5ed851b51eb0">kd</a>;  </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>};</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classrct_1_1is__pidable.html">   30</a></span><span class="keyword">class </span><a class="code hl_class" href="classrct_1_1is__pidable.html">is_pidable</a> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> = T&gt;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="keyword">struct </span>is_pidable_helper : std::false_type {};</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keyword">struct </span>is_pidable_helper&lt;T, decltype(std::declval&lt;T&amp;&gt;() = std::declval&lt;T&gt;() + std::declval&lt;T&gt;(),</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                                       std::declval&lt;T&amp;&gt;() = std::declval&lt;T&gt;() - std::declval&lt;T&gt;(),</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                                       std::declval&lt;T&amp;&gt;() = std::declval&lt;T&gt;() * std::declval&lt;float&gt;(),</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                                       std::declval&lt;T&amp;&gt;() = std::declval&lt;T&gt;() / std::declval&lt;float&gt;(), T{})&gt;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      : std::true_type {};</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classrct_1_1is__pidable.html#a743ea2afddfbdba4f59e038d1732c78c">   41</a></span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="classrct_1_1is__pidable.html#a743ea2afddfbdba4f59e038d1732c78c">value</a> = is_pidable_helper&lt;T&gt;::value;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>};</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="group__pid.html#gaf6b0805eb269ff102f5a787ab5d5dc8f">   48</a></span><span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="group__pid.html#gaf6b0805eb269ff102f5a787ab5d5dc8f">is_pidable_v</a> = <a class="code hl_class" href="classrct_1_1is__pidable.html">is_pidable&lt;T&gt;::value</a>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="structrct_1_1Pid.html">   53</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrct_1_1Pid.html">Pid</a> {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keyword">static_assert</span>(is_pidable_v&lt;T&gt;, <span class="stringliteral">&quot;T型がPID制御に対応していません。&quot;</span>);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="structrct_1_1Pid.html#a80ded0cb46923d851a563b8e4841500e">   58</a></span>  <a class="code hl_function" href="structrct_1_1Pid.html#a80ded0cb46923d851a563b8e4841500e">Pid</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structrct_1_1PidGain.html">PidGain</a>&amp; pid_gain) noexcept : pid_gain_{pid_gain} {}</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="structrct_1_1Pid.html#a9ed66bff08d476a3b55875d1591377d2">   65</a></span>  T <a class="code hl_function" href="structrct_1_1Pid.html#a9ed66bff08d476a3b55875d1591377d2">calc</a>(<span class="keyword">const</span> T&amp; dst, <span class="keyword">const</span> T&amp; now, <span class="keyword">const</span> std::chrono::microseconds&amp; delta_time) {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keyword">const</span> <span class="keywordtype">float</span> sec = std::chrono::duration&lt;float&gt;{delta_time}.count();</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keyword">const</span> T proportional = dst - now;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    integral_ += proportional * sec;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keyword">const</span> T differential = pre_ ? (now - *pre_) / sec : T{};</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    pre_ = now;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">return</span> proportional * pid_gain_.<a class="code hl_variable" href="structrct_1_1PidGain.html#ac53b9ca87cdb6ecebdec24101b8861fb">kp</a> + integral_ * pid_gain_.<a class="code hl_variable" href="structrct_1_1PidGain.html#adfc47a0273907847247ff4ef0f70de66">ki</a> + differential * pid_gain_.<a class="code hl_variable" href="structrct_1_1PidGain.html#ae1be5f7e2dbdd00d571d5ed851b51eb0">kd</a>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="structrct_1_1Pid.html#a5e53acb2ed5ddc0326f3f1dab97a6673">   75</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="structrct_1_1Pid.html#a5e53acb2ed5ddc0326f3f1dab97a6673">refresh</a>() noexcept {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    integral_ = T{};</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    pre_ = std::nullopt;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="structrct_1_1Pid.html#a059a7d9693c998e090a37925554ad892">   82</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="structrct_1_1Pid.html#a059a7d9693c998e090a37925554ad892">set_pid_gain</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structrct_1_1PidGain.html">PidGain</a>&amp; pid_gain) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    pid_gain_ = pid_gain;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <a class="code hl_function" href="structrct_1_1Pid.html#a5e53acb2ed5ddc0326f3f1dab97a6673">refresh</a>();</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <a class="code hl_struct" href="structrct_1_1PidGain.html">PidGain</a> pid_gain_;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  T integral_{};</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  std::optional&lt;T&gt; pre_{};</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>};</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>}  <span class="comment">// namespace rct</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="preprocessor">#endif  </span><span class="comment">// CHASSIS_PID_H_</span></div>
+<div class="ttc" id="aclassrct_1_1is__pidable_html"><div class="ttname"><a href="classrct_1_1is__pidable.html">rct::is_pidable</a></div><div class="ttdoc">T型がPID制御可能な型であるかを判定する。</div><div class="ttdef"><b>Definition:</b> <a href="Pid_8h_source.html#l00030">Pid.h:30</a></div></div>
+<div class="ttc" id="aclassrct_1_1is__pidable_html_a743ea2afddfbdba4f59e038d1732c78c"><div class="ttname"><a href="classrct_1_1is__pidable.html#a743ea2afddfbdba4f59e038d1732c78c">rct::is_pidable::value</a></div><div class="ttdeci">static constexpr bool value</div><div class="ttdoc">T型同士の加減算とfloat型との乗除が定義されていて、デフォルト初期化が可能であればtrue, そうでなければfalse。</div><div class="ttdef"><b>Definition:</b> <a href="Pid_8h_source.html#l00041">Pid.h:41</a></div></div>
+<div class="ttc" id="agroup__pid_html_gaf6b0805eb269ff102f5a787ab5d5dc8f"><div class="ttname"><a href="group__pid.html#gaf6b0805eb269ff102f5a787ab5d5dc8f">rct::is_pidable_v</a></div><div class="ttdeci">constexpr bool is_pidable_v</div><div class="ttdoc">T型がPID制御可能な型であるかを判定する。 T型同士の加減算とfloat型との乗除が定義されていればtrue, そうでなければfalse。</div><div class="ttdef"><b>Definition:</b> <a href="Pid_8h_source.html#l00048">Pid.h:48</a></div></div>
+<div class="ttc" id="anamespacerct_html"><div class="ttname"><a href="namespacerct.html">rct</a></div><div class="ttdoc">robot contoroll library</div><div class="ttdef"><b>Definition:</b> <a href="Chassis_8h_source.html#l00015">Chassis.h:15</a></div></div>
+<div class="ttc" id="astructrct_1_1PidGain_html"><div class="ttname"><a href="structrct_1_1PidGain.html">rct::PidGain</a></div><div class="ttdoc">PID制御のゲイン</div><div class="ttdef"><b>Definition:</b> <a href="Pid_8h_source.html#l00021">Pid.h:21</a></div></div>
+<div class="ttc" id="astructrct_1_1PidGain_html_ac53b9ca87cdb6ecebdec24101b8861fb"><div class="ttname"><a href="structrct_1_1PidGain.html#ac53b9ca87cdb6ecebdec24101b8861fb">rct::PidGain::kp</a></div><div class="ttdeci">float kp</div><div class="ttdoc">比例ゲイン</div><div class="ttdef"><b>Definition:</b> <a href="Pid_8h_source.html#l00022">Pid.h:22</a></div></div>
+<div class="ttc" id="astructrct_1_1PidGain_html_adfc47a0273907847247ff4ef0f70de66"><div class="ttname"><a href="structrct_1_1PidGain.html#adfc47a0273907847247ff4ef0f70de66">rct::PidGain::ki</a></div><div class="ttdeci">float ki</div><div class="ttdoc">積分ゲイン</div><div class="ttdef"><b>Definition:</b> <a href="Pid_8h_source.html#l00023">Pid.h:23</a></div></div>
+<div class="ttc" id="astructrct_1_1PidGain_html_ae1be5f7e2dbdd00d571d5ed851b51eb0"><div class="ttname"><a href="structrct_1_1PidGain.html#ae1be5f7e2dbdd00d571d5ed851b51eb0">rct::PidGain::kd</a></div><div class="ttdeci">float kd</div><div class="ttdoc">微分ゲイン</div><div class="ttdef"><b>Definition:</b> <a href="Pid_8h_source.html#l00024">Pid.h:24</a></div></div>
+<div class="ttc" id="astructrct_1_1Pid_html"><div class="ttname"><a href="structrct_1_1Pid.html">rct::Pid</a></div><div class="ttdoc">T型のPID制御を行うクラス。</div><div class="ttdef"><b>Definition:</b> <a href="Pid_8h_source.html#l00053">Pid.h:53</a></div></div>
+<div class="ttc" id="astructrct_1_1Pid_html_a059a7d9693c998e090a37925554ad892"><div class="ttname"><a href="structrct_1_1Pid.html#a059a7d9693c998e090a37925554ad892">rct::Pid::set_pid_gain</a></div><div class="ttdeci">void set_pid_gain(const PidGain &amp;pid_gain) noexcept</div><div class="ttdoc">ゲインをセットし、refreshを呼び出す。</div><div class="ttdef"><b>Definition:</b> <a href="Pid_8h_source.html#l00082">Pid.h:82</a></div></div>
+<div class="ttc" id="astructrct_1_1Pid_html_a5e53acb2ed5ddc0326f3f1dab97a6673"><div class="ttname"><a href="structrct_1_1Pid.html#a5e53acb2ed5ddc0326f3f1dab97a6673">rct::Pid::refresh</a></div><div class="ttdeci">void refresh() noexcept</div><div class="ttdoc">I値をリセットする。</div><div class="ttdef"><b>Definition:</b> <a href="Pid_8h_source.html#l00075">Pid.h:75</a></div></div>
+<div class="ttc" id="astructrct_1_1Pid_html_a80ded0cb46923d851a563b8e4841500e"><div class="ttname"><a href="structrct_1_1Pid.html#a80ded0cb46923d851a563b8e4841500e">rct::Pid::Pid</a></div><div class="ttdeci">Pid(const PidGain &amp;pid_gain) noexcept</div><div class="ttdoc">コンストラクタ。ゲインをセットする。</div><div class="ttdef"><b>Definition:</b> <a href="Pid_8h_source.html#l00058">Pid.h:58</a></div></div>
+<div class="ttc" id="astructrct_1_1Pid_html_a9ed66bff08d476a3b55875d1591377d2"><div class="ttname"><a href="structrct_1_1Pid.html#a9ed66bff08d476a3b55875d1591377d2">rct::Pid::calc</a></div><div class="ttdeci">T calc(const T &amp;dst, const T &amp;now, const std::chrono::microseconds &amp;delta_time)</div><div class="ttdoc">目標値、現在値、経過時間からPID制御の計算を行う。</div><div class="ttdef"><b>Definition:</b> <a href="Pid_8h_source.html#l00065">Pid.h:65</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -25,26 +25,9 @@
 var NAVTREE =
 [
   [ "Chassis", "index.html", [
-    [ "Introduction", "index.html", [
-      [ "Features", "index.html#autotoc_md3", null ],
-      [ "Supported Environment", "index.html#autotoc_md4", null ],
-      [ "License", "index.html#autotoc_md5", null ]
-    ] ],
-    [ "Chassisの導入方法", "md_md_Installation.html", [
-      [ "Platform IO", "md_md_Installation.html#autotoc_md0", null ],
-      [ "Arduino IDE", "md_md_Installation.html#autotoc_md1", null ]
-    ] ],
-    [ "Chassisの使用方法", "md_md_Usage.html", [
-      [ "Omniの手動制御", "md_md_Usage.html#autotoc_md7", null ],
-      [ "Odom", "md_md_Usage.html#autotoc_md8", null ],
-      [ "Omniの自動制御", "md_md_Usage.html#autotoc_md9", null ],
-      [ "Omni <int N>", "md_md_Usage.html#autotoc_md10", null ],
-      [ "Mecanum", "md_md_Usage.html#autotoc_md11", null ],
-      [ "Odom <int N>", "md_md_Usage.html#autotoc_md12", null ],
-      [ "Chassis <class T>", "md_md_Usage.html#autotoc_md13", null ],
-      [ "Pid <class T>", "md_md_Usage.html#autotoc_md14", null ],
-      [ "Coodinate, Velocity", "md_md_Usage.html#autotoc_md15", null ]
-    ] ],
+    [ "Introduction", "index.html", null ],
+    [ "Chassisの導入方法", "md_doc_Installation.html", null ],
+    [ "Chassisの使用方法", "md_doc_Usage.html", null ],
     [ "Todo List", "todo.html", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Namespaces", "namespaces.html", [
@@ -52,6 +35,7 @@ var NAVTREE =
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
         [ "Functions", "namespacemembers_func.html", null ],
+        [ "Variables", "namespacemembers_vars.html", null ],
         [ "Typedefs", "namespacemembers_type.html", null ]
       ] ]
     ] ],
@@ -60,7 +44,8 @@ var NAVTREE =
       [ "Data Structure Index", "classes.html", null ],
       [ "Data Fields", "functions.html", [
         [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ]
+        [ "Functions", "functions_func.html", null ],
+        [ "Variables", "functions_vars.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [

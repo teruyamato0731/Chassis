@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['frame_0',['Frame',['../group__frame.html',1,'']]]
+  ['frame_0',['frame',['../group__frame.html',1,'']]]
 ];

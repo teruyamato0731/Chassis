@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['odom_0',['Odom',['../structrct_1_1Odom.html#af116b5ed407a25e9963580720eca9fec',1,'rct::Odom::Odom()'],['../structrct_1_1Odom.html',1,'rct::Odom&lt; N &gt;']]],
-  ['odom_2eh_1',['Odom.h',['../Odom_8h.html',1,'']]],
-  ['omni_2',['Omni',['../structrct_1_1Omni.html#ade5fecb67738281147d22477d8017cb4',1,'rct::Omni::Omni()'],['../structrct_1_1Omni.html',1,'rct::Omni&lt; N &gt;']]],
-  ['omni_2eh_3',['Omni.h',['../Omni_8h.html',1,'']]]
+  ['mecanum_0',['Mecanum',['../structrct_1_1Mecanum.html#ad13c62930fea4e8ea5aefe2e3b15bee1',1,'rct::Mecanum::Mecanum()'],['../structrct_1_1Mecanum.html',1,'rct::Mecanum']]],
+  ['mecanum_2eh_1',['Mecanum.h',['../Mecanum_8h.html',1,'']]],
+  ['move_2',['move',['../structrct_1_1Mecanum.html#aaafe3b39577b9a794e45ddffa18641a6',1,'rct::Mecanum::move()'],['../structrct_1_1Omni.html#a111f6795d3b22c4fffd368ccca087ce4',1,'rct::Omni::move()']]]
 ];

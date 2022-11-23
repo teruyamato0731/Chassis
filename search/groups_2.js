@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['localization_0',['Localization',['../group__localization.html',1,'']]]
+  ['localization_0',['localization',['../group__localization.html',1,'']]]
 ];

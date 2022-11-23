@@ -20,8 +20,17 @@
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeInteractiveToc.init()
+</script>
 </head>
 <body>
+<!-- https://github.com/tholman/github-corners/blob/master/license.md -->
+<a target="_blank" href="https://github.com/teruyamato0731/Chassis" class="github-corner" aria-label="View source on GitHub">
+  <svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg>
+</a>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -92,41 +101,44 @@ $(document).ready(function(){initNavTree('ChassisPid_8h_source.html',''); initRe
 <div class="contents">
 <a href="ChassisPid_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef RCT_CHASSIS_PID_H_</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define RCT_CHASSIS_PID_H_</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;<a class="code" href="CoodinateUnit_8h.html">CoodinateUnit.h</a>&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;<a class="code" href="Pid_8h.html">Pid.h</a>&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;chrono&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerct.html">rct</a> {</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;<a class="code" href="CoodinateUnit_8h.html">CoodinateUnit.h</a>&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;<a class="code" href="Pid_8h.html">Pid.h</a>&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structrct_1_1ChassisPid.html">   20</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrct_1_1ChassisPid.html">ChassisPid</a> {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> F&gt;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <a class="code hl_struct" href="structrct_1_1ChassisPid.html">ChassisPid</a>(F&amp;&amp; f, <span class="keyword">const</span> <a class="code hl_struct" href="structrct_1_1PidGain.html">PidGain</a>&amp; vel_gain) : t_{std::forward&lt;F&gt;(f)}, vel_pid_{vel_gain} {}</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keywordtype">void</span> pid_move(<span class="keyword">const</span> <a class="code hl_struct" href="structrct_1_1CoodinateUnit.html">Velocity</a>&amp; tag_vel, <span class="keyword">const</span> <a class="code hl_struct" href="structrct_1_1CoodinateUnit.html">Velocity</a>&amp; now_vel, <span class="keyword">const</span> std::chrono::microseconds&amp; delta_time) {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">const</span> <span class="keyword">auto</span> out_vel = vel_pid_.calc(tag_vel, now_vel, delta_time);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    t_.move(out_vel);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  }</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  T t_;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <a class="code hl_struct" href="structrct_1_1Pid.html">Pid&lt;Velocity&gt;</a> vel_pid_;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>};</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}  <span class="comment">// namespace rct</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerct.html">rct</a> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structrct_1_1ChassisPid.html">   22</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrct_1_1ChassisPid.html">ChassisPid</a> {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> F&gt;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="structrct_1_1ChassisPid.html#a925ae1f72e9eec9f7f4b73f3b40db251">   29</a></span>  <a class="code hl_function" href="structrct_1_1ChassisPid.html#a925ae1f72e9eec9f7f4b73f3b40db251">ChassisPid</a>(F&amp;&amp; f, <span class="keyword">const</span> <a class="code hl_struct" href="structrct_1_1PidGain.html">PidGain</a>&amp; vel_gain) : t_{std::forward&lt;F&gt;(f)}, vel_pid_{vel_gain} {}</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structrct_1_1ChassisPid.html#ad7be13ec288b7106e0a714e015414884">   32</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="structrct_1_1ChassisPid.html#ad7be13ec288b7106e0a714e015414884">pid_move</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structrct_1_1CoodinateUnit.html">Velocity</a>&amp; tag_vel, <span class="keyword">const</span> <a class="code hl_struct" href="structrct_1_1CoodinateUnit.html">Velocity</a>&amp; now_vel, <span class="keyword">const</span> std::chrono::microseconds&amp; delta_time) {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">const</span> <span class="keyword">auto</span> out_vel = vel_pid_.calc(tag_vel, now_vel, delta_time);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    t_.move(out_vel);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  }</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#endif  </span><span class="comment">// RCT_CHASSIS_PID_H_</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  T t_;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <a class="code hl_struct" href="structrct_1_1Pid.html">Pid&lt;Velocity&gt;</a> vel_pid_;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>};</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}  <span class="comment">// namespace rct</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#endif  </span><span class="comment">// RCT_CHASSIS_PID_H_</span></div>
 <div class="ttc" id="aCoodinateUnit_8h_html"><div class="ttname"><a href="CoodinateUnit_8h.html">CoodinateUnit.h</a></div><div class="ttdoc">座標、速度を表す構造体 CoodinateUnit を提供する。</div></div>
 <div class="ttc" id="aPid_8h_html"><div class="ttname"><a href="Pid_8h.html">Pid.h</a></div><div class="ttdoc">PID制御を行う Pid クラスを提供する。</div></div>
-<div class="ttc" id="anamespacerct_html"><div class="ttname"><a href="namespacerct.html">rct</a></div><div class="ttdoc">robot contoroll library</div><div class="ttdef"><b>Definition:</b> <a href="Chassis_8h_source.html#l00013">Chassis.h:13</a></div></div>
-<div class="ttc" id="astructrct_1_1ChassisPid_html"><div class="ttname"><a href="structrct_1_1ChassisPid.html">rct::ChassisPid</a></div><div class="ttdoc">足回りの速度のPID制御を行う。</div><div class="ttdef"><b>Definition:</b> <a href="ChassisPid_8h_source.html#l00020">ChassisPid.h:20</a></div></div>
-<div class="ttc" id="astructrct_1_1CoodinateUnit_html"><div class="ttname"><a href="structrct_1_1CoodinateUnit.html">rct::CoodinateUnit</a></div><div class="ttdoc">座標、速度を示す構造体。 rct::Coodinate, rct::Velocity</div><div class="ttdef"><b>Definition:</b> <a href="CoodinateUnit_8h_source.html#l00021">CoodinateUnit.h:21</a></div></div>
-<div class="ttc" id="astructrct_1_1PidGain_html"><div class="ttname"><a href="structrct_1_1PidGain.html">rct::PidGain</a></div><div class="ttdoc">PID制御のゲイン</div><div class="ttdef"><b>Definition:</b> <a href="Pid_8h_source.html#l00015">Pid.h:15</a></div></div>
-<div class="ttc" id="astructrct_1_1Pid_html"><div class="ttname"><a href="structrct_1_1Pid.html">rct::Pid</a></div><div class="ttdoc">T型のPID制御を行うクラス。</div><div class="ttdef"><b>Definition:</b> <a href="Pid_8h_source.html#l00030">Pid.h:30</a></div></div>
+<div class="ttc" id="anamespacerct_html"><div class="ttname"><a href="namespacerct.html">rct</a></div><div class="ttdoc">robot contoroll library</div><div class="ttdef"><b>Definition:</b> <a href="Chassis_8h_source.html#l00015">Chassis.h:15</a></div></div>
+<div class="ttc" id="astructrct_1_1ChassisPid_html"><div class="ttname"><a href="structrct_1_1ChassisPid.html">rct::ChassisPid</a></div><div class="ttdoc">足回りの速度のPID制御を行う。</div><div class="ttdef"><b>Definition:</b> <a href="ChassisPid_8h_source.html#l00022">ChassisPid.h:22</a></div></div>
+<div class="ttc" id="astructrct_1_1ChassisPid_html_a925ae1f72e9eec9f7f4b73f3b40db251"><div class="ttname"><a href="structrct_1_1ChassisPid.html#a925ae1f72e9eec9f7f4b73f3b40db251">rct::ChassisPid::ChassisPid</a></div><div class="ttdeci">ChassisPid(F &amp;&amp;f, const PidGain &amp;vel_gain)</div><div class="ttdoc">コンストラクタ。T型をfで初期化し、変位と速度のPIDゲインをセットする。</div><div class="ttdef"><b>Definition:</b> <a href="ChassisPid_8h_source.html#l00029">ChassisPid.h:29</a></div></div>
+<div class="ttc" id="astructrct_1_1ChassisPid_html_ad7be13ec288b7106e0a714e015414884"><div class="ttname"><a href="structrct_1_1ChassisPid.html#ad7be13ec288b7106e0a714e015414884">rct::ChassisPid::pid_move</a></div><div class="ttdeci">void pid_move(const Velocity &amp;tag_vel, const Velocity &amp;now_vel, const std::chrono::microseconds &amp;delta_time)</div><div class="ttdoc">手動操縦用。速度のPID制御を行い、出力をT型のcalcに渡す</div><div class="ttdef"><b>Definition:</b> <a href="ChassisPid_8h_source.html#l00032">ChassisPid.h:32</a></div></div>
+<div class="ttc" id="astructrct_1_1CoodinateUnit_html"><div class="ttname"><a href="structrct_1_1CoodinateUnit.html">rct::CoodinateUnit</a></div><div class="ttdoc">座標、速度を示す構造体。 rct::Coodinate, rct::Velocity</div><div class="ttdef"><b>Definition:</b> <a href="CoodinateUnit_8h_source.html#l00026">CoodinateUnit.h:26</a></div></div>
+<div class="ttc" id="astructrct_1_1PidGain_html"><div class="ttname"><a href="structrct_1_1PidGain.html">rct::PidGain</a></div><div class="ttdoc">PID制御のゲイン</div><div class="ttdef"><b>Definition:</b> <a href="Pid_8h_source.html#l00021">Pid.h:21</a></div></div>
+<div class="ttc" id="astructrct_1_1Pid_html"><div class="ttname"><a href="structrct_1_1Pid.html">rct::Pid</a></div><div class="ttdoc">T型のPID制御を行うクラス。</div><div class="ttdef"><b>Definition:</b> <a href="Pid_8h_source.html#l00053">Pid.h:53</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
