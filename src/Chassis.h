@@ -2,6 +2,8 @@
 #define RCT_CHASSIS_H_
 /// @file
 /// @brief 足回りの自動制御を行う Chassis クラスを提供する。
+/// @copyright Copyright (c) 2022 Yoshikawa Teru
+/// @license [This project is released under the MIT License.](https://github.com/teruyamato0731/Chassis/blob/main/LICENSE)
 #include <CoodinateUnit.h>
 #include <Pid.h>
 
@@ -13,12 +15,12 @@
 namespace rct {
 
 /// @brief 自動制御を行う。
-/// @defgroup chassis
+/// @defgroup chassis chassis
 /// @{
 
 /// @brief 足回りの自動制御を行うクラス。
-/// @todo example
 /// @tparam T 自動制御を行うクラス。
+/// [sni_ch]
 template<class T>
 struct Chassis {
   /// @brief コンストラクタ。T型をfで初期化し、変位と速度のPIDゲインをセットする。

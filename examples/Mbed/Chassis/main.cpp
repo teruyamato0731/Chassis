@@ -1,5 +1,4 @@
-/// @file
-/// @brief Chassisの使用例 Mbed用
+#include <../snippets/Motor.h>
 #include <Chassis.h>
 #include <Odom.h>
 #include <Omni.h>
@@ -7,8 +6,6 @@
 
 #include <array>
 #include <functional>
-
-#include "Motor.h"
 
 using namespace rct;
 

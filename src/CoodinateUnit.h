@@ -2,12 +2,17 @@
 #define COODINATE_UNIT_H_
 /// @file CoodinateUnit.h
 /// @brief 座標、速度を表す構造体 CoodinateUnit を提供する。
+/// @copyright Copyright (c) 2022 Yoshikawa Teru
+/// @license [This project is released under the MIT License.](https://github.com/teruyamato0731/Chassis/blob/main/LICENSE)
 #include <chrono>
 #include <cmath>
 
 namespace rct {
 
-/// @defgroup unit
+/// @addtogroup utility
+/// @{
+
+/// @defgroup unit unit
 /// @brief 座標、速度を示す構造体を提供。 rct::Coodinate, rct::Velocity
 /// @{
 
@@ -19,12 +24,18 @@ namespace rct {
 /// @tparam N 時間の次元
 template<int N>
 struct CoodinateUnit {
-  float x_milli;
-  float y_milli;
-  float ang_rad;
+  float x_milli;  ///< x変位
+  float y_milli;  ///< y変位
+  float ang_rad;  ///< 角変位
+
+  /// @brief 時間の次元を取得する。
+  /// @return CoodinateUnit クラスの templateパラメータである N 定数を返す。
   static constexpr auto dimention() noexcept {
     return N;
   }
+
+  /// @{
+  /// @brief 各種演算子を定義する。
   CoodinateUnit& operator+=(const CoodinateUnit& obj) noexcept {
     this->x_milli += obj.x_milli;
     this->y_milli += obj.y_milli;
@@ -49,6 +60,7 @@ struct CoodinateUnit {
     this->ang_rad /= obj;
     return *this;
   }
+  /// @}
 };
 
 /// @brief 座標を示す構造体
@@ -56,6 +68,11 @@ using Coodinate = CoodinateUnit<0>;
 /// @brief 速度を示す構造体
 using Velocity = CoodinateUnit<-1>;
 
+/// @brief CoodinateUnitをCoodinateUnitにキャストする。
+/// @tparam M キャスト先の次元
+/// @tparam N 引数のCoodinateUnitの次元
+/// @param obj キャストするオブジェクト
+/// @return キャスト後のオブジェクト
 template<int M, int N>
 CoodinateUnit<M> unit_cast(const CoodinateUnit<N>& obj) {
   return *reinterpret_cast<const CoodinateUnit<M>*>(&obj);
@@ -111,9 +128,11 @@ template<int N>
 CoodinateUnit<N - 1> operator/(const CoodinateUnit<N>& obj, const std::chrono::microseconds& sec) {
   return unit_cast<N - 1>(obj / sec.count() * 1e6);
 }
-/// @}
+/// @}  operator
 
-/// @}
+/// @}  unit
+
+/// @}  utility
 
 }  // namespace rct
 
