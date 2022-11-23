@@ -1,4 +1,4 @@
-#include <../snipets/Motor.h>
+#include <../snippets/Motor.h>
 #include <Chassis.h>
 #include <Odom.h>
 #include <Omni.h>

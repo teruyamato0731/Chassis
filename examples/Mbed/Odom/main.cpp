@@ -1,4 +1,4 @@
-#include <../snipets/Motor.h>
+#include <../snippets/Motor.h>
 #include <Odom.h>
 #include <mbed.h>
 
