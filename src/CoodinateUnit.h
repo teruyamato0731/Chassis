@@ -85,6 +85,18 @@ constexpr float distance(const Coodinate& p1, const Coodinate& p2) {
   return std::hypot(p1.x_milli - p2.x_milli, p1.y_milli - p2.y_milli);
 }
 
+/// @brief 二点aとbの間を、時間tで線形補間 (linear interpolate) する。
+/// @tparam T 任意の引数型 T型同士の加減算, floatとの乗算が定義されていることを要求する。
+/// @param a 開始地点
+/// @param b 目標地点
+/// @param t 経過時間[%]
+/// @return a + t * (b - a);
+/// @note t == 0 の時 a, t == 1のとき bを返す。
+template<class T>
+constexpr T lerp(const T& a, const T& b, float t) noexcept {
+  return a + t * (b - a);
+}
+
 /// @name operator
 /// @brief 演算子を定義 CoodinateUnit同士の加減算, floatとの乗除算, chrono::microsecondsとの乗除算
 /// @{
