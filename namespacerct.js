@@ -11,6 +11,7 @@ var namespacerct =
     [ "Pid", "structrct_1_1Pid.html", "structrct_1_1Pid" ],
     [ "PidGain", "structrct_1_1PidGain.html", "structrct_1_1PidGain" ],
     [ "Pwm", "structrct_1_1Pwm.html", "structrct_1_1Pwm" ],
+    [ "SteerDrive", "structrct_1_1SteerDrive.html", "structrct_1_1SteerDrive" ],
     [ "Coodinate", "group__unit.html#gaa744d174b2b91a37bc54bebbf23589bd", null ],
     [ "Velocity", "group__unit.html#gadbf033c26b2931a7fa0cdc1982578652", null ],
     [ "distance", "group__unit.html#ga8dfda33eccfbb777114a3ceb6401b2df", null ],

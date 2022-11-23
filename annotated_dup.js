@@ -11,6 +11,7 @@ var annotated_dup =
       [ "Omni", "structrct_1_1Omni.html", "structrct_1_1Omni" ],
       [ "Pid", "structrct_1_1Pid.html", "structrct_1_1Pid" ],
       [ "PidGain", "structrct_1_1PidGain.html", "structrct_1_1PidGain" ],
-      [ "Pwm", "structrct_1_1Pwm.html", "structrct_1_1Pwm" ]
+      [ "Pwm", "structrct_1_1Pwm.html", "structrct_1_1Pwm" ],
+      [ "SteerDrive", "structrct_1_1SteerDrive.html", "structrct_1_1SteerDrive" ]
     ] ]
 ];

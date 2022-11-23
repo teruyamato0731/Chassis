@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Chassis: frame</title>
+<title>Chassis: src/SteerDrive.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -77,7 +77,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('group__frame.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('SteerDrive_8h.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -97,36 +97,55 @@ $(document).ready(function(){initNavTree('group__frame.html',''); initResizable(
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a>  </div>
-  <div class="headertitle"><div class="title">frame</div></div>
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#namespaces">Namespaces</a>  </div>
+  <div class="headertitle"><div class="title">SteerDrive.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>移動速度よりモータを出力に計算する。  
+<p>N輪独立ステアリングの制御を行う SteerDrive クラスを提供する。  
 <a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;complex&gt;</code><br />
+<code>#include &lt;functional&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for SteerDrive.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="SteerDrive_8h__incl.png" border="0" usemap="#asrc_2SteerDrive_8h" alt=""/></div>
+<map name="asrc_2SteerDrive_8h" id="asrc_2SteerDrive_8h">
+<area shape="rect" title="N輪独立ステアリングの制御を行う SteerDrive クラスを提供する。" alt="" coords="67,5,181,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,64,107"/>
+<area shape="rect" title=" " alt="" coords="89,80,159,107"/>
+<area shape="rect" title=" " alt="" coords="183,80,262,107"/>
+</map>
+</div>
+</div>
+<p><a href="SteerDrive_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrct_1_1Mecanum.html">rct::Mecanum</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">メカナムの制御を行うクラス。  <a href="structrct_1_1Mecanum.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrct_1_1Omni.html">rct::Omni&lt; N &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">N輪オムニの制御を行うクラス。  <a href="structrct_1_1Omni.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrct_1_1SteerDrive.html">rct::SteerDrive&lt; N &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">N輪独立ステアリング駆動機  <a href="structrct_1_1SteerDrive.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespacerct"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerct.html">rct</a></td></tr>
+<tr class="memdesc:namespacerct"><td class="mdescLeft">&#160;</td><td class="mdescRight">robot contoroll library <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p >移動速度よりモータを出力に計算する。 </p>
-<p >足回りのモータ出力を計算する。 Velocityを与えることにより、コールバック関数を通してモータへの出力をセットする。 </p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd><p class="startdd">図 </p>
-<p class="enddd">example</p>
-</dd></dl>
-</div><!-- contents -->
+<div class="textblock"><p >N輪独立ステアリングの制御を行う SteerDrive クラスを提供する。 </p>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 Yoshikawa Teru </dd></dl>
+<dl class="section user"><dt>License</dt><dd><a href="https://github.com/teruyamato0731/Chassis/blob/main/LICENSE">This project is released under the MIT License.</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="SteerDrive_8h_source.html">SteerDrive.h</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="SteerDrive_8h.html">SteerDrive.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>

@@ -24,6 +24,8 @@ var NAVTREEINDEX0 =
 "Pid_8h_source.html":[7,0,2,7],
 "Pwm_8h.html":[7,0,2,8],
 "Pwm_8h_source.html":[7,0,2,8],
+"SteerDrive_8h.html":[7,0,2,9],
+"SteerDrive_8h_source.html":[7,0,2,9],
 "annotated.html":[6,0],
 "classes.html":[6,1],
 "classrct_1_1is__pidable.html":[4,3,1,1],
@@ -115,5 +117,9 @@ var NAVTREEINDEX0 =
 "structrct_1_1Pwm.html#a579846a8965b715a8045f5012a3997da":[4,3,2,2],
 "structrct_1_1Pwm.html#a8c7c6645dac8c0f1f40925fb409c7734":[4,3,2,3],
 "structrct_1_1Pwm.html#af0e043b60476af52c199268320cca44b":[4,3,2,1],
+"structrct_1_1SteerDrive.html":[4,2,2],
+"structrct_1_1SteerDrive.html#a00e365d66d94fb82bc0c321018ac0609":[4,2,2,1],
+"structrct_1_1SteerDrive.html#a6e0d0e67f95f8262c1528025d5106714":[4,2,2,0],
+"structrct_1_1SteerDrive.html#aca889b54a7053cd281aa8e8ecd201311":[4,2,2,2],
 "todo.html":[3]
 };
