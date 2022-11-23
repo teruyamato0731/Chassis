@@ -13,5 +13,6 @@ var group__unit =
     [ "rct::Coodinate", "group__unit.html#gaa744d174b2b91a37bc54bebbf23589bd", null ],
     [ "rct::Velocity", "group__unit.html#gadbf033c26b2931a7fa0cdc1982578652", null ],
     [ "rct::distance", "group__unit.html#ga8dfda33eccfbb777114a3ceb6401b2df", null ],
+    [ "rct::lerp", "group__unit.html#ga2514f6ba8517aa41c8289b4c75a36593", null ],
     [ "rct::unit_cast", "group__unit.html#ga418e52ee1bbb59cd824fae7c6acb7b29", null ]
 ];
