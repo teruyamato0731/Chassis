@@ -2,32 +2,57 @@
 #define CHASSIS_PID_H_
 /// @file
 /// @brief PID制御を行う Pid クラスを提供する。
+/// @copyright Copyright (c) 2022 Yoshikawa Teru
+/// @license [This project is released under the MIT License.](https://github.com/teruyamato0731/Chassis/blob/main/LICENSE)
 #include <chrono>
 #include <optional>
 
 namespace rct {
 
 /// @brief 有用な機能群を提供する。
-/// @defgroup utility
+/// @defgroup utility utility
+/// @{
+
+/// @brief PID制御を提供する。
+/// @defgroup pid pid
 /// @{
 
 /// @brief PID制御のゲイン
 struct PidGain {
-  float kp;
-  float ki;
-  float kd;
+  float kp;  ///< 比例ゲイン
+  float ki;  ///< 積分ゲイン
+  float kd;  ///< 微分ゲイン
 };
 
-// @TODO Pidable
-// @TODO static_assert();
+/// @brief T型がPID制御可能な型であるかを判定する。
+/// @tparam T 判定を行う型
+template<class T>
+class is_pidable {
+  template<class T, class = T>
+  struct is_pidable_helper : std::false_type {};
+  template<class T>
+  struct is_pidable_helper<T, decltype(std::declval<T&>() = std::declval<T>() + std::declval<T>(),
+                                       std::declval<T&>() = std::declval<T>() - std::declval<T>(),
+                                       std::declval<T&>() = std::declval<T>() * std::declval<float>(),
+                                       std::declval<T&>() = std::declval<T>() / std::declval<float>(), T{})>
+      : std::true_type {};
+ public:
+  /// @brief T型同士の加減算とfloat型との乗除が定義されていて、デフォルト初期化が可能であればtrue, そうでなければfalse。
+  static constexpr bool value = is_pidable_helper<T>::value;
+};
+
+/// @brief T型がPID制御可能な型であるかを判定する。
+/// T型同士の加減算とfloat型との乗除が定義されていればtrue, そうでなければfalse。
+/// @tparam T 判定を行う型
+template<class T>
+constexpr bool is_pidable_v = is_pidable<T>::value;
 
 /// @brief T型のPID制御を行うクラス。
-/// @tparam T T型同士の加減算とfloat型との乗除が定義されていること。
-template<class T, decltype(std::declval<T&>() = std::declval<T>() + std::declval<T>(),
-                           std::declval<T&>() = std::declval<T>() - std::declval<T>(),
-                           std::declval<T&>() = std::declval<T>() * std::declval<float>(),
-                           std::declval<T&>() = std::declval<T>() / std::declval<float>(), T{}, nullptr) = nullptr>
+/// @tparam T PID制御可能な型であること。(T型同士の加減算とfloat型との乗除が定義されていること。)is_pidableで判定可能。
+template<class T>
 struct Pid {
+  static_assert(is_pidable_v<T>, "T型がPID制御に対応していません。");
+
   /// @brief コンストラクタ。ゲインをセットする。
   /// @param pid_gain PID制御のゲイン
   Pid(const PidGain& pid_gain) noexcept : pid_gain_{pid_gain} {}
@@ -36,7 +61,7 @@ struct Pid {
   /// @param dst 目標値
   /// @param now 現在値
   /// @param delta_time 前回呼び出しからの経過時間
-  /// @return PIDの結果
+  /// @return T型 PIDの結果を返す。
   T calc(const T& dst, const T& now, const std::chrono::microseconds& delta_time) {
     const float sec = std::chrono::duration<float>{delta_time}.count();
     const T proportional = dst - now;
@@ -65,7 +90,9 @@ struct Pid {
   std::optional<T> pre_{};
 };
 
-/// @}
+/// @}  pid
+
+/// @}  utility
 
 }  // namespace rct
 

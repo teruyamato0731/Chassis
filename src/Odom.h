@@ -2,6 +2,8 @@
 #define CHASSIS_ODOM_H_
 /// @file
 /// @brief オドメトリを行う Odom クラスを提供する。
+/// @copyright Copyright (c) 2022 Yoshikawa Teru
+/// @license [This project is released under the MIT License.](https://github.com/teruyamato0731/Chassis/blob/main/LICENSE)
 #include <CoodinateUnit.h>
 
 #include <cmath>
@@ -9,7 +11,7 @@
 namespace rct {
 
 /// @brief 自己位置推定を行う。
-/// @defgroup localization
+/// @defgroup localization localization
 /// @{
 
 /// @brief N個のエンコーダでオドメトリを行うクラス。

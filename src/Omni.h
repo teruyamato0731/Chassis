@@ -2,6 +2,8 @@
 #define CHASSIS_OMNI_H_
 /// @file
 /// @brief オムニの制御を行う Omni クラスを提供する。
+/// @copyright Copyright (c) 2022 Yoshikawa Teru
+/// @license [This project is released under the MIT License.](https://github.com/teruyamato0731/Chassis/blob/main/LICENSE)
 #include <CoodinateUnit.h>
 
 #include <cmath>
@@ -10,8 +12,12 @@
 
 namespace rct {
 
-/// @brief 移動速度Velocityを各モータへの出力に変換する。
-/// @defgroup frame
+/// @brief 移動速度よりモータを出力に計算する。
+/// @details 足回りのモータ出力を計算する。
+/// Velocityを与えることにより、コールバック関数を通してモータへの出力をセットする。
+/// \todo 図
+/// \todo example
+/// @defgroup frame frame
 /// @{
 
 /// @brief N輪オムニの制御を行うクラス。

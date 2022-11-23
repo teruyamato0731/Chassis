@@ -2,6 +2,8 @@
 #define CHASSIS_MECANUM_H_
 /// @file
 /// @brief メカナムの制御を行う Mecanum クラスを提供する。
+/// @copyright Copyright (c) 2022 Yoshikawa Teru
+/// @license [This project is released under the MIT License.](https://github.com/teruyamato0731/Chassis/blob/main/LICENSE)
 #include <CoodinateUnit.h>
 
 #include <cmath>
