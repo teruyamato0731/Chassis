@@ -24,9 +24,9 @@ namespace rct {
 /// @tparam N 時間の次元
 template<int N>
 struct CoodinateUnit {
-  float x_milli;  ///< x変位
-  float y_milli;  ///< y変位
-  float ang_rad;  ///< 角変位
+  float x_milli;  ///< x変位[mm]
+  float y_milli;  ///< y変位[mm]
+  float ang_rad;  ///< 角変位[rad]
 
   /// @brief 時間の次元を取得する。
   /// @return CoodinateUnit クラスの templateパラメータである N 定数を返す。
