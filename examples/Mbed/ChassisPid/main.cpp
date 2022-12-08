@@ -1,3 +1,5 @@
+/// @file
+/// @brief 速度PID制御
 #include <../snippets/Motor.h>
 #include <Chassis.h>
 #include <Odom.h>
@@ -22,23 +24,16 @@ Chassis<Omni<3>> chassis{[](const float (&pwm)[3]) {
 int main() {
   timer.start();
   while(1) {
-    // エンコーダの値を引数に渡す
+    // エンコーダ角変位の変化量を引数に渡す
     odom.integrate({0, 0, 0});
     auto now = timer.elapsed_time();
     static auto pre = now;
     auto delta = pre - now;
-#if 1
-    // ex 1
+
     Velocity tag_vel = {0, 0.5, 0.05};
     Velocity now_vel = odom.get() / delta;
     chassis.pid_move(tag_vel, now_vel, delta);
-#else
-    // ex 2
-    Coodinate dst = {0, 1000, 0.0};
-    Coodinate pos = odom.get();
-    chassis.auto_move(dst, pos, delta);
-    check_reached(dst, pos);
-#endif
+
     pre = now;
   }
 }

@@ -1,3 +1,4 @@
+/// @file
 #ifndef CHASSIS_MOTOR_H_
 #define CHASSIS_MOTOR_H_
 
