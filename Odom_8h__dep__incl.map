@@ -1,5 +1,6 @@
 <map id="src/Odom.h" name="src/Odom.h">
-<area shape="rect" id="node1" title="オドメトリを行う Odom クラスを提供する。" alt="" coords="133,5,223,32"/>
-<area shape="rect" id="node2" href="$Chassis_2main_8cpp_source.html" title=" " alt="" coords="5,80,169,121"/>
-<area shape="rect" id="node3" href="$Odom_2main_8cpp_source.html" title=" " alt="" coords="194,80,346,121"/>
+<area shape="rect" id="node1" title="オドメトリを行う Odom クラスを提供する。" alt="" coords="267,5,356,32"/>
+<area shape="rect" id="node2" href="$ChassisAuto_2main_8cpp.html" title="自動制御" alt="" coords="5,80,196,121"/>
+<area shape="rect" id="node3" href="$ChassisPid_2main_8cpp.html" title="速度PID制御" alt="" coords="220,80,403,121"/>
+<area shape="rect" id="node4" href="$Odom_2main_8cpp.html" title="オドメトリによる自己位置推定" alt="" coords="427,80,579,121"/>
 </map>

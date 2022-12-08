@@ -1,5 +1,8 @@
 <map id="src/Omni.h" name="src/Omni.h">
-<area shape="rect" id="node1" title="オムニの制御を行う Omni クラスを提供する。" alt="" coords="137,5,222,32"/>
-<area shape="rect" id="node2" href="$Chassis_2main_8cpp_source.html" title=" " alt="" coords="5,80,169,121"/>
-<area shape="rect" id="node3" href="$Omni3_2main_8cpp_source.html" title=" " alt="" coords="194,80,349,121"/>
+<area shape="rect" id="node1" title="オムニの制御を行う Omni クラスを提供する。" alt="" coords="443,5,528,32"/>
+<area shape="rect" id="node2" href="$Chassis_8cpp.html" title="Chassisの使用例 Arduino用" alt="" coords="5,80,181,121"/>
+<area shape="rect" id="node3" href="$Omni_8cpp.html" title="Omniの使用例 Arduino用" alt="" coords="205,80,365,121"/>
+<area shape="rect" id="node4" href="$ChassisAuto_2main_8cpp.html" title="自動制御" alt="" coords="390,80,581,121"/>
+<area shape="rect" id="node5" href="$ChassisPid_2main_8cpp.html" title="速度PID制御" alt="" coords="605,80,787,121"/>
+<area shape="rect" id="node6" href="$Omni3_2main_8cpp.html" title="3輪オムニ制御例" alt="" coords="812,80,967,121"/>
 </map>
