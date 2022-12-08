@@ -4,7 +4,7 @@ Chassisを用いて手動制御、自己位置推定、自動制御を行う方�
 
 ## 手動制御
 [frameモジュール](\ref frame)を用いる。
-[例](examples/Mbed/Omni3/main.cpp)は[Omni](\ref rct::Omni)。
+例は[3輪オムニ](\ref rct::Omni)。
 
 インスタンスの生成
 \snippet examples/Mbed/Omni3/main.cpp construct
@@ -24,6 +24,12 @@ Chassisを用いて手動制御、自己位置推定、自動制御を行う方�
 ## 自動制御
 [chassisモジュール](\ref chassis)を用いる。
 \include{lineno} examples/Mbed/Chassis/main.cpp
+
+## 4輪独立ステアリング
+インスタンスの生成
+\snippet examples/Mbed/4WDS/main.cpp construct
+出力
+\snippet examples/Mbed/4WDS/main.cpp move
 
 ---
 <span class="next_section_button">[utilityモジュール](\ref utility)</span>
