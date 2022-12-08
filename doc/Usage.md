@@ -20,6 +20,12 @@ Chassisを用いて手動制御、自己位置推定、自動制御を行う方�
 [chassisモジュール](\ref chassis)を用いる。
 \include{lineno} examples/Mbed/ChassisAuto/main.cpp
 
+## 4輪独立ステアリング
+インスタンスの生成
+\snippet examples/Mbed/4WDS/main.cpp construct
+出力
+\snippet examples/Mbed/4WDS/main.cpp move
+
 ---
 <span class="next_section_button">[utilityモジュール](\ref utility)</span>
 
