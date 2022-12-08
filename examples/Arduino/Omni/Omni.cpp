@@ -11,3 +11,10 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
 }
+
+int main() {
+  setup();
+  while(1) {
+    loop();
+  }
+}

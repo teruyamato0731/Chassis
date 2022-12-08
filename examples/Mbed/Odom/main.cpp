@@ -1,3 +1,5 @@
+/// @file
+/// @brief オドメトリによる自己位置推定
 #include <../snippets/Motor.h>
 #include <Odom.h>
 #include <mbed.h>
@@ -29,5 +31,8 @@ int main() {
     static Coodinate pre_pos = {};
     Velocity vel = (pos - pre_pos) / delta;
     pre_pos = pos;
+
+    printf("pos{x:%d,y:%d:,ang:%d}", pos.x_milli, pos.y_milli, pos.ang_rad * 180 / M_PI);
+    printf("vel{x:%d,y:%d:,ang:%d}", vel.x_milli, vel.y_milli, vel.ang_rad * 180 / M_PI);
   }
 }

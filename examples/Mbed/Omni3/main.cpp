@@ -1,3 +1,5 @@
+/// @file
+/// @brief 3輪オムニ制御例
 #include <../snippets/Motor.h>
 #include <Omni.h>
 #include <mbed.h>
@@ -19,9 +21,9 @@ int main() {
   // put your setup code here, to run once:
   while(1) {
     // put your main code here, to run repeatedly:
-    // [move]
+    /// [move]
     Velocity vel = {0, 0.5, 0};
     omni.move(vel);
-    // [move]
+    /// [move]
   }
 }
