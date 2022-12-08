@@ -101,47 +101,54 @@ $(document).ready(function(){initNavTree('SteerDrive_8h_source.html',''); initRe
 <div class="contents">
 <a href="SteerDrive_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef CHASSIS_STEER_DRIVE_H_</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define CHASSIS_STEER_DRIVE_H_</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;complex&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerct.html">rct</a> {</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;<a class="code" href="CoodinateUnit_8h.html">CoodinateUnit.h</a>&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;complex&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">template</span>&lt;<span class="keywordtype">int</span> N&gt;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structrct_1_1SteerDrive.html">   19</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrct_1_1SteerDrive.html">SteerDrive</a> {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keyword">static_assert</span>(N &gt; 0);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> F&gt;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structrct_1_1SteerDrive.html#a6e0d0e67f95f8262c1528025d5106714">   26</a></span>  <a class="code hl_function" href="structrct_1_1SteerDrive.html#a6e0d0e67f95f8262c1528025d5106714">SteerDrive</a>(F&amp;&amp; f) : f_{std::forward&lt;F&gt;(f)} {}</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structrct_1_1SteerDrive.html#aca889b54a7053cd281aa8e8ecd201311">   30</a></span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_function" href="structrct_1_1SteerDrive.html#aca889b54a7053cd281aa8e8ecd201311">size</a>() noexcept {</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">return</span> N;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  }</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="structrct_1_1SteerDrive.html#a00e365d66d94fb82bc0c321018ac0609">   37</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="structrct_1_1SteerDrive.html#a00e365d66d94fb82bc0c321018ac0609">move</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structrct_1_1CoodinateUnit.html">Velocity</a>&amp; vel, <span class="keywordtype">float</span> offset) {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    std::complex&lt;float&gt; vels[N];</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">const</span> std::complex&lt;float&gt; ang = std::polar&lt;float&gt;(vel.ang, 0);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; N; ++i) {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      <span class="keyword">const</span> std::complex&lt;float&gt; vel_fix = std::polar&lt;float&gt;(std::hypot(vel.x, vel.y), -offset - 2 * M_PI / N * i);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>      vels[i] = vel_fix - ang;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    }</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    f_(vels);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  }</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  std::function&lt;void(const std::complex&lt;float&gt; (&amp;)[N])&gt; f_;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>};</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>}  <span class="comment">// namespace rct</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#endif CHASSIS_STEER_DRIVE_H_</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerct.html">rct</a> {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">template</span>&lt;<span class="keywordtype">int</span> N&gt;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structrct_1_1SteerDrive.html">   21</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrct_1_1SteerDrive.html">SteerDrive</a> {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="keyword">static_assert</span>(N &gt; 0);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> F&gt;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="structrct_1_1SteerDrive.html#a6e0d0e67f95f8262c1528025d5106714">   28</a></span>  <a class="code hl_function" href="structrct_1_1SteerDrive.html#a6e0d0e67f95f8262c1528025d5106714">SteerDrive</a>(F&amp;&amp; f) : f_{std::forward&lt;F&gt;(f)} {}</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structrct_1_1SteerDrive.html#aca889b54a7053cd281aa8e8ecd201311">   32</a></span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_function" href="structrct_1_1SteerDrive.html#aca889b54a7053cd281aa8e8ecd201311">size</a>() noexcept {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">return</span> N;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  }</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="structrct_1_1SteerDrive.html#a162f23a844d84fd07f2d132e9210c43a">   39</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="structrct_1_1SteerDrive.html#a162f23a844d84fd07f2d132e9210c43a">move</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structrct_1_1CoodinateUnit.html">Velocity</a>&amp; vel, <span class="keywordtype">float</span> offset_rad = 0.0) {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    std::complex&lt;float&gt; vels[N];</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">const</span> std::complex&lt;float&gt; ang = std::polar&lt;float&gt;(vel.<a class="code hl_variable" href="structrct_1_1CoodinateUnit.html#a812c374ed3bca21047a559d980cd3515">ang_rad</a>, 0);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; N; ++i) {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      <span class="keyword">const</span> std::complex&lt;float&gt; vel_fix =</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>          std::polar&lt;float&gt;(std::hypot(vel.<a class="code hl_variable" href="structrct_1_1CoodinateUnit.html#a1a352d56bb5696504c719c9df357f805">x_milli</a>, vel.<a class="code hl_variable" href="structrct_1_1CoodinateUnit.html#a6b85c01af76d354335b18980da208749">y_milli</a>), -offset_rad - 2 * M_PI / N * i);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>      vels[i] = vel_fix - ang;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    f_(vels);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  std::function&lt;void(const std::complex&lt;float&gt; (&amp;)[N])&gt; f_;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>};</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}  <span class="comment">// namespace rct</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#endif  </span><span class="comment">// CHASSIS_STEER_DRIVE_H_</span></div>
+<div class="ttc" id="aCoodinateUnit_8h_html"><div class="ttname"><a href="CoodinateUnit_8h.html">CoodinateUnit.h</a></div><div class="ttdoc">座標、速度を表す構造体 CoodinateUnit を提供する。</div></div>
 <div class="ttc" id="anamespacerct_html"><div class="ttname"><a href="namespacerct.html">rct</a></div><div class="ttdoc">robot contoroll library</div><div class="ttdef"><b>Definition:</b> <a href="Chassis_8h_source.html#l00015">Chassis.h:15</a></div></div>
 <div class="ttc" id="astructrct_1_1CoodinateUnit_html"><div class="ttname"><a href="structrct_1_1CoodinateUnit.html">rct::CoodinateUnit</a></div><div class="ttdoc">座標、速度を示す構造体。 rct::Coodinate, rct::Velocity</div><div class="ttdef"><b>Definition:</b> <a href="CoodinateUnit_8h_source.html#l00026">CoodinateUnit.h:26</a></div></div>
-<div class="ttc" id="astructrct_1_1SteerDrive_html"><div class="ttname"><a href="structrct_1_1SteerDrive.html">rct::SteerDrive</a></div><div class="ttdoc">N輪独立ステアリング駆動機</div><div class="ttdef"><b>Definition:</b> <a href="SteerDrive_8h_source.html#l00019">SteerDrive.h:19</a></div></div>
-<div class="ttc" id="astructrct_1_1SteerDrive_html_a00e365d66d94fb82bc0c321018ac0609"><div class="ttname"><a href="structrct_1_1SteerDrive.html#a00e365d66d94fb82bc0c321018ac0609">rct::SteerDrive::move</a></div><div class="ttdeci">void move(const Velocity &amp;vel, float offset)</div><div class="ttdoc">モータへのPWM出力を計算する。その後callback関数にPWM出力を渡す。</div><div class="ttdef"><b>Definition:</b> <a href="SteerDrive_8h_source.html#l00037">SteerDrive.h:37</a></div></div>
-<div class="ttc" id="astructrct_1_1SteerDrive_html_a6e0d0e67f95f8262c1528025d5106714"><div class="ttname"><a href="structrct_1_1SteerDrive.html#a6e0d0e67f95f8262c1528025d5106714">rct::SteerDrive::SteerDrive</a></div><div class="ttdeci">SteerDrive(F &amp;&amp;f)</div><div class="ttdoc">コンストラクタ。callback関数をセットする。</div><div class="ttdef"><b>Definition:</b> <a href="SteerDrive_8h_source.html#l00026">SteerDrive.h:26</a></div></div>
-<div class="ttc" id="astructrct_1_1SteerDrive_html_aca889b54a7053cd281aa8e8ecd201311"><div class="ttname"><a href="structrct_1_1SteerDrive.html#aca889b54a7053cd281aa8e8ecd201311">rct::SteerDrive::size</a></div><div class="ttdeci">static constexpr int size() noexcept</div><div class="ttdoc">モータ数を返す。</div><div class="ttdef"><b>Definition:</b> <a href="SteerDrive_8h_source.html#l00030">SteerDrive.h:30</a></div></div>
+<div class="ttc" id="astructrct_1_1CoodinateUnit_html_a1a352d56bb5696504c719c9df357f805"><div class="ttname"><a href="structrct_1_1CoodinateUnit.html#a1a352d56bb5696504c719c9df357f805">rct::CoodinateUnit::x_milli</a></div><div class="ttdeci">float x_milli</div><div class="ttdoc">x変位[mm]</div><div class="ttdef"><b>Definition:</b> <a href="CoodinateUnit_8h_source.html#l00027">CoodinateUnit.h:27</a></div></div>
+<div class="ttc" id="astructrct_1_1CoodinateUnit_html_a6b85c01af76d354335b18980da208749"><div class="ttname"><a href="structrct_1_1CoodinateUnit.html#a6b85c01af76d354335b18980da208749">rct::CoodinateUnit::y_milli</a></div><div class="ttdeci">float y_milli</div><div class="ttdoc">y変位[mm]</div><div class="ttdef"><b>Definition:</b> <a href="CoodinateUnit_8h_source.html#l00028">CoodinateUnit.h:28</a></div></div>
+<div class="ttc" id="astructrct_1_1CoodinateUnit_html_a812c374ed3bca21047a559d980cd3515"><div class="ttname"><a href="structrct_1_1CoodinateUnit.html#a812c374ed3bca21047a559d980cd3515">rct::CoodinateUnit::ang_rad</a></div><div class="ttdeci">float ang_rad</div><div class="ttdoc">角変位[rad]</div><div class="ttdef"><b>Definition:</b> <a href="CoodinateUnit_8h_source.html#l00029">CoodinateUnit.h:29</a></div></div>
+<div class="ttc" id="astructrct_1_1SteerDrive_html"><div class="ttname"><a href="structrct_1_1SteerDrive.html">rct::SteerDrive</a></div><div class="ttdoc">N輪独立ステアリング駆動機</div><div class="ttdef"><b>Definition:</b> <a href="SteerDrive_8h_source.html#l00021">SteerDrive.h:21</a></div></div>
+<div class="ttc" id="astructrct_1_1SteerDrive_html_a162f23a844d84fd07f2d132e9210c43a"><div class="ttname"><a href="structrct_1_1SteerDrive.html#a162f23a844d84fd07f2d132e9210c43a">rct::SteerDrive::move</a></div><div class="ttdeci">void move(const Velocity &amp;vel, float offset_rad=0.0)</div><div class="ttdoc">モータへのPWM出力を計算する。その後callback関数にPWM出力を渡す。</div><div class="ttdef"><b>Definition:</b> <a href="SteerDrive_8h_source.html#l00039">SteerDrive.h:39</a></div></div>
+<div class="ttc" id="astructrct_1_1SteerDrive_html_a6e0d0e67f95f8262c1528025d5106714"><div class="ttname"><a href="structrct_1_1SteerDrive.html#a6e0d0e67f95f8262c1528025d5106714">rct::SteerDrive::SteerDrive</a></div><div class="ttdeci">SteerDrive(F &amp;&amp;f)</div><div class="ttdoc">コンストラクタ。callback関数をセットする。</div><div class="ttdef"><b>Definition:</b> <a href="SteerDrive_8h_source.html#l00028">SteerDrive.h:28</a></div></div>
+<div class="ttc" id="astructrct_1_1SteerDrive_html_aca889b54a7053cd281aa8e8ecd201311"><div class="ttname"><a href="structrct_1_1SteerDrive.html#aca889b54a7053cd281aa8e8ecd201311">rct::SteerDrive::size</a></div><div class="ttdeci">static constexpr int size() noexcept</div><div class="ttdoc">モータ数を返す。</div><div class="ttdef"><b>Definition:</b> <a href="SteerDrive_8h_source.html#l00032">SteerDrive.h:32</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
