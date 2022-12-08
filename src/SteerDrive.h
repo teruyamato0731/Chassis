@@ -4,6 +4,8 @@
 /// @brief N輪独立ステアリングの制御を行う SteerDrive クラスを提供する。
 /// @copyright Copyright (c) 2022 Yoshikawa Teru
 /// @license [This project is released under the MIT License.](https://github.com/teruyamato0731/Chassis/blob/main/LICENSE)
+#include <CoodinateUnit.h>
+
 #include <cmath>
 #include <complex>
 #include <functional>
@@ -34,11 +36,12 @@ struct SteerDrive {
   /// @brief モータへのPWM出力を計算する。その後callback関数にPWM出力を渡す。
   /// @param vel 移動速度
   /// @param offset_rad 姿勢角
-  void move(const Velocity& vel, float offset) {
+  void move(const Velocity& vel, float offset_rad = 0.0) {
     std::complex<float> vels[N];
-    const std::complex<float> ang = std::polar<float>(vel.ang, 0);
+    const std::complex<float> ang = std::polar<float>(vel.ang_rad, 0);
     for(int i = 0; i < N; ++i) {
-      const std::complex<float> vel_fix = std::polar<float>(std::hypot(vel.x, vel.y), -offset - 2 * M_PI / N * i);
+      const std::complex<float> vel_fix =
+          std::polar<float>(std::hypot(vel.x_milli, vel.y_milli), -offset_rad - 2 * M_PI / N * i);
       vels[i] = vel_fix - ang;
     }
     f_(vels);
@@ -51,4 +54,4 @@ struct SteerDrive {
 
 }  // namespace rct
 
-#endif CHASSIS_STEER_DRIVE_H_
+#endif  // CHASSIS_STEER_DRIVE_H_
