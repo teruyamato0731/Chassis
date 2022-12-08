@@ -1,10 +1,10 @@
 \page Usage Chassisの使用方法
 Chassisを用いて手動制御、自己位置推定、自動制御を行う方法を示す。
-また下記の例では[Motor.h](\ref snippets/Motor.h)を使用している。
+下記の例では[Motor.h](\ref snippets/Motor.h)を使用している。
 
 ## 手動制御
 [frameモジュール](\ref frame)を用いる。
-例は[3輪オムニ](\ref rct::Omni)。
+[例](examples/Mbed/Omni3/main.cpp)は[Omni](\ref rct::Omni)を制御するものである。
 
 インスタンスの生成
 \snippet examples/Mbed/Omni3/main.cpp construct

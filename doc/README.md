@@ -17,7 +17,7 @@
 ## Licensing
 Copyright (c) 2022 Yoshikawa Teru
 
-Chassis is under the MIT License, see [LICENSE](https://github.com/teruyamato0731/Chassis/blob/main/LICENSE).
+This project is released under the MIT License, see [LICENSE](https://github.com/teruyamato0731/Chassis/blob/main/LICENSE).
 
 ---
 <span class="next_section_button">\ref Installation</span>
