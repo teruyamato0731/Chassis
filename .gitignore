@@ -1,2 +1,4 @@
 src/test*
 docs
+test/third_party
+build
