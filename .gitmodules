@@ -1,5 +1,5 @@
 [submodule "doxygen-awesome-css"]
-	path = doxygen-awesome-css
+	path = doxygen-custom/doxygen-awesome-css
 	url = https://github.com/jothepro/doxygen-awesome-css.git
 [submodule "test/third_party/googletest"]
 	path = test/third_party/googletest
