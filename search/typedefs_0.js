@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['coodinate_0',['Coodinate',['../group__unit.html#gaa744d174b2b91a37bc54bebbf23589bd',1,'rct']]]
+  ['coordinate_0',['Coordinate',['../group__unit.html#ga40d53736f06c8fe2c11b388d683a1d5d',1,'rct']]]
 ];

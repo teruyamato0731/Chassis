@@ -18,8 +18,6 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
 <script type="text/javascript">
@@ -112,12 +110,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aad9074e0628e691d887031af8f36b266"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structrct_1_1Chassis.html#aad9074e0628e691d887031af8f36b266">Chassis</a> (F &amp;&amp;f, const <a class="el" href="structrct_1_1PidGain.html">PidGain</a> &amp;vel_gain, const <a class="el" href="structrct_1_1PidGain.html">PidGain</a> &amp;pos_gain)</td></tr>
 <tr class="memdesc:aad9074e0628e691d887031af8f36b266"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ。T型をfで初期化し、変位と速度のPIDゲインをセットする。  <a href="structrct_1_1Chassis.html#aad9074e0628e691d887031af8f36b266">More...</a><br /></td></tr>
 <tr class="separator:aad9074e0628e691d887031af8f36b266"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92534b814f457f51c6884b1d0c4f1984"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrct_1_1Chassis.html#a92534b814f457f51c6884b1d0c4f1984">pid_move</a> (const <a class="el" href="group__unit.html#gadbf033c26b2931a7fa0cdc1982578652">Velocity</a> &amp;tag_vel, const <a class="el" href="group__unit.html#gadbf033c26b2931a7fa0cdc1982578652">Velocity</a> &amp;now_vel, const std::chrono::microseconds &amp;delta_time, float offset_rad=0.0)</td></tr>
+<tr class="memitem:a92534b814f457f51c6884b1d0c4f1984"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrct_1_1Chassis.html#a92534b814f457f51c6884b1d0c4f1984">pid_move</a> (const <a class="el" href="group__unit.html#gaabe37c4ee5b7ecf0e9fe3ec1a3ff6594">Velocity</a> &amp;tag_vel, const <a class="el" href="group__unit.html#gaabe37c4ee5b7ecf0e9fe3ec1a3ff6594">Velocity</a> &amp;now_vel, const std::chrono::microseconds &amp;delta_time, float offset_rad=0.0)</td></tr>
 <tr class="memdesc:a92534b814f457f51c6884b1d0c4f1984"><td class="mdescLeft">&#160;</td><td class="mdescRight">手動操縦用。速度のPID制御を行い、出力をT型のcalcに渡す  <a href="structrct_1_1Chassis.html#a92534b814f457f51c6884b1d0c4f1984">More...</a><br /></td></tr>
 <tr class="separator:a92534b814f457f51c6884b1d0c4f1984"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0eaeea5082000cb1f15fa9bcc67daa75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrct_1_1Chassis.html#a0eaeea5082000cb1f15fa9bcc67daa75">auto_move</a> (const <a class="el" href="group__unit.html#gaa744d174b2b91a37bc54bebbf23589bd">Coodinate</a> &amp;dst, const <a class="el" href="group__unit.html#gaa744d174b2b91a37bc54bebbf23589bd">Coodinate</a> &amp;pos, const std::chrono::microseconds &amp;delta_time)</td></tr>
-<tr class="memdesc:a0eaeea5082000cb1f15fa9bcc67daa75"><td class="mdescLeft">&#160;</td><td class="mdescRight">自動制御用。変位のPID制御を行い、出力をT型のcalcに渡す。  <a href="structrct_1_1Chassis.html#a0eaeea5082000cb1f15fa9bcc67daa75">More...</a><br /></td></tr>
-<tr class="separator:a0eaeea5082000cb1f15fa9bcc67daa75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15ea7b6b49f84891ca658a5b78851d02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrct_1_1Chassis.html#a15ea7b6b49f84891ca658a5b78851d02">auto_move</a> (const <a class="el" href="group__unit.html#ga40d53736f06c8fe2c11b388d683a1d5d">Coordinate</a> &amp;dst, const <a class="el" href="group__unit.html#ga40d53736f06c8fe2c11b388d683a1d5d">Coordinate</a> &amp;pos, const std::chrono::microseconds &amp;delta_time)</td></tr>
+<tr class="memdesc:a15ea7b6b49f84891ca658a5b78851d02"><td class="mdescLeft">&#160;</td><td class="mdescRight">自動制御用。変位のPID制御を行い、出力をT型のcalcに渡す。  <a href="structrct_1_1Chassis.html#a15ea7b6b49f84891ca658a5b78851d02">More...</a><br /></td></tr>
+<tr class="separator:a15ea7b6b49f84891ca658a5b78851d02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class T&gt;<br />
@@ -188,8 +186,8 @@ template&lt;class F &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a0eaeea5082000cb1f15fa9bcc67daa75" name="a0eaeea5082000cb1f15fa9bcc67daa75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0eaeea5082000cb1f15fa9bcc67daa75">&#9670;&nbsp;</a></span>auto_move()</h2>
+<a id="a15ea7b6b49f84891ca658a5b78851d02" name="a15ea7b6b49f84891ca658a5b78851d02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15ea7b6b49f84891ca658a5b78851d02">&#9670;&nbsp;</a></span>auto_move()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -199,13 +197,13 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="structrct_1_1Chassis.html">rct::Chassis</a>&lt; T &gt;::auto_move </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__unit.html#gaa744d174b2b91a37bc54bebbf23589bd">Coodinate</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__unit.html#ga40d53736f06c8fe2c11b388d683a1d5d">Coordinate</a> &amp;&#160;</td>
           <td class="paramname"><em>dst</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__unit.html#gaa744d174b2b91a37bc54bebbf23589bd">Coodinate</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__unit.html#ga40d53736f06c8fe2c11b388d683a1d5d">Coordinate</a> &amp;&#160;</td>
           <td class="paramname"><em>pos</em>, </td>
         </tr>
         <tr>
@@ -247,13 +245,13 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="structrct_1_1Chassis.html">rct::Chassis</a>&lt; T &gt;::pid_move </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__unit.html#gadbf033c26b2931a7fa0cdc1982578652">Velocity</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__unit.html#gaabe37c4ee5b7ecf0e9fe3ec1a3ff6594">Velocity</a> &amp;&#160;</td>
           <td class="paramname"><em>tag_vel</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__unit.html#gadbf033c26b2931a7fa0cdc1982578652">Velocity</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__unit.html#gaabe37c4ee5b7ecf0e9fe3ec1a3ff6594">Velocity</a> &amp;&#160;</td>
           <td class="paramname"><em>now_vel</em>, </td>
         </tr>
         <tr>

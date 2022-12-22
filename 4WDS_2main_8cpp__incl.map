@@ -4,9 +4,9 @@
 <area shape="rect" id="node3" href="$SteerDrive_8h.html" title="N輪独立ステアリングの制御を行う SteerDrive クラスを提供する。" alt="" coords="157,95,251,121"/>
 <area shape="rect" id="node9" title=" " alt="" coords="275,95,339,121"/>
 <area shape="rect" id="node10" title=" " alt="" coords="363,95,413,121"/>
-<area shape="rect" id="node4" href="$CoodinateUnit_8h.html" title="座標、速度を表す構造体 CoodinateUnit を提供する。" alt="" coords="15,169,129,196"/>
-<area shape="rect" id="node6" title=" " alt="" coords="132,244,191,271"/>
+<area shape="rect" id="node4" href="$CoordinateUnit_8h.html" title="座標、速度を表す構造体 CoordinateUnit を提供する。" alt="" coords="10,169,129,196"/>
+<area shape="rect" id="node6" title=" " alt="" coords="131,244,189,271"/>
 <area shape="rect" id="node7" title=" " alt="" coords="205,169,275,196"/>
 <area shape="rect" id="node8" title=" " alt="" coords="299,169,378,196"/>
-<area shape="rect" id="node5" title=" " alt="" coords="41,244,103,271"/>
+<area shape="rect" id="node5" title=" " alt="" coords="39,244,100,271"/>
 </map>

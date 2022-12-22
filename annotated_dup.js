@@ -4,7 +4,7 @@ var annotated_dup =
       [ "Chassis", "structrct_1_1Chassis.html", "structrct_1_1Chassis" ],
       [ "ChassisAuto", "structrct_1_1ChassisAuto.html", "structrct_1_1ChassisAuto" ],
       [ "ChassisPid", "structrct_1_1ChassisPid.html", "structrct_1_1ChassisPid" ],
-      [ "CoodinateUnit", "structrct_1_1CoodinateUnit.html", "structrct_1_1CoodinateUnit" ],
+      [ "CoordinateUnit", "structrct_1_1CoordinateUnit.html", "structrct_1_1CoordinateUnit" ],
       [ "is_pidable", "classrct_1_1is__pidable.html", "classrct_1_1is__pidable" ],
       [ "Mecanum", "structrct_1_1Mecanum.html", "structrct_1_1Mecanum" ],
       [ "Odom", "structrct_1_1Odom.html", "structrct_1_1Odom" ],

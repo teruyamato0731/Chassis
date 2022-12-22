@@ -18,8 +18,6 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
 <script type="text/javascript">
@@ -112,7 +110,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a925ae1f72e9eec9f7f4b73f3b40db251"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structrct_1_1ChassisPid.html#a925ae1f72e9eec9f7f4b73f3b40db251">ChassisPid</a> (F &amp;&amp;f, const <a class="el" href="structrct_1_1PidGain.html">PidGain</a> &amp;vel_gain)</td></tr>
 <tr class="memdesc:a925ae1f72e9eec9f7f4b73f3b40db251"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ。T型をfで初期化し、変位と速度のPIDゲインをセットする。  <a href="structrct_1_1ChassisPid.html#a925ae1f72e9eec9f7f4b73f3b40db251">More...</a><br /></td></tr>
 <tr class="separator:a925ae1f72e9eec9f7f4b73f3b40db251"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7be13ec288b7106e0a714e015414884"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrct_1_1ChassisPid.html#ad7be13ec288b7106e0a714e015414884">pid_move</a> (const <a class="el" href="group__unit.html#gadbf033c26b2931a7fa0cdc1982578652">Velocity</a> &amp;tag_vel, const <a class="el" href="group__unit.html#gadbf033c26b2931a7fa0cdc1982578652">Velocity</a> &amp;now_vel, const std::chrono::microseconds &amp;delta_time)</td></tr>
+<tr class="memitem:ad7be13ec288b7106e0a714e015414884"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrct_1_1ChassisPid.html#ad7be13ec288b7106e0a714e015414884">pid_move</a> (const <a class="el" href="group__unit.html#gaabe37c4ee5b7ecf0e9fe3ec1a3ff6594">Velocity</a> &amp;tag_vel, const <a class="el" href="group__unit.html#gaabe37c4ee5b7ecf0e9fe3ec1a3ff6594">Velocity</a> &amp;now_vel, const std::chrono::microseconds &amp;delta_time)</td></tr>
 <tr class="memdesc:ad7be13ec288b7106e0a714e015414884"><td class="mdescLeft">&#160;</td><td class="mdescRight">手動操縦用。速度のPID制御を行い、出力をT型のcalcに渡す  <a href="structrct_1_1ChassisPid.html#ad7be13ec288b7106e0a714e015414884">More...</a><br /></td></tr>
 <tr class="separator:ad7be13ec288b7106e0a714e015414884"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -190,13 +188,13 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="structrct_1_1ChassisPid.html">rct::ChassisPid</a>&lt; T &gt;::pid_move </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__unit.html#gadbf033c26b2931a7fa0cdc1982578652">Velocity</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__unit.html#gaabe37c4ee5b7ecf0e9fe3ec1a3ff6594">Velocity</a> &amp;&#160;</td>
           <td class="paramname"><em>tag_vel</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__unit.html#gadbf033c26b2931a7fa0cdc1982578652">Velocity</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__unit.html#gaabe37c4ee5b7ecf0e9fe3ec1a3ff6594">Velocity</a> &amp;&#160;</td>
           <td class="paramname"><em>now_vel</em>, </td>
         </tr>
         <tr>

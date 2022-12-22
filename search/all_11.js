@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['y_5fmilli_0',['y_milli',['../structrct_1_1CoodinateUnit.html#a6b85c01af76d354335b18980da208749',1,'rct::CoodinateUnit']]]
+  ['y_5fmilli_0',['y_milli',['../structrct_1_1CoordinateUnit.html#a7d03928ad1f9d7d0b2e547e8aa04c957',1,'rct::CoordinateUnit']]]
 ];

@@ -1,5 +1,5 @@
-<map id="src/CoodinateUnit.h" name="src/CoodinateUnit.h">
-<area shape="rect" id="node1" title="座標、速度を表す構造体 CoodinateUnit を提供する。" alt="" coords="547,5,683,32"/>
+<map id="src/CoordinateUnit.h" name="src/CoordinateUnit.h">
+<area shape="rect" id="node1" title="座標、速度を表す構造体 CoordinateUnit を提供する。" alt="" coords="545,5,685,32"/>
 <area shape="rect" id="node2" href="$Chassis_8h.html" title="足回りの自動制御を行う Chassis クラスを提供する。" alt="" coords="113,80,214,107"/>
 <area shape="rect" id="node4" href="$ChassisAuto_8h.html" title="足回りの位置のPID制御を行うChassisAutoを提供する。" alt="" coords="421,80,549,107"/>
 <area shape="rect" id="node6" href="$ChassisPid_8h.html" title="足回りの速度のPID制御を行うChassisPidを提供する。" alt="" coords="682,80,802,107"/>

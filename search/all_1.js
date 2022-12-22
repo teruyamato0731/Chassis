@@ -13,9 +13,9 @@ var searchData=
   ['chassisauto_2eh_10',['ChassisAuto.h',['../ChassisAuto_8h.html',1,'']]],
   ['chassispid_11',['ChassisPid',['../structrct_1_1ChassisPid.html#a925ae1f72e9eec9f7f4b73f3b40db251',1,'rct::ChassisPid::ChassisPid()'],['../structrct_1_1ChassisPid.html',1,'rct::ChassisPid&lt; T &gt;']]],
   ['chassispid_2eh_12',['ChassisPid.h',['../ChassisPid_8h.html',1,'']]],
-  ['check_5freached_13',['check_reached',['../ChassisAuto_2main_8cpp.html#aaa7c0094cf5c771b0e5af18d9333e468',1,'main.cpp']]],
-  ['coodinate_14',['Coodinate',['../group__unit.html#gaa744d174b2b91a37bc54bebbf23589bd',1,'rct']]],
-  ['coodinateunit_15',['CoodinateUnit',['../structrct_1_1CoodinateUnit.html',1,'rct']]],
-  ['coodinateunit_2eh_16',['CoodinateUnit.h',['../CoodinateUnit_8h.html',1,'']]],
-  ['coodinateunit_3c_200_20_3e_17',['CoodinateUnit&lt; 0 &gt;',['../structrct_1_1CoodinateUnit.html',1,'rct']]]
+  ['check_5freached_13',['check_reached',['../ChassisAuto_2main_8cpp.html#a889c52280c86b07e682cbc944dd20e76',1,'main.cpp']]],
+  ['coordinate_14',['Coordinate',['../group__unit.html#ga40d53736f06c8fe2c11b388d683a1d5d',1,'rct']]],
+  ['coordinateunit_15',['CoordinateUnit',['../structrct_1_1CoordinateUnit.html',1,'rct']]],
+  ['coordinateunit_2eh_16',['CoordinateUnit.h',['../CoordinateUnit_8h.html',1,'']]],
+  ['coordinateunit_3c_200_20_3e_17',['CoordinateUnit&lt; 0 &gt;',['../structrct_1_1CoordinateUnit.html',1,'rct']]]
 ];
