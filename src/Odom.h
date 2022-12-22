@@ -4,7 +4,7 @@
 /// @brief オドメトリを行う Odom クラスを提供する。
 /// @copyright Copyright (c) 2022 Yoshikawa Teru
 /// @license [This project is released under the MIT License.](https://github.com/teruyamato0731/Chassis/blob/main/LICENSE)
-#include <CoodinateUnit.h>
+#include <CoordinateUnit.h>
 
 #include <cmath>
 
@@ -22,7 +22,7 @@ struct Odom {
 
   /// @brief コンストラクタ。現在位置を初期化する。
   /// @param pos 現在位置
-  Odom(const Coodinate& pos = {}) : pos_{pos} {}
+  Odom(const Coordinate& pos = {}) : pos_{pos} {}
   /// @brief エンコーダ数を返す。
   /// @return Odom クラスの templateパラメータである N 定数を返す。
   static constexpr int size() noexcept {
@@ -43,23 +43,23 @@ struct Odom {
 
   /// @{
   /// @brief 推定された自己位置を返す。
-  /// @return 左辺値の文脈ではCoodinateのconst参照を返し、右辺値の文脈ではCoodinateをコピーして返す。
-  const Coodinate& get() const& noexcept {
+  /// @return 左辺値の文脈ではCoordinateのconst参照を返し、右辺値の文脈ではCoordinateをコピーして返す。
+  const Coordinate& get() const& noexcept {
     return pos_;
   }
-  Coodinate get() const&& noexcept {
+  Coordinate get() const&& noexcept {
     return std::move(pos_);
   }
   /// @}
 
   /// @brief 自己位置を更新する。
   /// @param pos セットする自己位置。
-  void set(const Coodinate& pos) noexcept {
+  void set(const Coordinate& pos) noexcept {
     pos_ = pos;
   }
 
  private:
-  Coodinate pos_;
+  Coordinate pos_;
 };
 
 /// @}

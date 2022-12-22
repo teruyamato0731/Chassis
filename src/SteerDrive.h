@@ -4,7 +4,7 @@
 /// @brief N輪独立ステアリングの制御を行う SteerDrive クラスを提供する。
 /// @copyright Copyright (c) 2022 Yoshikawa Teru
 /// @license [This project is released under the MIT License.](https://github.com/teruyamato0731/Chassis/blob/main/LICENSE)
-#include <CoodinateUnit.h>
+#include <CoordinateUnit.h>
 
 #include <cmath>
 #include <complex>

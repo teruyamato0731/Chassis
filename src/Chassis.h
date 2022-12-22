@@ -4,14 +4,14 @@
 /// @brief 足回りの自動制御を行う Chassis クラスを提供する。
 /// @copyright Copyright (c) 2022 Yoshikawa Teru
 /// @license [This project is released under the MIT License.](https://github.com/teruyamato0731/Chassis/blob/main/LICENSE)
-#include <CoodinateUnit.h>
+#include <CoordinateUnit.h>
 #include <Pid.h>
 
 #include <chrono>
 #include <cmath>
 #include <cstdint>
 
-/// @brief robot contoroll library
+/// @brief robot control library
 namespace rct {
 
 /// @brief 自動制御を行う。
@@ -46,7 +46,7 @@ struct Chassis {
   /// @param dst 目標座標
   /// @param pos 現在座標
   /// @param delta_time 前回呼び出しからの経過時間
-  void auto_move(const Coodinate& dst, const Coodinate& pos, const std::chrono::microseconds& delta_time) {
+  void auto_move(const Coordinate& dst, const Coordinate& pos, const std::chrono::microseconds& delta_time) {
     const auto out_vel = pos_pid_.calc(dst, pos, delta_time) / std::chrono::seconds{1};
     t_.move(out_vel, pos.ang_rad);
   }
@@ -54,7 +54,7 @@ struct Chassis {
  private:
   T t_;
   Pid<Velocity> vel_pid_;
-  Pid<Coodinate> pos_pid_;
+  Pid<Coordinate> pos_pid_;
 };
 
 /// @}

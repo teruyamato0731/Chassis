@@ -19,7 +19,7 @@ int main() {
     odom.integrate({0, 0, 0});
 
     // 現在座標の取得
-    Coodinate pos = odom.get();
+    Coordinate pos = odom.get();
 
     // 前回からの経過時間を取得
     auto now = timer.elapsed_time();
@@ -28,7 +28,7 @@ int main() {
     pre = now;
 
     // 速度の取得
-    static Coodinate pre_pos = {};
+    static Coordinate pre_pos = {};
     Velocity vel = (pos - pre_pos) / delta;
     pre_pos = pos;
 

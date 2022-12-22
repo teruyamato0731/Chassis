@@ -4,7 +4,7 @@
 /// @brief 足回りの速度のPID制御を行うChassisPidを提供する。
 /// @copyright Copyright (c) 2022 Yoshikawa Teru
 /// @license [This project is released under the MIT License.](https://github.com/teruyamato0731/Chassis/blob/main/LICENSE)
-#include <CoodinateUnit.h>
+#include <CoordinateUnit.h>
 #include <Pid.h>
 
 #include <chrono>
