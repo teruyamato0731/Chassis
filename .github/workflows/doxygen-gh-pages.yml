@@ -15,7 +15,7 @@ jobs:
         with:
           submodules: true  # Fetch doxygen-awesome-css themes (true OR recursive)
       - name: set version
-        run: echo "PROJECT_NUMBER = `git describe --tags`" >> Doxyfile
+        run: echo "PROJECT_NUMBER = `git describe --tags --abbrev=0`" >> Doxyfile
       - name: Build
         uses: mattnotmitt/doxygen-action@v1.9.4
       - name : Deploy
