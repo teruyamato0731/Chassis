@@ -1,0 +1,17 @@
+
+# ==== Format ====
+# prefix: Subject ref:#issue No
+#
+# Commit body...
+
+# ==== Prefix ====
+# feat: 新しい機能
+# fix: バグの修正
+# docs: ドキュメントのみの変更
+# style: 空白、フォーマット、セミコロン追加など
+# refactor: 仕様に影響がないコード改善(リファクタ)
+# test: テスト関連
+# chore: ビルド、補助ツール、ライブラリ関連
+
+# How to use:
+#  git config commit.template .commit_template
