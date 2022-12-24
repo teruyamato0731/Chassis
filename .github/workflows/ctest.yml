@@ -1,4 +1,4 @@
-name: C++ GoogleTest on push
+name: CTest
 
 on:
   push:
