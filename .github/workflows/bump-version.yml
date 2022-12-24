@@ -3,7 +3,7 @@ name: Bump Version
 on:
   workflow_run:
     # テスト実行後
-    workflows: ["GoogleTest"]
+    workflows: ["Google Test"]
     types:
       - completed
     # mainブランチのみ

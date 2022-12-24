@@ -3,7 +3,7 @@ name: Doxygen Deploy Action
 on:
   workflow_run:
     # バージョンのBump後実行
-    workflows: ["BumpVersion", "on-failure"]
+    workflows: ["Bump Version"]
     types:
       - completed
 
