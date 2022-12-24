@@ -7,6 +7,8 @@ on:
 
 jobs:
   deploy:
+    if: ${{ always() }}
+    needs: BumpVersion
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     runs-on: ubuntu-latest
