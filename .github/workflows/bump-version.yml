@@ -36,7 +36,7 @@ jobs:
           sed -i -e "3i \  \"version\": \"${{ steps.tag_version.outputs.new_tag }}\"," library.json
 
       - name: Create Pull Request
-        if: ${{ steps.tag_version.outputs.release_type }} != false
+        if: ${{ steps.tag_version.outputs.release_type != false }}
         id: cpr
         uses: peter-evans/create-pull-request@v4
         with:
@@ -48,13 +48,13 @@ jobs:
           title: "Bump version:  ${{ steps.tag_version.outputs.new_tag }}"
 
       - name: merge PR
-        if: ${{ steps.tag_version.outputs.release_type }} != false
+        if: ${{ steps.tag_version.outputs.release_type != false }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh pr merge ${{ steps.cpr.outputs.pull-request-url }} --merge --delete-branch
 
       - name: Create a GitHub release
-        if: ${{ steps.tag_version.outputs.release_type }} != false
+        if: ${{ steps.tag_version.outputs.release_type != false }}
         uses: ncipollo/release-action@v1
         with:
           tag: ${{ steps.tag_version.outputs.new_tag }}
