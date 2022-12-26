@@ -26,8 +26,10 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           default_bump : false
 
+      - run: echo ${{steps.tag_version.outputs.release_type}}
+
       - name: set version
-        if: ${{ steps.tag_version.outputs.release_type }} != false
+        if: ${{ steps.tag_version.outputs.release_type != false }}
         run: |
           sed -i '/version/d' library.properties library.json
           sed -i -e "2i version=${{ steps.tag_version.outputs.new_tag }}" library.properties
