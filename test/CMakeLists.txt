@@ -1,4 +1,5 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.21)
+# ctestをjunit形式で出力するため
 
 add_subdirectory(third_party/googletest)
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)

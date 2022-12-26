@@ -1,4 +1,5 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.21)
+# ctestをjunit形式で出力するため
 
 # Parameters inside project
 project(Chassis)
