@@ -24,6 +24,7 @@ jobs:
         uses: mathieudutour/github-tag-action@v6.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          default_bump : false
 
       - name: set version
         run: |
@@ -45,7 +46,7 @@ jobs:
       - name: merge PR
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh pr merge ${{ steps.cpr.outputs.pull-request-url }} --merge
+        run: gh pr merge ${{ steps.cpr.outputs.pull-request-url }} --merge --delete-branch
 
       - name: Create a GitHub release
         uses: ncipollo/release-action@v1
