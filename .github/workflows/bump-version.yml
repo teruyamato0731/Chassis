@@ -31,6 +31,22 @@ jobs:
           sed -i -e "2i version=${{ steps.tag_version.outputs.new_tag }}" library.properties
           sed -i -e "3i \  \"version\": \"${{ steps.tag_version.outputs.new_tag }}\"," library.json
 
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Bump version:  ${{ steps.tag_version.outputs.new_tag }}"
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          branch: create-pull-request/${{ steps.tag_version.outputs.new_tag }}
+          delete-branch: true
+          title: "Bump version:  ${{ steps.tag_version.outputs.new_tag }}"
+
+      - name: merge PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr merge ${{ steps.cpr.outputs.pull-request-url }} --merge
+
       - name: Create a GitHub release
         uses: ncipollo/release-action@v1
         with:
