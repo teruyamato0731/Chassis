@@ -12,6 +12,7 @@ jobs:
     # 二重実行を防ぐ
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
     runs-on: ubuntu-latest
 
     steps:
