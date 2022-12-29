@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-20.04
     timeout-minutes: 5
     outputs:
-      release_type: steps.tag_version.outputs.release_type
-      new_tag: steps.tag_version.outputs.new_tag
-      changelog: steps.tag_version.outputs.changelog
+      release_type: ${{ steps.tag_version.outputs.release_type }}
+      new_tag: ${{ steps.tag_version.outputs.new_tag }}
+      changelog: ${{ steps.tag_version.outputs.changelog }}
     steps:
       - uses: actions/checkout@v3
 
