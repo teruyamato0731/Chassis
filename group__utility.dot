@@ -1,0 +1,11 @@
+digraph "utility"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node3 [label="pid",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__pid.html",tooltip="PID制御を提供する。"];
+  Node1 [label="utility",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="有用な機能群を提供する。"];
+  Node2 [label="unit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__unit.html",tooltip="座標、速度を示す構造体を提供。 rct::Coordinate, rct::Velocity"];
+  Node1->Node2 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+}
