@@ -1,0 +1,33 @@
+name: CI
+on:
+  push:
+    branches:
+      - main
+      - 'feat/**'
+  # 手動実行を許可する
+  workflow_dispatch:
+
+jobs:
+  unit-test:
+    name: Unit Test
+    uses: ./.github/workflows/unit-test.yml
+
+  bump-version:
+    # mainブランチのみ 成功時のみBump
+    if: ${{ github.ref_name == 'main' && success() }}
+    name: Bump Version
+    uses: ./.github/workflows/bump-version.yml
+    needs: unit-test
+    secrets:
+      token: ${{ secrets.GITHUB_TOKEN }}
+
+  pages-deploy:
+  # mainブランチのみ 失敗時もデプロイ
+    if: ${{ github.ref_name == 'main' && !cancelled() }}
+    name: Doxygen Deploy Action
+    uses: ./.github/workflows/doxygen-gh-pages.yml
+    needs: bump-version
+    with:
+      doxyfile_path: doxygen-custom/Doxyfile
+    secrets:
+      token: ${{ secrets.GITHUB_TOKEN }}
