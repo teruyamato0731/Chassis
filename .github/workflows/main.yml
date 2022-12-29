@@ -4,7 +4,7 @@ on:
     branches:
       - main
       - 'feat/**'
-      - 'ci/**'
+      - ci
   # 手動実行を許可する
   workflow_dispatch:
 
