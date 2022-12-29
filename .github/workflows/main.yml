@@ -17,7 +17,7 @@ jobs:
     uses: ./.github/workflows/bump-version.yml
     needs: unit-test
     secrets:
-      github_token: ${{ secrets.GITHUB_TOKEN }}
+      token: ${{ secrets.GITHUB_TOKEN }}
 
   pages-deploy:
   # mainブランチのみ
@@ -26,4 +26,4 @@ jobs:
     with:
       doxyfile_path: doxygen-custom/Doxyfile
     secrets:
-      github_token: ${{ secrets.GITHUB_TOKEN }}
+      token: ${{ secrets.GITHUB_TOKEN }}
