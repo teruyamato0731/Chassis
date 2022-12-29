@@ -1,19 +1,23 @@
 name: Doxygen Deploy Action
-
 on:
-  workflow_run:
-    # バージョンのBump後実行
-    workflows: ["Bump Version"]
-    types:
-      - completed
+  # mainから呼び出す
+  workflow_call:
+    inputs:
+      doxyfile_path:
+        required: true
+        type: string
+    secrets:
+      token:
+        required: true
 
 jobs:
   deploy:
+    runs-on: ubuntu-20.04
     # 二重実行を防ぐ
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
       cancel-in-progress: true
-    runs-on: ubuntu-latest
+    timeout-minutes: 5
 
     steps:
       - uses: actions/checkout@v3
@@ -21,16 +25,16 @@ jobs:
           submodules: true  # Fetch doxygen-awesome-css themes (true OR recursive)
           fetch-depth: 0 # タグにアクセスできるようにする
 
-      - name: set version
-        run: echo "PROJECT_NUMBER = `git describe --tags --abbrev=0`" >> doxygen-custom/Doxyfile
+      - name: Install Doxygen
+        run: sudo apt install -y doxygen
 
       - name: Build
-        uses: mattnotmitt/doxygen-action@v1.9.4
-        with:
-          doxyfile-path: doxygen-custom/Doxyfile
+        run: |
+          echo \"PROJECT_NUMBER = `git describe --tags --abbrev=0`\" >> ${{ inputs.doxyfile_path }}
+          doxygen ${{ inputs.doxyfile_path }}
 
       - name : Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.token }}
           publish_dir: ./docs

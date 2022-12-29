@@ -1,21 +1,19 @@
 name: Bump Version
-
 on:
-  workflow_run:
-    # テスト実行後
-    workflows: ["Google Test"]
-    types:
-      - completed
-    # mainブランチのみ
-    branches:
-      - main
+  # mainから呼び出す
+  workflow_call:
+    secrets:
+      token:
+        required: true
 
 jobs:
   BumpVersion:
-    runs-on: ubuntu-latest
-    # 成功時のみBump
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
-
+    runs-on: ubuntu-20.04
+    timeout-minutes: 5
+    outputs:
+      release_type: ${{ steps.tag_version.outputs.release_type }}
+      new_tag: ${{ steps.tag_version.outputs.new_tag }}
+      changelog: ${{ steps.tag_version.outputs.changelog }}
     steps:
       - uses: actions/checkout@v3
 
@@ -23,48 +21,49 @@ jobs:
         id: tag_version
         uses: mathieudutour/github-tag-action@v6.1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.token }}
           default_bump : false
+          dry_run: true  # tagはRelease作成時つける
 
-      - run: echo ${{steps.tag_version.outputs.release_type}}
+  CreateRelease:
+    needs: BumpVersion
+    if: ${{ needs.BumpVersion.outputs.release_type != false }}
+    runs-on: ubuntu-20.04
+    timeout-minutes: 5
 
-      - name: set version
-        if: ${{ steps.tag_version.outputs.release_type != false }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set version
+        run: sed -i -e 's/v[0-9]\+\.[0-9]\+\.[0-9]\+/${{ needs.BumpVersion.outputs.new_tag }}/' library.properties library.json
+
+      - name: Git config
         run: |
-          sed -i '/version/d' library.properties library.json
-          sed -i -e "2i version=${{ steps.tag_version.outputs.new_tag }}" library.properties
-          sed -i -e "3i \  \"version\": \"${{ steps.tag_version.outputs.new_tag }}\"," library.json
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Create Pull Request
-        if: ${{ steps.tag_version.outputs.release_type != false }}
-        id: cpr
-        uses: peter-evans/create-pull-request@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "Bump version:  ${{ steps.tag_version.outputs.new_tag }}"
-          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
-          branch: create-pull-request/${{ steps.tag_version.outputs.new_tag }}
-          delete-branch: true
-          title: "Bump version:  ${{ steps.tag_version.outputs.new_tag }}"
-
-      - name: merge PR
-        if: ${{ steps.tag_version.outputs.release_type != false }}
+      - name: Push version
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh pr merge ${{ steps.cpr.outputs.pull-request-url }} --merge --delete-branch
+          branch: "release/${{ needs.BumpVersion.outputs.new_tag }}"
+        run: |
+          git switch -c ${{ env.branch }}
+          git add .
+          git commit -m "Bump version: ${{ needs.BumpVersion.outputs.new_tag }}"
+          git tag -a ${{ needs.BumpVersion.outputs.new_tag }} -m "Bump version: ${{ needs.BumpVersion.outputs.new_tag }}"
+          git push -u origin ${{ env.branch }}
+          git push origin ${{ needs.BumpVersion.outputs.new_tag }}
+
+      - name: Create and merge Pull Request
+        env:
+          GH_TOKEN: ${{ secrets.token }}
+          branch: "release/${{ needs.BumpVersion.outputs.new_tag }}"
+        run: |
+          gh pr create --base ${GITHUB_REF_NAME} --head ${{env.branch}} --assignee ${GITHUB_ACTOR} \
+             --title "Bump version: ${{ needs.BumpVersion.outputs.new_tag }}" --body 'TODO URL'
+          gh pr merge ${{env.branch}} --merge --delete-branch
 
       - name: Create a GitHub release
-        if: ${{ steps.tag_version.outputs.release_type != false }}
         uses: ncipollo/release-action@v1
         with:
-          tag: ${{ steps.tag_version.outputs.new_tag }}
-          name: Release ${{ steps.tag_version.outputs.new_tag }}
-          body: ${{ steps.tag_version.outputs.changelog }}
-
-  on-failure:
-    runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
-    steps:
-      - name: failure
-        run: |
-          echo "Test失敗によりBumpVersionは実行しない"
+          tag: ${{ needs.BumpVersion.outputs.new_tag }}
+          body: ${{ needs.BumpVersion.outputs.changelog }}
