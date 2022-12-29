@@ -59,7 +59,7 @@ jobs:
           branch: "release/${{ needs.BumpVersion.outputs.new_tag }}"
         run: |
           gh pr create --base ${GITHUB_REF_NAME} --head ${{env.branch}} --assignee ${GITHUB_ACTOR} \
-             --title "Bump version: ${{ needs.BumpVersion.outputs.new_tag }}" --body 'TODO URL'
+             --title "Bump version: ${{ needs.BumpVersion.outputs.new_tag }}" --body 'Automated changes by [Bump Version](https://github.com/teruyamato0731/Chassis/actions/workflows/bump-version.yml) GitHub action'
           gh pr merge ${{env.branch}} --merge --delete-branch
 
       - name: Create a GitHub release
