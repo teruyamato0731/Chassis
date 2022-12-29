@@ -1,0 +1,22 @@
+# Welcome to Chassis contributing guide
+このプロジェクトのバージョニングは[Semantic versioning](https://semver.org/lang/ja/)に従っている。
+コミットメッセージは[Conventional commit](https://www.conventionalcommits.org/ja/v1.0.0/)に従っており、[commit.template](./.commit_template)を使用している。
+ブランチ戦略はGithub Flowを取っている。
+
+# Quick Start
+```
+git clone https://github.com/teruyamato0731/Chassis.git
+``
+
+Google Test を導入しており、cmakeでテストを実行できる。
+```
+mkdir -p build && cd "$_"
+cmake ..
+cmake --build .
+ctest
+```
+
+# 開発者の環境
+- Ubuntu 22.04
+- VSCode + Platform IO
+- Git + Github

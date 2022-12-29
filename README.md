@@ -14,40 +14,6 @@ Copyright (c) 2022 Yoshikawa Teru
 Chassis is under the MIT License, see [LICENSE](./LICENSE).
 
 # Developer
-
-開発環境
-- Ubuntu 22.04
-- VSCode with Platform IO
-- Git + Github (Pages, Projects, Work flow)
-- ブランチ戦略 truck base or Github Flow
-- Google Test with cmake
-
-```
-git clone https://github.com/teruyamato0731/Chassis.git
-``
-
-cmakeでテストを実行できる
-
-```
-mkdir build
-cd build
-cmake ..
-cmake --build .
-ctest
-```
-
-Semberに従っている
-
-Conventional commit
-commit_templateを使用している
-```
-git config commit.template .commit_template
-```
-
-# Quick Start
-
-# Learn Frame
-# Learn Chassis
-
-# Reference
-Motor 位置 順番
+開発者ガイドは[CONTRIBUTING](./CONTRIBUTING)をどうぞ。
+依存は[NOTICE.md](./NOTICE.md)にまとめている。
+このプロジェクトのバージョニングは[Semantic versioning](https://semver.org/lang/ja/)に従っている。
