@@ -7,7 +7,7 @@ on:
         required: true
         type: string
     secrets:
-      github_token:
+      token:
         required: true
 
 jobs:
@@ -33,5 +33,5 @@ jobs:
       - name : Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.github_token }}
+          github_token: ${{ secrets.token }}
           publish_dir: ./docs

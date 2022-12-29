@@ -3,7 +3,7 @@ on:
   # mainから呼び出す
   workflow_call:
     secrets:
-      github_token:
+      token:
         required: true
 
 jobs:
@@ -21,7 +21,7 @@ jobs:
         id: tag_version
         uses: mathieudutour/github-tag-action@v6.1
         with:
-          github_token: ${{ secrets.github_token }}
+          github_token: ${{ secrets.token }}
           default_bump : false
           dry_run: true  # tagはRelease作成時つける
 
@@ -54,7 +54,7 @@ jobs:
 
       - name: Create and merge Pull Request
         env:
-          GH_TOKEN: ${{ secrets.github_token }}
+          GH_TOKEN: ${{ secrets.token }}
           branch: "release/${{ needs.BumpVersion.outputs.new_tag }}"
         run: |
           gh pr create --base ${GITHUB_REF_NAME} --head ${{env.branch}} --assignee ${GITHUB_ACTOR} \
