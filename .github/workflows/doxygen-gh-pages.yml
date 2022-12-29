@@ -25,6 +25,9 @@ jobs:
           submodules: true  # Fetch doxygen-awesome-css themes (true OR recursive)
           fetch-depth: 0 # タグにアクセスできるようにする
 
+      - name: Install Doxygen
+        run: sudo apt install -y doxygen
+
       - name: Build
         run: |
           echo \"PROJECT_NUMBER = `git describe --tags --abbrev=0`\" >> ${{ inputs.doxyfile_path }}
