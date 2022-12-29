@@ -50,7 +50,7 @@ jobs:
           git add .
           git commit -m "Bump version: ${{ needs.BumpVersion.outputs.new_tag }}"
           git tag ${{ needs.BumpVersion.outputs.new_tag }}
-          git push ${{ needs.BumpVersion.outputs.new_tag }}
+          git push origin ${{ needs.BumpVersion.outputs.new_tag }}
 
       - name: Create and merge Pull Request
         env:
