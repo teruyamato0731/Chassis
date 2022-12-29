@@ -50,7 +50,7 @@ jobs:
           git add .
           git commit -m "Bump version: ${{ needs.BumpVersion.outputs.new_tag }}"
           git tag -a ${{ needs.BumpVersion.outputs.new_tag }} -m "Bump version: ${{ needs.BumpVersion.outputs.new_tag }}"
-          git push origin
+          git push -u origin
           git push origin ${{ needs.BumpVersion.outputs.new_tag }}
 
       - run: echo GITHUB_REF_NAME:${GITHUB_REF_NAME}
