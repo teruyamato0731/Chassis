@@ -39,8 +39,8 @@ jobs:
 
       - name: Git config
         run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Push version
         env:
@@ -49,7 +49,7 @@ jobs:
           git switch -c ${{ env.branch }}
           git add .
           git commit -m "Bump version: ${{ needs.BumpVersion.outputs.new_tag }}"
-          git tag ${{ needs.BumpVersion.outputs.new_tag }}
+          git tag -a ${{ needs.BumpVersion.outputs.new_tag }}
           git push origin ${{ needs.BumpVersion.outputs.new_tag }}
 
       - name: Create and merge Pull Request
