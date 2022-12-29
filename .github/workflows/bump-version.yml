@@ -52,6 +52,10 @@ jobs:
           git tag -a ${{ needs.BumpVersion.outputs.new_tag }} -m "Bump version: ${{ needs.BumpVersion.outputs.new_tag }}"
           git push origin ${{ needs.BumpVersion.outputs.new_tag }}
 
+        - run: echo GITHUB_REF_NAME:${GITHUB_REF_NAME}
+        - run: echo GITHUB_ACTOR:${{GITHUB_ACTOR}}
+        - run: echo env.branch:${{env.branch}}
+
       - name: Create and merge Pull Request
         env:
           GH_TOKEN: ${{ secrets.token }}
