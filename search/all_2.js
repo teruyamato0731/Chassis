@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['dimention_17',['dimention',['../structrct_1_1CoordinateUnit.html#a5caf17192387e0074cd27089c68eaa43',1,'rct::CoordinateUnit']]],
+  ['dimension_17',['dimension',['../structrct_1_1CoordinateUnit.html#af8e3fda148b1a9308c048ae09ce3e647',1,'rct::CoordinateUnit']]],
   ['distance_18',['distance',['../group__unit.html#gae10720aaf2a9e8a7fa4d5c72fcfbdade',1,'rct']]]
 ];

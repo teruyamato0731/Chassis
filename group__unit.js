@@ -1,7 +1,7 @@
 var group__unit =
 [
     [ "CoordinateUnit", "structrct_1_1CoordinateUnit.html", [
-      [ "dimention", "structrct_1_1CoordinateUnit.html#a5caf17192387e0074cd27089c68eaa43", null ],
+      [ "dimension", "structrct_1_1CoordinateUnit.html#af8e3fda148b1a9308c048ae09ce3e647", null ],
       [ "operator*=", "structrct_1_1CoordinateUnit.html#ae5a992ed13a6267e4d1a4632fb03a628", null ],
       [ "operator+=", "structrct_1_1CoordinateUnit.html#a79954b8a2cb663895474bb5a95ef6ba7", null ],
       [ "operator-=", "structrct_1_1CoordinateUnit.html#ada2a611b96bf447a37b089187f2dc246", null ],
