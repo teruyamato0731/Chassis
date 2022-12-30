@@ -31,7 +31,3 @@ jobs:
       doxyfile_path: doxygen-custom/Doxyfile
     secrets:
       token: ${{ secrets.GITHUB_TOKEN }}
-
-defaults:
-  run:
-    shell: bash
