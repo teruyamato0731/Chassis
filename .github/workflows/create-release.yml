@@ -2,9 +2,6 @@ name: Create Release
 on:
   # mainから呼び出す
   workflow_call:
-    secrets:
-      token:
-        required: true
     inputs:
       new_tag:
         required: true
@@ -12,6 +9,9 @@ on:
       changelog:
         required: true
         type: string
+    secrets:
+      token:
+        required: true
 
 jobs:
   CreateRelease:

@@ -52,8 +52,8 @@ jobs:
     uses: ./.github/workflows/doxygen-gh-pages.yml
     with:
       doxyfile_path: doxygen-custom/Doxyfile
-    # unit-test成功かつneeds.unit-test.outputs.release_type != false のとき new_tag
-    # unit-test失敗 Bumpなしのとき previous_tag
+      # unit-test成功かつneeds.unit-test.outputs.release_type != false のとき new_tag
+      # unit-test失敗 Bumpなしのとき previous_tag
       project_version: ${{ (needs.unit-test.result == 'success' && needs.unit-test.outputs.release_type != false &&
                             needs.bump-version.outputs.new_tag) || needs.bump-version.outputs.previous_tag }}
     secrets:
