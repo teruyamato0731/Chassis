@@ -39,8 +39,8 @@ jobs:
     # mainブランチのみ unit-test成功時のみ バージョンがあがるときのみ
     uses: ./.github/workflows/create-release.yml
     with:
-      new_tag: ${{ needs.unit-test.outputs.new_tag }}
-      changelog: ${{ needs.unit-test.outputs.changelog }}
+      new_tag: ${{ needs.bump-version.outputs.new_tag }}
+      changelog: ${{ needs.bump-version.outputs.changelog }}
     secrets:
       token: ${{ secrets.GITHUB_TOKEN }}
 
