@@ -28,7 +28,10 @@ jobs:
           submodules: true  # Fetch doxygen-awesome-css themes (true OR recursive)
 
       - name: Install Doxygen
-        run: sudo apt install -y doxygen
+        uses: awalsh128/cache-apt-pkgs-action@v1
+        with:
+          packages: doxygen
+          version: 1.0
 
       - name: Build
         run: |
