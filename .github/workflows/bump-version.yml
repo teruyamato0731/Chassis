@@ -8,7 +8,8 @@ on:
 
 jobs:
   BumpVersion:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
+    container: teruyamato0731/chassis-action
     timeout-minutes: 5
     outputs:
       release_type: ${{ steps.tag_version.outputs.release_type }}
@@ -28,7 +29,8 @@ jobs:
   CreateRelease:
     needs: BumpVersion
     if: ${{ needs.BumpVersion.outputs.release_type != false }}
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
+    container: teruyamato0731/chassis-action
     timeout-minutes: 5
 
     steps:
