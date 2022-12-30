@@ -30,7 +30,7 @@ struct CoordinateUnit {
 
   /// @brief 時間の次元を取得する。
   /// @return CoordinateUnit クラスの templateパラメータである N 定数を返す。
-  static constexpr auto dimention() noexcept {
+  static constexpr auto dimension() noexcept {
     return N;
   }
 
