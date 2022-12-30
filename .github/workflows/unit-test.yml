@@ -20,7 +20,7 @@ jobs:
           submodules: true  # Fetch GoogleTest (true OR recursive)
 
       - name: Install gcovr
-        uses: awalsh128/cache-apt-pkgs-action@v1.2
+        uses: awalsh128/cache-apt-pkgs-action@v1
         with:
           packages: gcovr
           version: 1.0
