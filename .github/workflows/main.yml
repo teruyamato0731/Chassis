@@ -4,6 +4,7 @@ on:
     branches:
       - main
       - 'feat/**'
+      - ci
   # 手動実行を許可する
   workflow_dispatch:
 
@@ -13,21 +14,47 @@ jobs:
     uses: ./.github/workflows/unit-test.yml
 
   bump-version:
-    # mainブランチのみ 成功時のみBump
-    if: ${{ github.ref_name == 'main' && success() }}
-    name: Bump Version
-    uses: ./.github/workflows/bump-version.yml
-    needs: unit-test
+    name: Bump Version  # バージョンをあげる
+    if: ${{ github.ref_name == 'main' || github.ref_name == 'ci' }}  # mainブランチのみ Bump
+    runs-on: ubuntu-20.04
+    timeout-minutes: 5
+    outputs:
+      release_type: ${{ steps.tag-version.outputs.release_type }}
+      previous_tag: ${{ steps.tag-version.outputs.previous_tag }}
+      new_tag: ${{ steps.tag-version.outputs.new_tag }}
+      changelog: ${{ steps.tag-version.outputs.changelog }}
+    steps:
+      - uses: actions/checkout@v3
+      - id: tag-version
+        uses: mathieudutour/github-tag-action@v6.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          default_bump : false
+          dry_run: true  # tagはRelease作成時つける
+
+  create-release:
+    name: Create Release  # Releaseを作成
+    needs: [unit-test, bump-version]
+    if: ${{ (github.ref_name == 'main' || github.ref_name == 'ci') && needs.unit-test.result == 'success' && needs.bump-version.outputs.release_type != false }}
+    # mainブランチのみ unit-test成功時のみ バージョンがあがるときのみ
+    uses: ./.github/workflows/create-release.yml
+    with:
+      new_tag: ${{ needs.bump-version.outputs.new_tag }}
+      changelog: ${{ needs.bump-version.outputs.changelog }}
     secrets:
       token: ${{ secrets.GITHUB_TOKEN }}
 
   pages-deploy:
-  # mainブランチのみ 失敗時もデプロイ
-    if: ${{ github.ref_name == 'main' && !cancelled() }}
-    name: Doxygen Deploy Action
+    name: Doxygen Deploy Action  # github.ioにデプロイ
+    needs: [unit-test, bump-version]
+    # mainブランチのみ bump-version成功時のみ (unit-testの成否によらずデプロイする)
+    if: ${{ (github.ref_name == 'main' || github.ref_name == 'ci') && needs.bump-version.result == 'success' }}
     uses: ./.github/workflows/doxygen-gh-pages.yml
-    needs: bump-version
     with:
       doxyfile_path: doxygen-custom/Doxyfile
+      # unit-test成功かつneeds.unit-test.outputs.release_type != false のとき new_tag
+      # unit-test失敗 Bumpなしのとき previous_tag
+      project_version: ${{ (needs.unit-test.result == 'success' && needs.unit-test.outputs.release_type != false &&
+                            needs.bump-version.outputs.new_tag) || needs.bump-version.outputs.previous_tag }}
     secrets:
       token: ${{ secrets.GITHUB_TOKEN }}

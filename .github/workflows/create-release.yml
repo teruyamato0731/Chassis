@@ -1,0 +1,56 @@
+name: Create Release
+on:
+  # mainから呼び出す
+  workflow_call:
+    inputs:
+      new_tag:
+        required: true
+        type: string
+      changelog:
+        required: true
+        type: string
+    secrets:
+      token:
+        required: true
+
+jobs:
+  CreateRelease:
+    runs-on: ubuntu-20.04
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set version
+        run: sed -i -e 's/v[0-9]\+\.[0-9]\+\.[0-9]\+/${{ inputs.new_tag }}/' library.properties library.json
+
+      - name: Git config
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Push version
+        env:
+          branch: "release/${{ inputs.new_tag }}"
+        run: |
+          git switch -c ${{ env.branch }}
+          git add .
+          git commit -m "Bump version: ${{ inputs.new_tag }}"
+          git tag -a ${{ inputs.new_tag }} -m "Bump version: ${{ inputs.new_tag }}"
+          git push -u origin ${{ env.branch }}
+          git push origin ${{ inputs.new_tag }}
+
+      - name: Create and merge Pull Request
+        env:
+          GH_TOKEN: ${{ secrets.token }}
+          branch: "release/${{ inputs.new_tag }}"
+        run: |
+          gh pr create --base ${GITHUB_REF_NAME} --head ${{env.branch}} --assignee ${GITHUB_ACTOR} \
+             --title "Bump version: ${{ inputs.new_tag }}" --body 'Automated changes by [Bump Version](https://github.com/teruyamato0731/Chassis/actions/workflows/main.yml) GitHub action'
+          gh pr merge ${{env.branch}} --merge --delete-branch
+
+      - name: Create a GitHub release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ inputs.new_tag }}
+          body: ${{ inputs.changelog }}

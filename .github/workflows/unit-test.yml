@@ -20,7 +20,10 @@ jobs:
           submodules: true  # Fetch GoogleTest (true OR recursive)
 
       - name: Install gcovr
-        run: sudo apt install -y gcovr
+        uses: awalsh128/cache-apt-pkgs-action@v1
+        with:
+          packages: gcovr
+          version: 1.0
 
       - name: Build and Test
         run: bash ./.github/scripts/ctest.bash
