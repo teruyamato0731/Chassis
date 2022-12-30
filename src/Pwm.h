@@ -28,7 +28,7 @@ struct Pwm {
   /// @param n 0:正転出力,1:逆転出力
   /// @return PWM出力
   /// @post 0.0 <= 返り値 <= 1.0
-  float& operator[](const int n) & {
+  const float& operator[](const int n) const& {
     return pwm_[n];
   }
   /// @brief モータ出力をセットする。
