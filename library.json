@@ -1,6 +1,6 @@
 {
   "name": "Chassis",
-  "version": "v1.2.4",
+  "version": "v1.2.5",
   "frameworks": [
     "arduino",
     "mbed"
