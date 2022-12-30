@@ -1,7 +1,8 @@
 # Chassis
-[![version](https://img.shields.io/github/v/release/teruyamato0731/Chassis?style=flat-square)](https://github.com/teruyamato0731/Chassis/releases/latest)
-[![license](https://img.shields.io/github/license/teruyamato0731/Chassis?style=flat-square)](https://github.com/teruyamato0731/Chassis/blob/main/LICENSE)
-[![CI](https://img.shields.io/github/actions/workflow/status/teruyamato0731/Chassis/main.yml?label=CI&style=flat-square)](https://github.com/teruyamato0731/Chassis/actions/workflows/main.yml)
+[![version](https://img.shields.io/github/v/release/teruyamato0731/Chassis)](https://github.com/teruyamato0731/Chassis/releases/latest)
+[![license](https://img.shields.io/github/license/teruyamato0731/Chassis)](https://github.com/teruyamato0731/Chassis/blob/main/LICENSE)
+[![CI](https://github.com/teruyamato0731/Chassis/actions/workflows/main.yml/badge.svg)](https://github.com/teruyamato0731/Chassis/actions/workflows/main.yml)
+[![codecov](https://codecov.io/gh/teruyamato0731/Chassis/branch/main/graph/badge.svg?token=RXGH7FGNYH)](https://codecov.io/gh/teruyamato0731/Chassis)
 
 Chassisはロボコンでの足回り制御を行うためのC++ライブラリである。
 ロボコン用足回りのモータ出力計算と自己位置推定による自動制御をサポートする。
