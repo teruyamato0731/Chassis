@@ -19,6 +19,9 @@ jobs:
         with:
           submodules: true  # Fetch GoogleTest (true OR recursive)
 
+      - name: Install gcovr
+        run: sudo apt install -y gcovr
+
       - name: Build and Test
         run: bash ./.github/scripts/ctest.bash
 
