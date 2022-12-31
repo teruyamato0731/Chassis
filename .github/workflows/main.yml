@@ -32,6 +32,22 @@ jobs:
           default_bump : false
           dry_run: true  # tagはRelease作成時つける
 
+  arduino-lint:
+    if: ${{ github.ref_name == 'main' }}
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: arduino/arduino-lint-action@v1
+        with:
+          library-manager: update
+          compliance: strict
+          project-type: library
+          report-file: arduino-lint.json
+      - uses: actions/upload-artifact@v3
+        with:
+          name: arduino-lint
+          path: arduino-lint.json
+
   create-release:
     name: Create Release  # Releaseを作成
     needs: [unit-test, bump-version]
