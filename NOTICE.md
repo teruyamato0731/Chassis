@@ -1,16 +1,24 @@
-# submodule
-https://github.com/jothepro/doxygen-awesome-css.git
+## Submodule
+Unit Testで[Google Test]を使用している。
 
-https://github.com/google/googletest.git
+Github Pagesのスタイルに[doxygen-awesome-css]を使用している。
 
-# workflow
-mikepenz/action-junit-report
+[Google Test]: https://github.com/google/googletest.git
+[doxygen-awesome-css]: https://github.com/jothepro/doxygen-awesome-css.git
 
-mathieudutour/github-tag-action
+## Workflow
+- [mikepenz/action-junit-report]
+- [mathieudutour/github-tag-action]
+- [ncipollo/release-action]
+- [peaceiris/actions-gh-pages]
 
-ncipollo/release-action
+[mikepenz/action-junit-report]: https://github.com/mikepenz/action-junit-report
+[mathieudutour/github-tag-action]: https://github.com/mathieudutour/github-tag-action
+[ncipollo/release-action]: https://github.com/ncipollo/release-action
+[peaceiris/actions-gh-pages]: https://github.com/peaceiris/actions-gh-pages
 
-peaceiris/actions-gh-pages
+## Tools
+ビルドに[Cmake]と[Doxygen]を使用している。
 
-# deploy
-Doxygen
+[Cmake]: https://cmake.org/
+[Doxygen]: https://www.doxygen.nl/

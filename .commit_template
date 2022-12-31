@@ -1,26 +1,21 @@
 
-
 # ==== Format ====
 # prefix: Subject ref:#<issue No>
 #
 # Commit body...
+# [BREAKING CHANG: ]
 # [close#<issue No>]
 
 # ==== Prefix ====
 # feat: 新しい機能
 # fix: バグの修正
+# revert: コミットの削除
 # docs: ドキュメントのみの変更
 # style: 空白、フォーマット、セミコロン追加など
 # refactor: 仕様に影響がないコード改善(リファクタ)
 # test: テスト関連
 # ci: workflowなどの変更
 # chore: ビルド、補助ツール、ライブラリ関連
-
-# === Versioning ===
-# major <-- BREAKING CHANGE or !
-# minor <-- feat
-# patch <-- fix, refactor
-# none  <-- style, docs, test, ci, chore
 
 # How to use:
 #  git config commit.template .commit_template
