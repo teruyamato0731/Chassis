@@ -22,6 +22,7 @@ jobs:
       release_type: ${{ steps.tag-version.outputs.release_type }}
       previous_tag: ${{ steps.tag-version.outputs.previous_tag }}
       new_tag: ${{ steps.tag-version.outputs.new_tag }}
+      new_version: ${{ steps.tag-version.outputs.new_version }}
       changelog: ${{ steps.tag-version.outputs.changelog }}
     steps:
       - uses: actions/checkout@v3
@@ -56,6 +57,7 @@ jobs:
     uses: ./.github/workflows/create-release.yml
     with:
       new_tag: ${{ needs.bump-version.outputs.new_tag }}
+      new_version: ${{ needs.bump-version.outputs.new_version }}
       changelog: ${{ needs.bump-version.outputs.changelog }}
     secrets:
       token: ${{ secrets.GITHUB_TOKEN }}

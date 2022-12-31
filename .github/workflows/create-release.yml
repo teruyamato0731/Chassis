@@ -6,6 +6,9 @@ on:
       new_tag:
         required: true
         type: string
+      new_version:
+        required: true
+        type: string
       changelog:
         required: true
         type: string
@@ -22,7 +25,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Set version
-        run: sed -i -e 's/v[0-9]\+\.[0-9]\+\.[0-9]\+/${{ inputs.new_tag }}/' library.properties library.json
+        run: sed -i -e 's/[0-9]\+\.[0-9]\+\.[0-9]\+/${{ inputs.new_version }}/' library.properties library.json
 
       - name: Git config
         run: |
