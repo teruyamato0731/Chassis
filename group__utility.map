@@ -1,0 +1,5 @@
+<map id="utility" name="utility">
+<area shape="rect" id="node1" href="$group__pid.html" title="PID制御を提供する。" alt="" coords="107,5,146,31"/>
+<area shape="rect" id="node2" href="$group__unit.html" title="座標、速度を示す構造体を提供。 rct::Coordinate, rct::Velocity" alt="" coords="105,55,148,80"/>
+<area shape="rect" id="node3" title="有用な機能群を提供する。" alt="" coords="5,31,57,56"/>
+</map>
