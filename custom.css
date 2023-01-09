@@ -54,6 +54,7 @@
 
 html {
   --side-nav-fixed-width: 270px;
+  --top-height: 130px;
 }
 
 .next_section_button a {
