@@ -27,16 +27,13 @@ jobs:
         with:
           submodules: true  # Fetch doxygen-awesome-css themes (true OR recursive)
 
-      - name: Install Doxygen
-        uses: awalsh128/cache-apt-pkgs-action@v1
-        with:
-          packages: doxygen
-          version: 1.0
+      - name: set version
+        run: echo "PROJECT_NUMBER = ${{ inputs.project_version }}" >> ${{ inputs.doxyfile_path }}
 
       - name: Build
-        run: |
-          echo \"PROJECT_NUMBER = `git describe --tags --abbrev=0`\" >> ${{ inputs.doxyfile_path }}
-          doxygen ${{ inputs.doxyfile_path }}
+        uses: mattnotmitt/doxygen-action@v1.9.5
+        with:
+          doxyfile-path: doxygen-custom/Doxyfile
 
       - name : Deploy
         uses: peaceiris/actions-gh-pages@v3
