@@ -19,11 +19,11 @@ jobs:
         with:
           submodules: true  # Fetch GoogleTest (true OR recursive)
 
-      - name: Install gcovr
-        uses: awalsh128/cache-apt-pkgs-action@v1
-        with:
-          packages: gcovr
-          version: 1.0
+      # - name: Install gcovr
+      #   uses: awalsh128/cache-apt-pkgs-action@v1
+      #   with:
+      #     packages: gcovr
+      #     version: 1.0
 
       - name: Build and Test
         run: bash ./.github/scripts/ctest.bash
@@ -37,5 +37,7 @@ jobs:
         uses: codecov/codecov-action@v3
         with:
           gcov: true
-          files: build/coverage.xml
+          # files: build/coverage.xml
+          # gcov_ignore:
+          # gcov_include:
           verbose: true
