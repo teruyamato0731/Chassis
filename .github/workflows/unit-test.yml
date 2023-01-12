@@ -39,5 +39,5 @@ jobs:
           gcov: true
           # files: build/coverage.xml
           # gcov_ignore:
-          # gcov_include:
+          gcov_include: src
           verbose: true
