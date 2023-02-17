@@ -5,7 +5,6 @@
 /// @copyright Copyright (c) 2022 Yoshikawa Teru
 /// @license This project is released under the MIT License, see [LICENSE](https://github.com/teruyamato0731/Chassis/blob/main/LICENSE)
 #include <chrono>
-#include <optional>
 
 namespace rct {
 
@@ -55,7 +54,7 @@ struct Pid {
 
   /// @brief コンストラクタ。ゲインをセットする。
   /// @param pid_gain PID制御のゲイン
-  Pid(const PidGain& pid_gain) noexcept : pid_gain_{pid_gain} {}
+  Pid(const PidGain& pid_gain, T init = T{}) noexcept : pid_gain_{pid_gain}, pre_{init} {}
 
   /// @brief 目標値、現在値、経過時間からPID制御の計算を行う。
   /// @param dst 目標値
@@ -66,7 +65,7 @@ struct Pid {
     const float sec = std::chrono::duration<float>{delta_time}.count();
     const T proportional = dst - now;
     integral_ += proportional * sec;
-    const T differential = pre_ ? (now - *pre_) / sec : T{};
+    const T differential = now - pre_ / sec;
     pre_ = now;
     return proportional * pid_gain_.kp + integral_ * pid_gain_.ki + differential * pid_gain_.kd;
   }
@@ -74,7 +73,7 @@ struct Pid {
   /// @brief I値をリセットする。
   void refresh() noexcept {
     integral_ = T{};
-    pre_ = std::nullopt;
+    pre_ = T{};
   }
 
   /// @brief ゲインをセットし、refreshを呼び出す。
@@ -87,7 +86,7 @@ struct Pid {
  private:
   PidGain pid_gain_;
   T integral_{};
-  std::optional<T> pre_{};
+  T pre_;
 };
 
 /// @}  pid
