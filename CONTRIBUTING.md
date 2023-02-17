@@ -1,7 +1,7 @@
 # Welcome to Chassis contributing guide
 このプロジェクトのバージョニングは[Semantic versioning](https://semver.org/lang/ja/)に従っている。
 
-コミットメッセージは[Conventional commit](https://www.conventionalcommits.org/ja/v1.0.0/)に従っており、[commit.template](./.commit_template)を使用している。
+コミットメッセージは[Conventional commit](https://www.conventionalcommits.org/ja/v1.0.0/)に従っている。
 
 ブランチ戦略はGithub Flowを取っている。
 
@@ -29,12 +29,20 @@ cmake --build .
 ctest
 ```
 
+[commit.template](./.commit_template)を使用しており、下記コマンドで導入できる。
+```
+git config commit.template .commit_template
+```
+
 PRを提出する前に以下のことを確認してください
 - [ ] エラーや警告がなくコンパイルが通る
 - [ ] Doxygenコメントが追加されている
 - [ ] Doxygenのビルドが通る
 - [ ] ユニットテストが追加されている
 - [ ] ユニットテストが通る
+
+## Library Manager
+このライブラリは[Arduino Library Manager](https://www.arduinolibraries.info/libraries/chassis)に登録されており、[logはここ](https://downloads.arduino.cc/libraries/logs/github.com/teruyamato0731/Chassis/)から確認できる。
 
 ## 開発者の環境
 - Ubuntu 22.04

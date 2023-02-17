@@ -6,7 +6,7 @@ platformio.iniに[下記のように](\ref snippets/platformio.ini)lib_deps, bui
 \snippet snippets/platformio.ini config
 
 ## Arduino IDE
-Arduino IDEのライブラリマネージャでChassisと検索しインストール。<br>
+Arduino IDEの[ライブラリマネージャ](https://www.arduinolibraries.info/libraries/chassis)でChassisと検索しインストール。<br>
 もしくはGitHubよりChassisをダウンロードしinoと同じディレクトリにソースファイルを配置。
 
 ---
