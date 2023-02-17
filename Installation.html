@@ -41,7 +41,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Chassis
-   &#160;<span id="projectnumber">v1.2.5</span>
+   &#160;<span id="projectnumber">v1.3.0</span>
    </div>
    <div id="projectbrief">Chassisはロボコンでの足回り制御を行うためのC++ライブラリである。</div>
   </td>
@@ -117,14 +117,12 @@ $(document).ready(function(){initNavTree('Installation.html',''); initResizable(
 </div>
 <div class="textblock"><h2><a class="anchor" id="autotoc_md0"></a>
 Platform IO</h2>
-<p >platformio.iniに<a class="el" href="platformio_8ini_source.html">下記のように</a>lib_deps, build_flags, build_unflagsを追記。</p>
+<p >platformio.iniに<a class="el" href="platformio_8ini_source.html">下記のように</a>lib_depsを追記。</p>
 <div class="fragment"><div class="line">[env:nucleo_f446re]</div>
 <div class="line">platform = ststm32</div>
 <div class="line">board = nucleo_f446re</div>
 <div class="line">framework = mbed</div>
 <div class="line">lib_deps = https://github.com/teruyamato0731/chassis.git</div>
-<div class="line">build_flags = -std=gnu++17</div>
-<div class="line">build_unflags = -std=gnu++14</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md1"></a>
 Arduino IDE</h2>
 <p >Arduino IDEの<a href="https://www.arduinolibraries.info/libraries/chassis">ライブラリマネージャ</a>でChassisと検索しインストール。<br  />
