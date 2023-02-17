@@ -1,7 +1,7 @@
 /**
 \page Installation Chassisの導入方法
 ## Platform IO
-platformio.iniに[下記のように](\ref snippets/platformio.ini)lib_deps, build_flags, build_unflagsを追記。
+platformio.iniに[下記のように](\ref snippets/platformio.ini)lib_depsを追記。
 
 \snippet snippets/platformio.ini config
 

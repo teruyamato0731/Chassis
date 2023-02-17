@@ -10,6 +10,7 @@
 #include <chrono>
 #include <cmath>
 #include <cstdint>
+#include <utility>
 
 /// @brief robot control library
 namespace rct {
