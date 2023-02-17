@@ -28,13 +28,13 @@ struct PidGain {
 /// @tparam T 判定を行う型
 template<class T>
 class is_pidable {
-  template<class T, class = T>
+  template<class U, class = U>
   struct is_pidable_helper : std::false_type {};
-  template<class T>
-  struct is_pidable_helper<T, decltype(std::declval<T&>() = std::declval<T>() + std::declval<T>(),
-                                       std::declval<T&>() = std::declval<T>() - std::declval<T>(),
-                                       std::declval<T&>() = std::declval<T>() * std::declval<float>(),
-                                       std::declval<T&>() = std::declval<T>() / std::declval<float>(), T{})>
+  template<class U>
+  struct is_pidable_helper<U, decltype(std::declval<U&>() = std::declval<U>() + std::declval<U>(),
+                                       std::declval<U&>() = std::declval<U>() - std::declval<U>(),
+                                       std::declval<U&>() = std::declval<U>() * std::declval<float>(),
+                                       std::declval<U&>() = std::declval<U>() / std::declval<float>(), U{})>
       : std::true_type {};
  public:
   /// @brief T型同士の加減算とfloat型との乗除が定義されていて、デフォルト初期化が可能であればtrue, そうでなければfalse。
