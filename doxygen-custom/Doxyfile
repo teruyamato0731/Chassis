@@ -866,7 +866,7 @@ WARN_LOGFILE           =
 # Note: If this tag is empty the current directory is searched.
 
 INPUT                  = src \
-                         doc \
+                         dox \
                          examples \
                          snippets
 

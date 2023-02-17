@@ -1,3 +1,4 @@
+/**
 \page Usage Chassisの使用方法
 Chassisを用いて手動制御、自己位置推定、自動制御を行う方法を示す。
 下記の例では[Motor.h](\ref snippets/Motor.h)を使用している。
@@ -33,3 +34,4 @@ Chassisを用いて手動制御、自己位置推定、自動制御を行う方�
 - \ref Installation
 
 \tableofcontents
+*/

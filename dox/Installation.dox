@@ -1,3 +1,4 @@
+/**
 \page Installation Chassisの導入方法
 ## Platform IO
 platformio.iniに[下記のように](\ref snippets/platformio.ini)lib_deps, build_flags, build_unflagsを追記。
@@ -15,3 +16,4 @@ Arduino IDEのライブラリマネージャでChassisと検索しインスト�
 - \ref Usage
 
 \tableofcontents
+*/
