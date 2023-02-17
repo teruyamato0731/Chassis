@@ -119,9 +119,9 @@ $(document).ready(function(){initNavTree('structrct_1_1Pid.html',''); initResiza
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a80ded0cb46923d851a563b8e4841500e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrct_1_1Pid.html#a80ded0cb46923d851a563b8e4841500e">Pid</a> (const <a class="el" href="structrct_1_1PidGain.html">PidGain</a> &amp;pid_gain) noexcept</td></tr>
-<tr class="memdesc:a80ded0cb46923d851a563b8e4841500e"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ。ゲインをセットする。  <a href="structrct_1_1Pid.html#a80ded0cb46923d851a563b8e4841500e">More...</a><br /></td></tr>
-<tr class="separator:a80ded0cb46923d851a563b8e4841500e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad235de6e94a60574485dd1e1a247e07d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrct_1_1Pid.html#ad235de6e94a60574485dd1e1a247e07d">Pid</a> (const <a class="el" href="structrct_1_1PidGain.html">PidGain</a> &amp;pid_gain, T init=T{}) noexcept</td></tr>
+<tr class="memdesc:ad235de6e94a60574485dd1e1a247e07d"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ。ゲインをセットする。  <a href="structrct_1_1Pid.html#ad235de6e94a60574485dd1e1a247e07d">More...</a><br /></td></tr>
+<tr class="separator:ad235de6e94a60574485dd1e1a247e07d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ed66bff08d476a3b55875d1591377d2"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrct_1_1Pid.html#a9ed66bff08d476a3b55875d1591377d2">calc</a> (const T &amp;dst, const T &amp;now, const std::chrono::microseconds &amp;delta_time)</td></tr>
 <tr class="memdesc:a9ed66bff08d476a3b55875d1591377d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">目標値、現在値、経過時間からPID制御の計算を行う。  <a href="structrct_1_1Pid.html#a9ed66bff08d476a3b55875d1591377d2">More...</a><br /></td></tr>
 <tr class="separator:a9ed66bff08d476a3b55875d1591377d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,10 +142,10 @@ struct rct::Pid&lt; T &gt;</div><p >T型のPID制御を行うクラス。 </p>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Pid_8h_source.html#l00053">53</a> of file <a class="el" href="Pid_8h_source.html">Pid.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pid_8h_source.html#l00052">52</a> of file <a class="el" href="Pid_8h_source.html">Pid.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a80ded0cb46923d851a563b8e4841500e" name="a80ded0cb46923d851a563b8e4841500e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80ded0cb46923d851a563b8e4841500e">&#9670;&#160;</a></span>Pid()</h2>
+<a id="ad235de6e94a60574485dd1e1a247e07d" name="ad235de6e94a60574485dd1e1a247e07d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad235de6e94a60574485dd1e1a247e07d">&#9670;&#160;</a></span>Pid()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -159,8 +159,18 @@ template&lt;class T &gt; </div>
           <td class="memname"><a class="el" href="structrct_1_1Pid.html">rct::Pid</a>&lt; T &gt;::Pid </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structrct_1_1PidGain.html">PidGain</a> &amp;&#160;</td>
-          <td class="paramname"><em>pid_gain</em></td><td>)</td>
+          <td class="paramname"><em>pid_gain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>init</em> = <code>T{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -178,7 +188,7 @@ template&lt;class T &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Pid_8h_source.html#l00058">58</a> of file <a class="el" href="Pid_8h_source.html">Pid.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pid_8h_source.html#l00057">57</a> of file <a class="el" href="Pid_8h_source.html">Pid.h</a>.</p>
 
 </div>
 </div>
@@ -228,7 +238,7 @@ template&lt;class T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T型 PIDの結果を返す。 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Pid_8h_source.html#l00065">65</a> of file <a class="el" href="Pid_8h_source.html">Pid.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pid_8h_source.html#l00064">64</a> of file <a class="el" href="Pid_8h_source.html">Pid.h</a>.</p>
 
 </div>
 </div>
@@ -259,7 +269,7 @@ template&lt;class T &gt; </div>
 
 <p>I値をリセットする。 </p>
 
-<p class="definition">Definition at line <a class="el" href="Pid_8h_source.html#l00075">75</a> of file <a class="el" href="Pid_8h_source.html">Pid.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pid_8h_source.html#l00074">74</a> of file <a class="el" href="Pid_8h_source.html">Pid.h</a>.</p>
 
 </div>
 </div>
@@ -297,7 +307,7 @@ template&lt;class T &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Pid_8h_source.html#l00082">82</a> of file <a class="el" href="Pid_8h_source.html">Pid.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pid_8h_source.html#l00081">81</a> of file <a class="el" href="Pid_8h_source.html">Pid.h</a>.</p>
 
 </div>
 </div>

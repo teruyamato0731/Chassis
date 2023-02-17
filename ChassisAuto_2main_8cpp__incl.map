@@ -2,17 +2,16 @@
 <area shape="rect" id="node1" title="自動制御" alt="" coords="427,5,618,45"/>
 <area shape="rect" id="node2" title=" " alt="" coords="24,93,152,119"/>
 <area shape="rect" id="node3" href="$ChassisAuto_8h.html" title="足回りの位置のPID制御を行うChassisAutoを提供する。" alt="" coords="176,93,283,119"/>
-<area shape="rect" id="node10" href="$Odom_8h.html" title="オドメトリを行う Odom クラスを提供する。" alt="" coords="365,93,432,119"/>
-<area shape="rect" id="node11" href="$Omni_8h.html" title="オムニの制御を行う Omni クラスを提供する。" alt="" coords="457,93,519,119"/>
-<area shape="rect" id="node12" title=" " alt="" coords="590,167,669,192"/>
-<area shape="rect" id="node14" title=" " alt="" coords="595,93,699,119"/>
-<area shape="rect" id="node15" title=" " alt="" coords="723,93,787,119"/>
-<area shape="rect" id="node16" title=" " alt="" coords="811,93,861,119"/>
+<area shape="rect" id="node9" href="$Odom_8h.html" title="オドメトリを行う Odom クラスを提供する。" alt="" coords="365,93,432,119"/>
+<area shape="rect" id="node10" href="$Omni_8h.html" title="オムニの制御を行う Omni クラスを提供する。" alt="" coords="457,93,519,119"/>
+<area shape="rect" id="node11" title=" " alt="" coords="590,167,669,192"/>
+<area shape="rect" id="node13" title=" " alt="" coords="595,93,699,119"/>
+<area shape="rect" id="node14" title=" " alt="" coords="723,93,787,119"/>
+<area shape="rect" id="node15" title=" " alt="" coords="811,93,861,119"/>
 <area shape="rect" id="node4" href="$CoordinateUnit_8h.html" title="座標、速度を表す構造体 CoordinateUnit を提供する。" alt="" coords="267,167,386,192"/>
-<area shape="rect" id="node5" title=" " alt="" coords="161,240,223,265"/>
+<area shape="rect" id="node5" title=" " alt="" coords="148,240,209,265"/>
 <area shape="rect" id="node6" title=" " alt="" coords="345,240,404,265"/>
 <area shape="rect" id="node7" href="$Pid_8h.html" title="PID制御を行う Pid クラスを提供する。" alt="" coords="91,167,141,192"/>
-<area shape="rect" id="node9" title=" " alt="" coords="5,167,67,192"/>
-<area shape="rect" id="node8" title=" " alt="" coords="71,240,137,265"/>
-<area shape="rect" id="node13" title=" " alt="" coords="462,167,514,192"/>
+<area shape="rect" id="node8" title=" " alt="" coords="5,167,67,192"/>
+<area shape="rect" id="node12" title=" " alt="" coords="462,167,514,192"/>
 </map>
