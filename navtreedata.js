@@ -26,8 +26,8 @@ var NAVTREE =
 [
   [ "Chassis", "index.html", [
     [ "Introduction", "index.html", null ],
-    [ "Chassisの導入方法", "md_doc_Installation.html", null ],
-    [ "Chassisの使用方法", "md_doc_Usage.html", null ],
+    [ "Chassisの導入方法", "Installation.html", null ],
+    [ "Chassisの使用方法", "Usage.html", null ],
     [ "Todo List", "todo.html", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Namespaces", "namespaces.html", [
