@@ -44,6 +44,9 @@ PRを提出する前に以下のことを確認してください
 ## Library Manager
 このライブラリは[Arduino Library Manager](https://www.arduinolibraries.info/libraries/chassis)に登録されており、[logはここ](https://downloads.arduino.cc/libraries/logs/github.com/teruyamato0731/Chassis/)から確認できる。
 
+## CI/CD
+<image src="./dox/ci.drawio.svg" style="padding: 1em" alt="CI,CDのフロー図" />
+
 ## 開発者の環境
 - Ubuntu 22.04
 - VSCode + Platform IO
