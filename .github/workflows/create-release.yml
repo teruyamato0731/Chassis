@@ -48,7 +48,7 @@ jobs:
           GH_TOKEN: ${{ secrets.token }}
           branch: "release/${{ inputs.new_tag }}"
         run: |
-          gh pr create --base ${GITHUB_REF_NAME} --head ${{env.branch}} --assignee ${GITHUB_ACTOR} \
+          gh pr create --base ${GITHUB_REF_NAME} --head ${{env.branch}} --assignee ${GITHUB_ACTOR} -l "bump version" \
              --title "Bump version: ${{ inputs.new_tag }}" --body 'Automated changes by [Bump Version](https://github.com/teruyamato0731/Chassis/actions/workflows/main.yml) GitHub action'
           gh pr merge ${{env.branch}} --merge --delete-branch
 
