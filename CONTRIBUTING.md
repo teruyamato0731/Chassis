@@ -12,9 +12,9 @@
 - 不具合を見つけた場合
 - 新機能の要望
 
-はじめにすでにIssueが存在するかを検索してください。
+はじめにすでにIssueが存在するかを検索すること。
 
-関連するIssueが存在しない場合は、Issue templateを使用して新しいIssueを作成してください。
+関連するIssueが存在しない場合に、Issue templateを使用して新しいIssueを作成する。
 
 ### Make Changes
 ```
@@ -43,6 +43,8 @@ PRを提出する前に以下のことを確認してください
 
 ## Library Manager
 このライブラリは[Arduino Library Manager](https://www.arduinolibraries.info/libraries/chassis)に登録されており、[logはここ](https://downloads.arduino.cc/libraries/logs/github.com/teruyamato0731/Chassis/)から確認できる。
+
+[Platform IOのレジストリ](https://registry.platformio.org/libraries/teruyamato0731/Chassis)にも登録されている。
 
 ## CI/CD
 <image src="./dox/ci.drawio.svg" style="padding: 1em" alt="CI,CDのフロー図" />
