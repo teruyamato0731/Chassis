@@ -4,7 +4,7 @@
 #
 # Commit body...
 # [BREAKING CHANG: ]
-# [close#<issue No>]
+# [close #<issue No>]
 
 # ==== Prefix ====
 # feat: 新しい機能
