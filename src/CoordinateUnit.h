@@ -140,6 +140,14 @@ template<int N>
 CoordinateUnit<N - 1> operator/(const CoordinateUnit<N>& obj, const std::chrono::microseconds& sec) {
   return unit_cast<N - 1>(obj / sec.count() * 1e6);
 }
+template<int N>
+bool operator==(const CoordinateUnit<N>& lhs, const CoordinateUnit<N>& rhs) {
+  return (lhs.x_milli == rhs.x_milli) && (lhs.y_milli == rhs.y_milli) && (lhs.ang_rad == rhs.ang_rad);
+}
+template<int N>
+bool operator!=(const CoordinateUnit<N>& lhs, const CoordinateUnit<N>& rhs) {
+  return !(lhs == rhs);
+}
 /// @}  operator
 
 /// @}  unit
