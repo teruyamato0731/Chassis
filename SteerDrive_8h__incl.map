@@ -1,8 +1,9 @@
 <map id="src/SteerDrive.h" name="src/SteerDrive.h">
-<area shape="rect" id="node1" title="N輪独立ステアリングの制御を行う SteerDrive クラスを提供する。" alt="" coords="141,5,255,31"/>
+<area shape="rect" id="node1" title="N輪独立ステアリングの制御を行う SteerDrive クラスを提供する。" alt="" coords="178,5,293,31"/>
 <area shape="rect" id="node2" href="$CoordinateUnit_8h.html" title="座標、速度を表す構造体 CoordinateUnit を提供する。" alt="" coords="5,79,124,104"/>
 <area shape="rect" id="node4" title=" " alt="" coords="126,152,185,177"/>
 <area shape="rect" id="node5" title=" " alt="" coords="200,79,271,104"/>
 <area shape="rect" id="node6" title=" " alt="" coords="295,79,373,104"/>
+<area shape="rect" id="node7" title=" " alt="" coords="397,79,449,104"/>
 <area shape="rect" id="node3" title=" " alt="" coords="34,152,95,177"/>
 </map>

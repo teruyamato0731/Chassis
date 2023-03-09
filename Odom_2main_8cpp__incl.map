@@ -2,10 +2,11 @@
 <area shape="rect" id="node1" title="オドメトリによる自己位置推定" alt="" coords="204,5,356,45"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,93,133,119"/>
 <area shape="rect" id="node3" href="$Odom_8h.html" title="オドメトリを行う Odom クラスを提供する。" alt="" coords="157,93,224,119"/>
-<area shape="rect" id="node7" title=" " alt="" coords="248,93,312,119"/>
-<area shape="rect" id="node8" title=" " alt="" coords="336,93,387,119"/>
-<area shape="rect" id="node9" title=" " alt="" coords="411,93,490,119"/>
-<area shape="rect" id="node4" href="$CoordinateUnit_8h.html" title="座標、速度を表す構造体 CoordinateUnit を提供する。" alt="" coords="82,167,201,192"/>
-<area shape="rect" id="node6" title=" " alt="" coords="203,240,261,265"/>
-<area shape="rect" id="node5" title=" " alt="" coords="111,240,172,265"/>
+<area shape="rect" id="node8" title=" " alt="" coords="248,93,312,119"/>
+<area shape="rect" id="node9" title=" " alt="" coords="336,93,387,119"/>
+<area shape="rect" id="node10" title=" " alt="" coords="411,93,490,119"/>
+<area shape="rect" id="node4" href="$CoordinateUnit_8h.html" title="座標、速度を表す構造体 CoordinateUnit を提供する。" alt="" coords="34,167,153,192"/>
+<area shape="rect" id="node6" title=" " alt="" coords="155,240,213,265"/>
+<area shape="rect" id="node7" title=" " alt="" coords="229,167,281,192"/>
+<area shape="rect" id="node5" title=" " alt="" coords="63,240,124,265"/>
 </map>
