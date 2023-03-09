@@ -4,7 +4,7 @@
 using namespace rct;
 
 TEST(OMNI_4, SIZE) {
-  EXPECT_FLOAT_EQ(4, Omni<4>::size());
+  EXPECT_EQ(4, Omni<4>::size());
 }
 
 TEST(OMNI_4, MOVE) {
