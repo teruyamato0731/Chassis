@@ -7,6 +7,7 @@
 #include <CoordinateUnit.h>
 
 #include <cmath>
+#include <utility>
 
 namespace rct {
 
