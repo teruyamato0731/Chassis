@@ -1,4 +1,5 @@
 #!/bin/bash
+cd ${BASH_SOURCE[0]%/*}/../..
 mkdir -p build && cd "$_"
 cmake ..
 cmake --build . --target all --clean-first -j4
