@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Chassis: src/bits/float_cmp.h Source File</title>
+<title>Chassis: examples/Mbed -&gt; src Relation</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -41,7 +41,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Chassis
-   &#160;<span id="projectnumber">v1.4.0</span>
+   &#160;<span id="projectnumber">v1.5.0</span>
    </div>
    <div id="projectbrief">Chassisはロボコンでの足回り制御を行うためのC++ライブラリである。</div>
   </td>
@@ -80,7 +80,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('float__cmp_8h_source.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('dir_d1beff12654d7dd39782852aec0b9605.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -105,35 +105,13 @@ $(document).ready(function(){initNavTree('float__cmp_8h_source.html',''); initRe
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">float_cmp.h</div></div>
-</div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef RCT_FLOAT_CMP</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define RCT_FLOAT_CMP</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;cfloat&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">inline</span> <span class="keywordtype">int</span> float_cmp(<span class="keyword">const</span> <span class="keywordtype">float</span> a, <span class="keyword">const</span> <span class="keywordtype">float</span> b) {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>  <span class="keyword">const</span> <span class="keyword">auto</span> eps = FLT_EPSILON * std::max({1.0f, std::abs(a), std::abs(b)});</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  <span class="keywordflow">if</span>(a &gt; b + eps) {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(a &lt; b - eps) {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  }</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>}</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#endif  </span><span class="comment">// RCT_FLOAT_CMP</span></div>
-</div><!-- fragment --></div><!-- contents -->
+<h3>Mbed &rarr; src Relation</h3><table class="dirtab"><tr class="dirtab"><th class="dirtab">File in examples/Mbed</th><th class="dirtab">Includes file in src</th></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="dir_35185c2a8d614de1ea963e39e2826185.html">ChassisPid</a>&#160;/&#160;<a class="el" href="ChassisPid_2main_8cpp.html">main.cpp</a></td><td class="dirtab"><a class="el" href="Chassis_8h.html">Chassis.h</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="dir_4124c4dd0791f1f6b614ff2f66793737.html">ChassisAuto</a>&#160;/&#160;<a class="el" href="ChassisAuto_2main_8cpp.html">main.cpp</a></td><td class="dirtab"><a class="el" href="ChassisAuto_8h.html">ChassisAuto.h</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="dir_4124c4dd0791f1f6b614ff2f66793737.html">ChassisAuto</a>&#160;/&#160;<a class="el" href="ChassisAuto_2main_8cpp.html">main.cpp</a></td><td class="dirtab"><a class="el" href="Odom_8h.html">Odom.h</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="dir_35185c2a8d614de1ea963e39e2826185.html">ChassisPid</a>&#160;/&#160;<a class="el" href="ChassisPid_2main_8cpp.html">main.cpp</a></td><td class="dirtab"><a class="el" href="Odom_8h.html">Odom.h</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="dir_4124c4dd0791f1f6b614ff2f66793737.html">ChassisAuto</a>&#160;/&#160;<a class="el" href="ChassisAuto_2main_8cpp.html">main.cpp</a></td><td class="dirtab"><a class="el" href="Omni_8h.html">Omni.h</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="dir_35185c2a8d614de1ea963e39e2826185.html">ChassisPid</a>&#160;/&#160;<a class="el" href="ChassisPid_2main_8cpp.html">main.cpp</a></td><td class="dirtab"><a class="el" href="Omni_8h.html">Omni.h</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="dir_a4f54d17ca0c794c4d53dfea10d74237.html">4WDS</a>&#160;/&#160;<a class="el" href="4WDS_2main_8cpp.html">main.cpp</a></td><td class="dirtab"><a class="el" href="SteerDrive_8h.html">SteerDrive.h</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="dir_dccf8259db91415ea68b41b98dc424f5.html">Odom</a>&#160;/&#160;<a class="el" href="Odom_2main_8cpp.html">main.cpp</a></td><td class="dirtab"><a class="el" href="Odom_8h.html">Odom.h</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="dir_29e94ed2f4fa5163a06c27d192a0f058.html">Omni3</a>&#160;/&#160;<a class="el" href="Omni3_2main_8cpp.html">main.cpp</a></td><td class="dirtab"><a class="el" href="Omni_8h.html">Omni.h</a></td></tr></table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ffbd8fa4f0d2c39e05d0b979611bf178.html">bits</a></li><li class="navelem"><b>float_cmp.h</b></li>
+    <li class="navelem"><a class="el" href="dir_d28a4824dc47e487b107a5db32ef43c4.html">examples</a></li><li class="navelem"><a class="el" href="dir_d1beff12654d7dd39782852aec0b9605.html">Mbed</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
   </ul>
 </div>

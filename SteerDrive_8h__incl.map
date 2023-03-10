@@ -1,12 +1,10 @@
 <map id="src/SteerDrive.h" name="src/SteerDrive.h">
-<area shape="rect" id="node1" title="N輪独立ステアリングの制御を行う SteerDrive クラスを提供する。" alt="" coords="170,5,285,31"/>
-<area shape="rect" id="node2" href="$CoordinateUnit_8h.html" title="座標、速度を表す構造体 CoordinateUnit を提供する。" alt="" coords="49,79,168,104"/>
-<area shape="rect" id="node4" title=" " alt="" coords="99,225,158,251"/>
-<area shape="rect" id="node8" title=" " alt="" coords="192,79,263,104"/>
-<area shape="rect" id="node9" title=" " alt="" coords="287,79,365,104"/>
-<area shape="rect" id="node10" title=" " alt="" coords="389,79,441,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="30,152,91,177"/>
-<area shape="rect" id="node5" href="$float__cmp_8h_source.html" title=" " alt="" coords="167,152,280,177"/>
-<area shape="rect" id="node6" title=" " alt="" coords="183,225,258,251"/>
-<area shape="rect" id="node7" title=" " alt="" coords="282,225,335,251"/>
+<area shape="rect" id="node1" title="N輪独立ステアリングの制御を行う SteerDrive クラスを提供する。" alt="" coords="271,5,385,31"/>
+<area shape="rect" id="node2" href="$CoordinateUnit_8h.html" title="座標、速度を表す構造体 CoordinateUnit を提供する。" alt="" coords="95,79,214,104"/>
+<area shape="rect" id="node4" title=" " alt="" coords="229,152,288,177"/>
+<area shape="rect" id="node6" title=" " alt="" coords="293,79,363,104"/>
+<area shape="rect" id="node7" title=" " alt="" coords="387,79,466,104"/>
+<area shape="rect" id="node8" title=" " alt="" coords="490,79,542,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,152,67,177"/>
+<area shape="rect" id="node5" title=" " alt="" coords="91,152,205,177"/>
 </map>

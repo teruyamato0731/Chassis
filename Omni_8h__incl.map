@@ -1,11 +1,9 @@
 <map id="src/Omni.h" name="src/Omni.h">
-<area shape="rect" id="node1" title="オムニの制御を行う Omni クラスを提供する。" alt="" coords="118,5,203,31"/>
-<area shape="rect" id="node2" href="$CoordinateUnit_8h.html" title="座標、速度を表す構造体 CoordinateUnit を提供する。" alt="" coords="40,79,159,104"/>
-<area shape="rect" id="node4" title=" " alt="" coords="90,225,149,251"/>
-<area shape="rect" id="node8" title=" " alt="" coords="183,79,261,104"/>
-<area shape="rect" id="node9" title=" " alt="" coords="285,79,337,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="21,152,82,177"/>
-<area shape="rect" id="node5" href="$float__cmp_8h_source.html" title=" " alt="" coords="157,152,271,177"/>
-<area shape="rect" id="node6" title=" " alt="" coords="174,225,249,251"/>
-<area shape="rect" id="node7" title=" " alt="" coords="273,225,326,251"/>
+<area shape="rect" id="node1" title="オムニの制御を行う Omni クラスを提供する。" alt="" coords="251,5,336,31"/>
+<area shape="rect" id="node2" href="$CoordinateUnit_8h.html" title="座標、速度を表す構造体 CoordinateUnit を提供する。" alt="" coords="95,79,214,104"/>
+<area shape="rect" id="node4" title=" " alt="" coords="229,152,288,177"/>
+<area shape="rect" id="node6" title=" " alt="" coords="293,79,371,104"/>
+<area shape="rect" id="node7" title=" " alt="" coords="395,79,447,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,152,67,177"/>
+<area shape="rect" id="node5" title=" " alt="" coords="91,152,205,177"/>
 </map>
