@@ -7,6 +7,8 @@
 #include <chrono>
 #include <cmath>
 
+#include "bits/float_cmp.h"
+
 namespace rct {
 
 /// @addtogroup utility
@@ -142,7 +144,8 @@ CoordinateUnit<N - 1> operator/(const CoordinateUnit<N>& obj, const std::chrono:
 }
 template<int N>
 bool operator==(const CoordinateUnit<N>& lhs, const CoordinateUnit<N>& rhs) {
-  return (lhs.x_milli == rhs.x_milli) && (lhs.y_milli == rhs.y_milli) && (lhs.ang_rad == rhs.ang_rad);
+  return float_cmp(lhs.x_milli, rhs.x_milli) == 0 && float_cmp(lhs.y_milli, rhs.y_milli) == 0 &&
+         float_cmp(lhs.ang_rad, rhs.ang_rad) == 0;
 }
 template<int N>
 bool operator!=(const CoordinateUnit<N>& lhs, const CoordinateUnit<N>& rhs) {
