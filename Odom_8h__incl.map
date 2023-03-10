@@ -1,7 +1,10 @@
 <map id="src/Odom.h" name="src/Odom.h">
-<area shape="rect" id="node1" title="オドメトリを行う Odom クラスを提供する。" alt="" coords="117,5,207,31"/>
-<area shape="rect" id="node2" href="$CoordinateUnit_8h.html" title="座標、速度を表す構造体 CoordinateUnit を提供する。" alt="" coords="5,79,124,104"/>
-<area shape="rect" id="node4" title=" " alt="" coords="126,152,185,177"/>
-<area shape="rect" id="node5" title=" " alt="" coords="200,79,252,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="34,152,95,177"/>
+<area shape="rect" id="node1" title="オドメトリを行う Odom クラスを提供する。" alt="" coords="63,5,152,31"/>
+<area shape="rect" id="node2" href="$CoordinateUnit_8h.html" title="座標、速度を表す構造体 CoordinateUnit を提供する。" alt="" coords="48,79,167,104"/>
+<area shape="rect" id="node4" title=" " alt="" coords="98,225,157,251"/>
+<area shape="rect" id="node8" title=" " alt="" coords="191,79,243,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="29,152,90,177"/>
+<area shape="rect" id="node5" href="$float__cmp_8h_source.html" title=" " alt="" coords="165,152,279,177"/>
+<area shape="rect" id="node6" title=" " alt="" coords="182,225,257,251"/>
+<area shape="rect" id="node7" title=" " alt="" coords="281,225,334,251"/>
 </map>

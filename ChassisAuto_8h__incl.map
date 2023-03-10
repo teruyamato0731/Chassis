@@ -1,9 +1,12 @@
 <map id="src/ChassisAuto.h" name="src/ChassisAuto.h">
-<area shape="rect" id="node1" title="足回りの位置のPID制御を行うChassisAutoを提供する。" alt="" coords="142,5,270,31"/>
-<area shape="rect" id="node2" href="$CoordinateUnit_8h.html" title="座標、速度を表す構造体 CoordinateUnit を提供する。" alt="" coords="99,79,217,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="18,152,79,177"/>
-<area shape="rect" id="node4" title=" " alt="" coords="177,152,235,177"/>
-<area shape="rect" id="node5" href="$Pid_8h.html" title="PID制御を行う Pid クラスを提供する。" alt="" coords="23,79,74,104"/>
-<area shape="rect" id="node6" title=" " alt="" coords="293,79,354,104"/>
-<area shape="rect" id="node7" title=" " alt="" coords="379,79,431,104"/>
+<area shape="rect" id="node1" title="足回りの位置のPID制御を行うChassisAutoを提供する。" alt="" coords="180,5,308,31"/>
+<area shape="rect" id="node2" href="$CoordinateUnit_8h.html" title="座標、速度を表す構造体 CoordinateUnit を提供する。" alt="" coords="137,79,255,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,152,67,177"/>
+<area shape="rect" id="node4" title=" " alt="" coords="213,225,272,251"/>
+<area shape="rect" id="node8" href="$Pid_8h.html" title="PID制御を行う Pid クラスを提供する。" alt="" coords="61,79,112,104"/>
+<area shape="rect" id="node9" title=" " alt="" coords="331,79,392,104"/>
+<area shape="rect" id="node10" title=" " alt="" coords="417,79,469,104"/>
+<area shape="rect" id="node5" href="$float__cmp_8h_source.html" title=" " alt="" coords="91,152,205,177"/>
+<area shape="rect" id="node6" title=" " alt="" coords="29,225,104,251"/>
+<area shape="rect" id="node7" title=" " alt="" coords="128,225,181,251"/>
 </map>
