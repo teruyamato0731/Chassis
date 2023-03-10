@@ -144,8 +144,8 @@ CoordinateUnit<N - 1> operator/(const CoordinateUnit<N>& obj, const std::chrono:
 }
 template<int N>
 bool operator==(const CoordinateUnit<N>& lhs, const CoordinateUnit<N>& rhs) {
-  return float_cmp(lhs.x_milli, rhs.x_milli) == 0 && float_cmp(lhs.y_milli, rhs.y_milli) == 0 &&
-         float_cmp(lhs.ang_rad, rhs.ang_rad) == 0;
+  return impl::float_cmp(lhs.x_milli, rhs.x_milli) == 0 && impl::float_cmp(lhs.y_milli, rhs.y_milli) == 0 &&
+         impl::float_cmp(lhs.ang_rad, rhs.ang_rad) == 0;
 }
 template<int N>
 bool operator!=(const CoordinateUnit<N>& lhs, const CoordinateUnit<N>& rhs) {
