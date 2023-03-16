@@ -33,7 +33,7 @@ jobs:
       - name: Build
         uses: mattnotmitt/doxygen-action@v1.9.5
         with:
-          doxyfile-path: doxygen-custom/Doxyfile
+          doxyfile-path: ${{ inputs.doxyfile_path }}
 
       - name : Deploy
         uses: peaceiris/actions-gh-pages@v3
