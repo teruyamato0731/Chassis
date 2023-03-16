@@ -29,7 +29,7 @@ cmake --build .
 ctest
 ```
 
-[commit.template](./.commit_template)を使用しており、下記コマンドで導入できる。
+[commit.template](../.commit_template)を使用しており、下記コマンドで導入できる。
 ```
 git config commit.template .commit_template
 ```
@@ -47,7 +47,7 @@ PRを提出する前に以下のことを確認してください
 [Platform IOのレジストリ](https://registry.platformio.org/libraries/teruyamato0731/Chassis)にも登録されている。
 
 ## CI/CD
-<image src="./dox/ci.drawio.svg" style="padding: 1em" alt="CI,CDのフロー図" />
+<image src="./ci.drawio.svg" style="padding: 1em" alt="CI,CDのフロー図" />
 
 ## 開発者の環境
 - Ubuntu 22.04

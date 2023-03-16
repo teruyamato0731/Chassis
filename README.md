@@ -19,5 +19,5 @@ Copyright (c) 2022 Yoshikawa Teru
 Chassis is under the MIT License, see [LICENSE](./LICENSE).
 
 # Developer
-開発者ガイドは[CONTRIBUTING.md](./CONTRIBUTING.md)をどうぞ。
-依存は[NOTICE.md](./NOTICE.md)にまとめている。
+開発者ガイドは [CONTRIBUTING.md](./docs//CONTRIBUTING.md) をどうぞ。
+依存は [NOTICE.md](./docs/NOTICE.md) にまとめている。

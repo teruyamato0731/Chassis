@@ -1,4 +1,4 @@
 src/test*
-docs
+docs/html
 build
 .vscode
