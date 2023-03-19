@@ -25,7 +25,6 @@ struct ChassisPid {
   /// @tparam F 関数型。T型に与えるcallback関数の型。
   /// @param f callback関数。
   /// @param vel_gain 手動速度制御のPIDゲイン
-  /// @param pos_gain 自動制御のPIDゲイン
   template<class F>
   ChassisPid(F&& f, const PidGain& vel_gain) : t_{std::forward<F>(f)}, vel_pid_{vel_gain} {}
 

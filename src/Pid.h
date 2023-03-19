@@ -54,6 +54,7 @@ struct Pid {
 
   /// @brief コンストラクタ。ゲインをセットする。
   /// @param pid_gain PID制御のゲイン
+  /// @param init 初期値
   Pid(const PidGain& pid_gain, const T& init = T{}) noexcept : pid_gain_{pid_gain}, pre_{init} {}
 
   /// @brief 目標値、現在値、経過時間からPID制御の計算を行う。
