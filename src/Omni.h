@@ -15,8 +15,6 @@ namespace rct {
 /// @brief 移動速度よりモータを出力に計算する。
 /// @details 足回りのモータ出力を計算する。
 /// Velocityを与えることにより、コールバック関数を通してモータへの出力をセットする。
-/// \todo 図
-/// \todo example
 /// @defgroup frame frame
 /// @{
 
