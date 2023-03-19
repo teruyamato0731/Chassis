@@ -1,0 +1,12 @@
+version: '3'
+services:
+  chassis:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      # Working
+      - ..:/workspaces/Chassis:cached
+    working_dir: /workspaces/Chassis
+    tty: true
+    command: /bin/sh -c "while sleep 1000; do :; done"
