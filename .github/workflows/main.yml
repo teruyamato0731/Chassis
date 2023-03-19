@@ -16,7 +16,7 @@ jobs:
   bump-version:
     name: Bump Version  # バージョンをあげる
     if: ${{ github.ref_name == 'main' || github.ref_name == 'ci' }}  # mainブランチのみ Bump
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     timeout-minutes: 5
     outputs:
       release_type: ${{ steps.tag-version.outputs.release_type }}
@@ -34,7 +34,7 @@ jobs:
           dry_run: true  # tagはRelease作成時つける
 
   arduino-lint:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
       - uses: arduino/arduino-lint-action@v1
