@@ -52,8 +52,18 @@ jobs:
              --title "Bump version: ${{ inputs.new_tag }}" --body 'Automated changes by [Bump Version](https://github.com/teruyamato0731/Chassis/actions/workflows/main.yml) GitHub action'
           gh pr merge ${{ env.branch }} --merge --delete-branch
 
+      - uses: devcontainers/ci@v0.3
+        with:
+          imageName: ghcr.io/teruyamato0731/chassis-devcontainer
+          cacheFrom: ghcr.io/teruyamato0731/chassis-devcontainer
+          refFilterForPush: 'refs/heads/main'
+          runCmd: pio pkg pack -o Chassis-${{ inputs.new_version }}.tar.gz && pio pkg publish
+          env: |
+            PLATFORMIO_AUTH_TOKEN=${{ secrets.PLATFORMIO_AUTH_TOKEN }}
+
       - name: Create a GitHub release
         uses: ncipollo/release-action@v1
         with:
           tag: ${{ inputs.new_tag }}
           body: ${{ inputs.changelog }}
+          artifacts: Chassis-${{ inputs.new_version }}.tar.gz

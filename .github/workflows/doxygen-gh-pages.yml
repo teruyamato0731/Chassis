@@ -27,13 +27,14 @@ jobs:
         with:
           submodules: true  # Fetch doxygen-awesome-css themes (true OR recursive)
 
-      - name: set version
-        run: echo "PROJECT_NUMBER = ${{ inputs.project_version }}" >> ${{ inputs.doxyfile_path }}
-
-      - name: Build
-        uses: mattnotmitt/doxygen-action@v1.9.5
+      - uses: devcontainers/ci@v0.3
         with:
-          doxyfile-path: ${{ inputs.doxyfile_path }}
+          imageName: ghcr.io/teruyamato0731/chassis-devcontainer
+          cacheFrom: ghcr.io/teruyamato0731/chassis-devcontainer
+          refFilterForPush: 'refs/heads/main'
+          runCmd: scripts/deploy.bash
+          env: |
+            PROJECT_VERSION=${{ inputs.project_version }}
 
       - name : Deploy
         uses: peaceiris/actions-gh-pages@v3
