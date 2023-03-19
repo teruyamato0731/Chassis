@@ -20,7 +20,7 @@ jobs:
           submodules: true  # Fetch GoogleTest (true OR recursive)
 
       - name: Build and Test
-        run: bash ./.github/scripts/ctest.bash
+        run: bash scripts/test.bash
 
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v3
