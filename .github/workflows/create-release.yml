@@ -24,13 +24,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set version
-        run: sed -i -e 's/[0-9]\+\.[0-9]\+\.[0-9]\+/${{ inputs.new_version }}/' library.properties library.json
-
       - name: Git config
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Set version
+        run: sed -i -e 's/[0-9]\+\.[0-9]\+\.[0-9]\+/${{ inputs.new_version }}/' library.properties library.json
 
       - name: Push version
         env:
@@ -48,9 +48,9 @@ jobs:
           GH_TOKEN: ${{ secrets.token }}
           branch: "release/${{ inputs.new_tag }}"
         run: |
-          gh pr create --base ${GITHUB_REF_NAME} --head ${{env.branch}} --assignee ${GITHUB_ACTOR} -l "bump version" \
+          gh pr create --base ${GITHUB_REF_NAME} --head ${{ env.branch }} --assignee ${GITHUB_ACTOR} -l "bump version" \
              --title "Bump version: ${{ inputs.new_tag }}" --body 'Automated changes by [Bump Version](https://github.com/teruyamato0731/Chassis/actions/workflows/main.yml) GitHub action'
-          gh pr merge ${{env.branch}} --merge --delete-branch
+          gh pr merge ${{ env.branch }} --merge --delete-branch
 
       - name: Create a GitHub release
         uses: ncipollo/release-action@v1
