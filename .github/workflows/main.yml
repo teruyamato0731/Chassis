@@ -34,7 +34,6 @@ jobs:
           dry_run: true  # tagはRelease作成時つける
 
   arduino-lint:
-    if: ${{ github.ref_name == 'main' }}
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
