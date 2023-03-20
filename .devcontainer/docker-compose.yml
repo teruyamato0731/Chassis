@@ -9,4 +9,6 @@ services:
       - ..:/workspaces/Chassis:cached
     working_dir: /workspaces/Chassis
     tty: true
-    command: /bin/sh -c "while sleep 1000; do :; done"
+    command: scripts/server-start.bash
+    ports:
+      - 8000:8000
