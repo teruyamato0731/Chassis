@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euxo pipefail
 cd ${BASH_SOURCE[0]%/*}/..
 
 echo PROJECT_NUMBER set to ${PROJECT_VERSION:=$(git describe --tags --abbrev=0)}

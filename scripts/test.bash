@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euxo pipefail
 cd ${BASH_SOURCE[0]%/*}/..
 mkdir -p build && cd "$_"
 cmake ..
