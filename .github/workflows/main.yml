@@ -50,6 +50,7 @@ jobs:
           imageName: ghcr.io/teruyamato0731/chassis-devcontainer
           cacheFrom: ghcr.io/teruyamato0731/chassis-devcontainer
           refFilterForPush: 'refs/heads/main'
+          skipContainerUserIdUpdate: true
 
   arduino-lint:
     runs-on: ubuntu-22.04
