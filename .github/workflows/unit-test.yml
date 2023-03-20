@@ -22,13 +22,6 @@ jobs:
       - name: Build and Test
         run: bash scripts/test.bash
 
-      - uses: devcontainers/ci@v0.3
-        with:
-          imageName: ghcr.io/teruyamato0731/chassis-devcontainer
-          cacheFrom: ghcr.io/teruyamato0731/chassis-devcontainer
-          refFilterForPush: 'refs/heads/main'
-          runCmd: scripts/test.bash
-
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v3
         with:

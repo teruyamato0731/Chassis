@@ -54,9 +54,8 @@ jobs:
 
       - uses: devcontainers/ci@v0.3
         with:
-          imageName: ghcr.io/teruyamato0731/chassis-devcontainer
           cacheFrom: ghcr.io/teruyamato0731/chassis-devcontainer
-          refFilterForPush: 'refs/heads/main'
+          push: never
           runCmd: pio pkg pack -o Chassis-${{ inputs.new_version }}.tar.gz && pio pkg publish
           env: |
             PLATFORMIO_AUTH_TOKEN=${{ secrets.PLATFORMIO_AUTH_TOKEN }}

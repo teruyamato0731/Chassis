@@ -33,6 +33,23 @@ jobs:
           default_bump : false
           dry_run: true  # tagはRelease作成時つける
 
+  devcontainers-ci:
+    name: build devcontainer
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Pre-build dev container image
+        uses: devcontainers/ci@v0.3
+        with:
+          imageName: ghcr.io/teruyamato0731/chassis-devcontainer
+          cacheFrom: ghcr.io/teruyamato0731/chassis-devcontainer
+          refFilterForPush: 'refs/heads/main'
+
   arduino-lint:
     runs-on: ubuntu-22.04
     steps:
