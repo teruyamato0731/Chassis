@@ -37,6 +37,7 @@ jobs:
     name: build devcontainer
     runs-on: ubuntu-22.04
     steps:
+      - uses: actions/checkout@v3
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v2
         with:
@@ -67,7 +68,7 @@ jobs:
 
   create-release:
     name: Create Release  # Releaseを作成
-    needs: [unit-test, bump-version]
+    needs: [unit-test, bump-version, devcontainers-ci]
     if: ${{ (github.ref_name == 'main' || github.ref_name == 'ci') && needs.unit-test.result == 'success' && needs.bump-version.outputs.release_type != false }}
     # mainブランチのみ unit-test成功時のみ バージョンがあがるときのみ
     uses: ./.github/workflows/create-release.yml
@@ -80,7 +81,7 @@ jobs:
 
   pages-deploy:
     name: Doxygen Deploy Action  # github.ioにデプロイ
-    needs: [unit-test, bump-version]
+    needs: [unit-test, bump-version, devcontainers-ci]
     # mainブランチのみ bump-version成功時のみ (unit-testの成否によらずデプロイする)
     if: ${{ (github.ref_name == 'main' || github.ref_name == 'ci') && needs.bump-version.result == 'success' }}
     uses: ./.github/workflows/doxygen-gh-pages.yml
