@@ -70,7 +70,7 @@ jobs:
   create-release:
     name: Create Release  # Releaseを作成
     needs: [unit-test, bump-version, devcontainers-ci]
-    if: ${{ (github.ref_name == 'main' || github.ref_name == 'ci') && needs.unit-test.result == 'success' && needs.bump-version.outputs.release_type != false }}
+    if: ${{ github.ref_name == 'main' && needs.unit-test.result == 'success' && needs.bump-version.outputs.release_type != false }}
     # mainブランチのみ unit-test成功時のみ バージョンがあがるときのみ
     uses: ./.github/workflows/create-release.yml
     with:
