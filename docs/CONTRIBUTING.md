@@ -1,3 +1,5 @@
+[![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/teruyamato0731/Chassis)
+
 # Welcome to Chassis contributing guide
 このプロジェクトのバージョニングは[Semantic versioning](https://semver.org/lang/ja/)に従っている。
 
@@ -17,29 +19,18 @@
 関連するIssueが存在しない場合に、Issue templateを使用して新しいIssueを作成する。
 
 ### Make Changes
-```
-git clone https://github.com/teruyamato0731/Chassis.git
-```
-
-Google Test を導入しており、cmakeでテストを実行できる。
-```
-mkdir -p build && cd "$_"
-cmake ..
-cmake --build .
-ctest
-```
-
-[commit.template](../.commit_template)を使用しており、下記コマンドで導入できる。
-```
-git config commit.template .commit_template
-```
-
-PRを提出する前に以下のことを確認してください
-- [ ] エラーや警告がなくコンパイルが通る
-- [ ] Doxygenコメントが追加されている
-- [ ] Doxygenのビルドが通る
-- [ ] ユニットテストが追加されている
-- [ ] ユニットテストが通る
+1. Docker, vscode をインストールする。
+1. Open in Dev Containers または [こちら](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/teruyamato0731/Chassis) を押す。
+1. 任意の変更を行う。
+1. scripts/test.bash を実行してコードのテストを行う。
+  ```bash
+  scripts/test.bash
+  ```
+1. scripts/deploy.bash を実行すると、 Doxygen によるドキュメントの生成が行われる。
+  http://localhost:8000 より WEB ページの出力が確認できる。
+  ```bash
+  scripts/deploy.bash
+  ```
 
 ## Library Manager
 このライブラリは[Arduino Library Manager](https://www.arduinolibraries.info/libraries/chassis)に登録されており、[logはここ](https://downloads.arduino.cc/libraries/logs/github.com/teruyamato0731/Chassis/)から確認できる。
