@@ -1,11 +1,15 @@
 [![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/teruyamato0731/Chassis)
 
 # Welcome to Chassis contributing guide
-このプロジェクトのバージョニングは[Semantic versioning](https://semver.org/lang/ja/)に従っている。
+このプロジェクトのバージョニングは [Semantic versioning](https://semver.org/lang/ja/) に従っている。
 
-コミットメッセージは[Conventional commit](https://www.conventionalcommits.org/ja/v1.0.0/)に従っている。
+コミットメッセージは [Conventional commit](https://www.conventionalcommits.org/ja/v1.0.0/) に従っている。
 
-ブランチ戦略はGithub Flowを取っている。
+ブランチ戦略は GitHub Flow を取っている。
+
+Unit Test には Google Test を使用している。
+
+Documentation には Doxygen と GitHub Pages を使用している。
 
 ## Quick Start
 
@@ -33,7 +37,7 @@
   ```
 
 ## Library Manager
-このライブラリは[Arduino Library Manager](https://www.arduinolibraries.info/libraries/chassis)に登録されており、[logはここ](https://downloads.arduino.cc/libraries/logs/github.com/teruyamato0731/Chassis/)から確認できる。
+このライブラリは [Arduino Library Manager](https://www.arduinolibraries.info/libraries/chassis) に登録されており、[logはここ](https://downloads.arduino.cc/libraries/logs/github.com/teruyamato0731/Chassis/)から確認できる。
 
 [Platform IOのレジストリ](https://registry.platformio.org/libraries/teruyamato0731/Chassis)にも登録されている。
 
