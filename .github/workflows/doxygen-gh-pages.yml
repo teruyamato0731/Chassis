@@ -31,7 +31,6 @@ jobs:
         with:
           cacheFrom: ghcr.io/teruyamato0731/chassis-devcontainer
           push: never
-          skipContainerUserIdUpdate: true
           runCmd: scripts/deploy.bash
           env: |
             PROJECT_VERSION=${{ inputs.project_version }}
