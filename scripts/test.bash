@@ -1,6 +1,6 @@
 #!/bin/bash
 set -euxo pipefail
-cd ${BASH_SOURCE[0]%/*}/..
+cd "${BASH_SOURCE[0]%/*}"/..
 git submodule update --init test/third_party/googletest
 mkdir -p build && cd "$_"
 rm CMakeCache.txt || true
