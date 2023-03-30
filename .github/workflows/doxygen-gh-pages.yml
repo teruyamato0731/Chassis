@@ -24,8 +24,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-        with:
-          submodules: true  # Fetch doxygen-awesome-css themes (true OR recursive)
 
       - uses: devcontainers/ci@v0.3
         with:
