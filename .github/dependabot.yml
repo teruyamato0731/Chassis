@@ -13,7 +13,7 @@ updates:
       prefix: "chore"
       include: "scope"
     reviewers:
-      "teruyamato0731"
+      - "teruyamato0731"
 
   - package-ecosystem: "github-actions" # See documentation for possible values
     directory: "/" # Location of package manifests
@@ -23,4 +23,4 @@ updates:
       prefix: "chore"
       include: "scope"
     reviewers:
-      "teruyamato0731"
+      - "teruyamato0731"
