@@ -5,6 +5,7 @@ RUN apt-get update && apt-get install -y \
   cmake \
   python3-venv \
   graphviz \
+  bash-completion \
   && rm -rf /var/lib/apt/lists/*
 
 RUN curl -fsSOL https://github.com/doxygen/doxygen/releases/download/Release_1_9_6/doxygen-1.9.6.linux.bin.tar.gz \
@@ -14,6 +15,5 @@ RUN curl -fsSOL https://github.com/doxygen/doxygen/releases/download/Release_1_9
 
 USER vscode
 RUN python3 -c "$(curl -fsSL https://raw.githubusercontent.com/platformio/platformio/master/scripts/get-platformio.py)" \
-  && $HOME/.platformio/penv/bin/pio system completion install bash \
-  && echo "export PATH=$PATH:$HOME/.platformio/penv/bin" >> ~/.bashrc \
-  && echo ". /home/vscode/.bash_completion" >> ~/.bashrc
+  && sudo $HOME/.platformio/penv/bin/pio system completion install bash --path /etc/bash_completion.d/pio \
+  && echo 'export PATH=$PATH:$HOME/.platformio/penv/bin' >> ~/.bashrc
