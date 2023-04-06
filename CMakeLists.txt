@@ -4,6 +4,10 @@ cmake_minimum_required(VERSION 3.21)
 # Parameters inside project
 project(Chassis)
 
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
+
 # Compiler option
 # GoogleTest requirest C++11 or later
 set(CMAKE_CXX_STANDARD 14)
