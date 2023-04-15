@@ -63,6 +63,6 @@ jobs:
         with:
           cacheFrom: ghcr.io/teruyamato0731/chassis-devcontainer
           push: never
-          runCmd: pio pkg pack -o Chassis-${{ inputs.new_version }}.tar.gz && pio pkg publish
+          runCmd: pio pkg pack -o Chassis-${{ inputs.new_version }}.tar.gz && pio pkg publish --no-interactive
           env: |
             PLATFORMIO_AUTH_TOKEN=${{ secrets.PLATFORMIO_AUTH_TOKEN }}
