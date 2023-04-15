@@ -14,7 +14,7 @@
 - C++で動くフレームワークとマイコン。<br>ArduinoやMbedで動くnucleo, esp32, teensyなどに対応。
 
 ## Licensing
-Copyright (c) 2022 Yoshikawa Teru
+Copyright (c) 2022-2023 Yoshikawa Teru
 
 This project is released under the MIT License, see [LICENSE](https://github.com/teruyamato0731/Chassis/blob/main/LICENSE).
 

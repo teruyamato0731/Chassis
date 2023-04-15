@@ -2,8 +2,8 @@
 #define RCT_CHASSIS_AUTO_H_
 /// @file
 /// @brief 足回りの位置のPID制御を行うChassisAutoを提供する。
-/// @copyright Copyright (c) 2022 Yoshikawa Teru
-/// @license This project is released under the MIT License, see [LICENSE](https://github.com/teruyamato0731/Chassis/blob/main/LICENSE)
+/// @copyright Copyright (c) 2022-2023 Yoshikawa Teru
+/// @license This project is released under the MIT License, see [LICENSE](https://github.com/teruyamato0731/Chassis/blob/main/LICENSE).
 #include <CoordinateUnit.h>
 #include <Pid.h>
 

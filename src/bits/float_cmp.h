@@ -1,6 +1,9 @@
 #ifndef RCT_FLOAT_CMP
 #define RCT_FLOAT_CMP
-
+/// @file
+/// @brief 浮動小数点数の比較を行う float_cmp を提供する。
+/// @copyright Copyright (c) 2022-2023 Yoshikawa Teru
+/// @license This project is released under the MIT License, see [LICENSE](https://github.com/teruyamato0731/Chassis/blob/main/LICENSE).
 #include <algorithm>
 #include <cfloat>
 #include <cmath>

@@ -2,8 +2,8 @@
 #define COORDINATE_UNIT_H_
 /// @file CoordinateUnit.h
 /// @brief 座標、速度を表す構造体 CoordinateUnit を提供する。
-/// @copyright Copyright (c) 2022 Yoshikawa Teru
-/// @license This project is released under the MIT License, see [LICENSE](https://github.com/teruyamato0731/Chassis/blob/main/LICENSE)
+/// @copyright Copyright (c) 2022-2023 Yoshikawa Teru
+/// @license This project is released under the MIT License, see [LICENSE](https://github.com/teruyamato0731/Chassis/blob/main/LICENSE).
 #include <chrono>
 #include <cmath>
 

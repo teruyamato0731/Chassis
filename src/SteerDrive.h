@@ -2,8 +2,8 @@
 #define CHASSIS_STEER_DRIVE_H_
 /// @file
 /// @brief N輪独立ステアリングの制御を行う SteerDrive クラスを提供する。
-/// @copyright Copyright (c) 2022 Yoshikawa Teru
-/// @license This project is released under the MIT License, see [LICENSE](https://github.com/teruyamato0731/Chassis/blob/main/LICENSE)
+/// @copyright Copyright (c) 2022-2023 Yoshikawa Teru
+/// @license This project is released under the MIT License, see [LICENSE](https://github.com/teruyamato0731/Chassis/blob/main/LICENSE).
 #include <CoordinateUnit.h>
 
 #include <cmath>

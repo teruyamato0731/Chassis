@@ -15,7 +15,7 @@ Chassisはロボコンでの足回り制御を行うためのC++ライブラリ�
 [ドキュメントはこちら](https://teruyamato0731.github.io/Chassis/)
 
 # License
-Copyright (c) 2022 Yoshikawa Teru
+Copyright (c) 2022-2023 Yoshikawa Teru
 
 Chassis is under the MIT License, see [LICENSE](./LICENSE).
 
