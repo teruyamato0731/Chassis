@@ -48,7 +48,7 @@ struct Odom {
   const Coordinate& get() const& noexcept {
     return pos_;
   }
-  Coordinate get() const&& noexcept {
+  Coordinate get() && noexcept {
     return std::move(pos_);
   }
   /// @}
