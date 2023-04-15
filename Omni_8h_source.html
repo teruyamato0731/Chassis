@@ -121,7 +121,7 @@ $(document).ready(function(){initNavTree('Omni_8h_source.html',''); initResizabl
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">template</span>&lt;<span class="keywordtype">int</span> N&gt;</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structrct_1_1Omni.html">   24</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrct_1_1Omni.html">Omni</a> {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keyword">static_assert</span>(N &gt; 0);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keyword">static_assert</span>(N &gt; 0, <span class="stringliteral">&quot;template parameter N must be greater than 0&quot;</span>);</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> F&gt;</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structrct_1_1Omni.html#ade5fecb67738281147d22477d8017cb4">   31</a></span>  <a class="code hl_function" href="structrct_1_1Omni.html#ade5fecb67738281147d22477d8017cb4">Omni</a>(F&amp;&amp; f) : f_{std::forward&lt;F&gt;(f)} {}</div>
