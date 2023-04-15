@@ -20,7 +20,7 @@ namespace rct {
 /// @tparam N ステアリングホイール数。 N > 0であること。
 template<int N>
 struct SteerDrive {
-  static_assert(N > 0);
+  static_assert(N > 0, "template parameter N must be greater than 0");
 
   /// @brief コンストラクタ。callback関数をセットする。
   /// @tparam F 関数型。引数に const std::complex<float> (&)[N] を受け取り、返り値が void であること。

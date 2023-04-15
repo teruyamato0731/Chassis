@@ -50,7 +50,7 @@ constexpr bool is_pidable_v = is_pidable<T>::value;
 /// @tparam T PID制御可能な型であること。(T型同士の加減算とfloat型との乗除が定義されていること。)is_pidableで判定可能。
 template<class T>
 struct Pid {
-  static_assert(is_pidable_v<T>, "T型がPID制御に対応していません。");
+  static_assert(is_pidable_v<T>, "template parameter T must be PID-able type");
 
   /// @brief コンストラクタ。ゲインをセットする。
   /// @param pid_gain PID制御のゲイン

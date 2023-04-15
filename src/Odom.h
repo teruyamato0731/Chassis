@@ -19,7 +19,7 @@ namespace rct {
 /// @tparam N エンコーダ数。 N > 0 であること。
 template<int N>
 struct Odom {
-  static_assert(N > 0);
+  static_assert(N > 0, "template parameter N must be greater than 0");
 
   /// @brief コンストラクタ。現在位置を初期化する。
   /// @param pos 現在位置

@@ -22,7 +22,7 @@ namespace rct {
 /// @tparam N モータ数。 N > 0であること。
 template<int N>
 struct Omni {
-  static_assert(N > 0);
+  static_assert(N > 0, "template parameter N must be greater than 0");
 
   /// @brief コンストラクタ。callback関数をセットする。
   /// @tparam F 関数型。引数に const float (&)[N] を受け取り、返り値が void であること。
