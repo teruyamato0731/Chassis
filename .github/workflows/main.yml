@@ -30,7 +30,7 @@ jobs:
         uses: mathieudutour/github-tag-action@v6.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          default_bump : false
+          default_bump: false
           dry_run: true  # tagはRelease作成時つける
 
   devcontainers-ci:
