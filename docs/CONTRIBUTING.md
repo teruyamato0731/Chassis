@@ -18,23 +18,21 @@ Documentation には Doxygen と GitHub Pages を使用している。
 - 不具合を見つけた場合
 - 新機能の要望
 
-はじめにすでにIssueが存在するかを検索すること。
-
-関連するIssueが存在しない場合に、Issue templateを使用して新しいIssueを作成する。
+はじめにIssueが既に存在するかを検索し、関連するIssueが存在しなかった場合に新しいIssueを作成すること。
 
 ### Make Changes
 1. Docker, vscode をインストールする。
-1. Open in Dev Containers または [こちら](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/teruyamato0731/Chassis) を押す。
+1. ページ上部の Open in Dev Containers または [こちら](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/teruyamato0731/Chassis) を押す。
 1. 任意の変更を行う。
 1. scripts/test.bash を実行してコードのテストを行う。
-  ```bash
-  scripts/test.bash
-  ```
+    ```bash
+    scripts/test.bash
+    ```
 1. scripts/deploy.bash を実行すると、 Doxygen によるドキュメントの生成が行われる。
   http://localhost:8000 より WEB ページの出力が確認できる。
-  ```bash
-  scripts/deploy.bash
-  ```
+    ```bash
+    scripts/deploy.bash
+    ```
 
 ## Library Manager
 このライブラリは [Arduino Library Manager](https://www.arduinolibraries.info/libraries/chassis) に登録されており、[logはここ](https://downloads.arduino.cc/libraries/logs/github.com/teruyamato0731/Chassis/)から確認できる。
