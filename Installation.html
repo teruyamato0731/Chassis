@@ -116,16 +116,12 @@ $(document).ready(function(){initNavTree('Installation.html',''); initResizable(
 </div>
 <div class="textblock"><h2><a class="anchor" id="autotoc_md0"></a>
 Platform IO</h2>
-<p>platformio.iniに<a class="el" href="platformio_8ini_source.html">下記のように</a>lib_depsを追記。</p>
-<div class="fragment"><div class="line">[env:nucleo_f446re]</div>
-<div class="line">platform = ststm32</div>
-<div class="line">board = nucleo_f446re</div>
-<div class="line">framework = mbed</div>
-<div class="line">lib_deps = https://github.com/teruyamato0731/chassis.git</div>
+<p>PIOライブラリマネージャーより<a href="https://registry.platformio.org/libraries/teruyamato0731/Chassis/installation">インストール</a>。<br  />
+ platformio.iniに<a class="el" href="platformio_8ini_source.html">下記のように</a> <code>lib_deps</code> を追記すればよい。</p>
+<div class="fragment"><div class="line">lib_deps = teruyamato0731/Chassis</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md1"></a>
 Arduino IDE</h2>
-<p>Arduino IDEの<a href="https://www.arduinolibraries.info/libraries/chassis">ライブラリマネージャ</a>でChassisと検索しインストール。<br  />
- もしくはGitHubよりChassisをダウンロードしinoと同じディレクトリにソースファイルを配置。</p>
+<p>Arduino IDEの<a href="https://www.arduino.cc/reference/en/libraries/">ライブラリマネージャ</a>で <a href="https://www.arduinolibraries.info/libraries/chassis">Chassis</a> と検索し<a href="https://docs.arduino.cc/software/ide-v1/tutorials/installing-libraries">インストール</a>。</p>
 <hr  />
 <p> <span class="next_section_button"><a class="el" href="Usage.html">Chassisの使用方法</a></span></p>
 <ul>
