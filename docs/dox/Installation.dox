@@ -1,13 +1,15 @@
 /**
 \page Installation Chassisの導入方法
 ## Platform IO
-platformio.iniに[下記のように](\ref snippets/platformio.ini)lib_depsを追記。
+PIOライブラリマネージャーより[インストール](https://registry.platformio.org/libraries/teruyamato0731/Chassis/installation)。<br>
+platformio.iniに[下記のように](\ref snippets/platformio.ini) `lib_deps` を追記すればよい。
 
-\snippet snippets/platformio.ini config
+```
+lib_deps = teruyamato0731/Chassis
+```
 
 ## Arduino IDE
-Arduino IDEの[ライブラリマネージャ](https://www.arduinolibraries.info/libraries/chassis)でChassisと検索しインストール。<br>
-もしくはGitHubよりChassisをダウンロードしinoと同じディレクトリにソースファイルを配置。
+Arduino IDEの[ライブラリマネージャ](https://www.arduino.cc/reference/en/libraries/)で [Chassis](https://www.arduinolibraries.info/libraries/chassis) と検索し[インストール](https://docs.arduino.cc/software/ide-v1/tutorials/installing-libraries)。
 
 ---
 <span class="next_section_button">\ref Usage</span>
