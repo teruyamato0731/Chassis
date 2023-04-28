@@ -9,7 +9,9 @@ lib_deps = teruyamato0731/Chassis
 ```
 
 ## Arduino IDE
-Arduino IDEの[ライブラリマネージャ](https://www.arduino.cc/reference/en/libraries/)で [Chassis](https://www.arduinolibraries.info/libraries/chassis) と検索し[インストール](https://docs.arduino.cc/software/ide-v1/tutorials/installing-libraries)。
+Arduino IDEの[ライブラリマネージャ](https://www.arduino.cc/reference/en/libraries/)で [Chassis](https://www.arduinolibraries.info/libraries/chassis) と検索しインストール。<br>
+インストール方法は[公式リファレンス](https://docs.arduino.cc/software/ide-v1/tutorials/installing-libraries)を参照。
+[Arduino IDE 2](https://docs.arduino.cc/software/ide-v2/tutorials/ide-v2-installing-a-library) はこちら。
 
 ---
 <span class="next_section_button">\ref Usage</span>
