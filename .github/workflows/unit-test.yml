@@ -35,3 +35,18 @@ jobs:
           gcov: true
           gcov_include: src
           verbose: true
+
+  arduino-lint:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: arduino/arduino-lint-action@v1
+        with:
+          library-manager: update
+          compliance: strict
+          project-type: library
+          report-file: arduino-lint.json
+      - uses: actions/upload-artifact@v3
+        with:
+          name: arduino-lint
+          path: arduino-lint.json
