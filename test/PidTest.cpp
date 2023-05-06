@@ -14,6 +14,14 @@ TEST(PID_GAIN, TYPE_TRAIT) {
 TEST(IS_PIDABLE, ACCEPT_TYPE) {
   EXPECT_TRUE(is_pidable_v<int>);
   EXPECT_TRUE(is_pidable_v<float>);
+
+  struct Hoge {};
+  EXPECT_FALSE(is_pidable_v<Hoge>);
+}
+
+TEST(PID, TYPE_TRAIT) {
+  EXPECT_TRUE(noexcept(Pid<int>{{}}));
+  EXPECT_TRUE(noexcept(Pid<float>{{}}));
 }
 
 TEST(PID, CALC_ZERO) {
