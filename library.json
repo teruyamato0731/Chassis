@@ -1,6 +1,6 @@
 {
   "name": "Chassis",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "Chassis is a C++ library for undercarriage control in robotics.",
   "homepage": "https://teruyamato0731.github.io/Chassis/",
   "repository": {
