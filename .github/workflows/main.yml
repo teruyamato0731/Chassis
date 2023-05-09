@@ -12,6 +12,8 @@ jobs:
   unit-test:
     name: Unit Test
     uses: ./.github/workflows/unit-test.yml
+    secrets:
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
   bump-version:
     name: Bump Version  # バージョンをあげる
@@ -78,7 +80,7 @@ jobs:
       new_version: ${{ needs.bump-version.outputs.new_version }}
       changelog: ${{ needs.bump-version.outputs.changelog }}
     secrets:
-      token: ${{ secrets.GITHUB_TOKEN }}
+      PLATFORMIO_AUTH_TOKEN: ${{ secrets.PLATFORMIO_AUTH_TOKEN }}
 
   pages-deploy:
     name: Doxygen Deploy Action  # github.ioにデプロイ
@@ -92,5 +94,3 @@ jobs:
       # unit-test失敗 Bumpなしのとき previous_tag
       project_version: ${{ (needs.unit-test.result == 'success' && needs.unit-test.outputs.release_type != false &&
                             needs.bump-version.outputs.new_tag) || needs.bump-version.outputs.previous_tag }}
-    secrets:
-      token: ${{ secrets.GITHUB_TOKEN }}
