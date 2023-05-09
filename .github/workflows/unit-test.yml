@@ -2,6 +2,9 @@ name: Unit Test
 on:
   # mainから呼び出す
   workflow_call:
+    secrets:
+      CODECOV_TOKEN:
+        required: true
   # 手動実行を許可する
   workflow_dispatch:
 

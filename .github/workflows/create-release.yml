@@ -13,7 +13,7 @@ on:
         required: true
         type: string
     secrets:
-      token:
+      PLATFORMIO_AUTH_TOKEN:
         required: true
 
 jobs:
@@ -45,7 +45,7 @@ jobs:
 
       - name: Create and merge Pull Request
         env:
-          GH_TOKEN: ${{ secrets.token }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           branch: "release/${{ inputs.new_tag }}"
         run: |
           gh pr create --base ${GITHUB_REF_NAME} --head ${{ env.branch }} --assignee ${GITHUB_ACTOR} -l "bump version" \
