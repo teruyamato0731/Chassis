@@ -66,3 +66,7 @@ jobs:
           tag: ${{ inputs.new_tag }}
           body: ${{ inputs.changelog }}
           artifacts: Chassis-${{ inputs.new_version }}.tar.gz
+
+      - name: Delete cache
+        run: |
+          curl -X PURGE https://camo.githubusercontent.com/b0dfa47fce01d3b2696fda450c451312795fb591036205ae07de1bdb47853981/68747470733a2f2f6261646765732e72656769737472792e706c6174666f726d696f2e6f72672f7061636b616765732f7465727579616d61746f303733312f6c6962726172792f436861737369732e737667
