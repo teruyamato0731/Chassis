@@ -3,9 +3,6 @@ on:
   # mainから呼び出す
   workflow_call:
     inputs:
-      doxyfile_path:
-        required: true
-        type: string
       project_version:
         required: true
         type: string

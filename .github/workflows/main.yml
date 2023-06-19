@@ -74,7 +74,6 @@ jobs:
     if: ${{ (github.ref_name == 'main' || github.ref_name == 'ci') && needs.bump-version.result == 'success' }}
     uses: ./.github/workflows/doxygen-gh-pages.yml
     with:
-      doxyfile_path: docs/doxygen-custom/Doxyfile
       # unit-test成功かつneeds.unit-test.outputs.release_type != false のとき new_tag
       # unit-test失敗 Bumpなしのとき previous_tag
       project_version: ${{ (needs.unit-test.result == 'success' && needs.bump-version.outputs.release_type != false &&
