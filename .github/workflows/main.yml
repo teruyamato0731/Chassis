@@ -3,8 +3,7 @@ on:
   push:
     branches:
       - main
-      - 'feat/**'
-      - ci
+
   # 手動実行を許可する
   workflow_dispatch:
 
@@ -17,7 +16,6 @@ jobs:
 
   bump-version:
     name: Bump Version  # バージョンをあげる
-    if: ${{ github.ref_name == 'main' || github.ref_name == 'ci' }}  # mainブランチのみ Bump
     runs-on: ubuntu-22.04
     timeout-minutes: 5
     outputs:
@@ -57,8 +55,8 @@ jobs:
   create-release:
     name: Create Release  # Releaseを作成
     needs: [unit-test, bump-version, devcontainers-ci]
-    if: ${{ github.ref_name == 'main' && needs.unit-test.result == 'success' && needs.bump-version.outputs.release_type != false }}
-    # mainブランチのみ unit-test成功時のみ バージョンがあがるときのみ
+    # unit-test成功時のみ バージョンがあがるときのみ
+    if: ${{ needs.unit-test.result == 'success' && needs.bump-version.outputs.release_type != false }}
     uses: ./.github/workflows/create-release.yml
     with:
       new_tag: ${{ needs.bump-version.outputs.new_tag }}
@@ -70,11 +68,11 @@ jobs:
   pages-deploy:
     name: Doxygen Deploy Action  # github.ioにデプロイ
     needs: [unit-test, bump-version, devcontainers-ci]
-    # mainブランチのみ bump-version成功時のみ (unit-testの成否によらずデプロイする)
-    if: ${{ (github.ref_name == 'main' || github.ref_name == 'ci') && needs.bump-version.result == 'success' }}
+    # unit-testの成否によらずデプロイする
+    if: ${{ needs.unit-test.result != 'canceled' && needs.bump-version.result == 'success' && needs.devcontainers-ci.result == 'success' }}
     uses: ./.github/workflows/doxygen-gh-pages.yml
     with:
-      # unit-test成功かつneeds.unit-test.outputs.release_type != false のとき new_tag
-      # unit-test失敗 Bumpなしのとき previous_tag
+      # unit-test成功 && バージョンがあがるとき new_tag
+      # unit-test失敗 || Bumpなしのとき previous_tag
       project_version: ${{ (needs.unit-test.result == 'success' && needs.bump-version.outputs.release_type != false &&
                             needs.bump-version.outputs.new_tag) || needs.bump-version.outputs.previous_tag }}

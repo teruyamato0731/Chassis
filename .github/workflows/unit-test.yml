@@ -1,10 +1,14 @@
 name: Unit Test
 on:
-  # mainから呼び出す
+  # pushed-main から呼び出す
   workflow_call:
     secrets:
       CODECOV_TOKEN:
         required: true
+  # main 以外に push されたとき
+  push:
+    branches-ignore:
+      - main
   # 手動実行を許可する
   workflow_dispatch:
 
