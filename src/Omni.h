@@ -6,6 +6,7 @@
 /// @license This project is released under the MIT License, see [LICENSE](https://github.com/teruyamato0731/Chassis/blob/main/LICENSE).
 #include <CoordinateUnit.h>
 
+#include <array>
 #include <cmath>
 #include <functional>
 #include <utility>
@@ -42,17 +43,17 @@ struct Omni {
   void move(const Velocity& vel, const float offset_rad = 0.0) {
     const float theta_rad = std::atan2(vel.y_milli, vel.x_milli);
     const float run_power = std::hypot(vel.x_milli, vel.y_milli);
-    float pwms[N];
+    std::array<float, N> pwms;
     for(int i = 0; i < N; ++i) {
       constexpr auto k = 2 * M_PI / N;
       const auto pwm = run_power * std::cos(i * k + theta_rad + offset_rad) + vel.ang_rad;
       pwms[i] = pwm;
     }
-    f_(pwms);
+    f_(std::move(pwms));
   }
 
  private:
-  std::function<void(const float (&)[N])> f_;
+  std::function<void(std::array<float, N>)> f_;
 };
 
 /// @}

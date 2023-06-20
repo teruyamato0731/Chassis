@@ -6,6 +6,7 @@
 /// @license This project is released under the MIT License, see [LICENSE](https://github.com/teruyamato0731/Chassis/blob/main/LICENSE).
 #include <CoordinateUnit.h>
 
+#include <array>
 #include <cmath>
 #include <complex>
 #include <functional>
@@ -38,17 +39,17 @@ struct SteerDrive {
   /// @param vel 移動速度
   /// @param offset_rad 姿勢角
   void move(const Velocity& vel, float offset_rad = 0.0) {
-    std::complex<float> vels[N];
+    std::array<std::complex<float>, N> vels;
     const std::complex<float> ang = std::polar<float>(vel.ang_rad, 0);
     for(int i = 0; i < N; ++i) {
       const std::complex<float> vel_fix =
           std::polar<float>(std::hypot(vel.x_milli, vel.y_milli), -offset_rad - 2 * M_PI / N * i);
       vels[i] = vel_fix - ang;
     }
-    f_(vels);
+    f_(std::move(vels));
   }
  private:
-  std::function<void(const std::complex<float> (&)[N])> f_;
+  std::function<void(std::array<std::complex<float>, N>)> f_;
 };
 
 /// @}

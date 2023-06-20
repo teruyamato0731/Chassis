@@ -7,6 +7,7 @@
 #include <CoordinateUnit.h>
 
 #include <cmath>
+#include <array>
 #include <functional>
 #include <utility>
 
@@ -41,7 +42,7 @@ struct Mecanum {
   }
 
  private:
-  std::function<void(const float (&)[4])> f_;
+  std::function<void(std::array<float, 4>)> f_;
 };
 
 /// @}
