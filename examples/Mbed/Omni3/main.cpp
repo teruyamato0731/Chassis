@@ -10,7 +10,7 @@ using namespace rct;
 
 Motor motors[3] = {{D10, D11}, {D12, D13}, {D12, D13}};
 /// [construct]
-Omni<3> omni{[](const float (&pwm)[3]) {
+Omni<3> omni{[](std::array<float, 3> pwm) {
   for(int i = 0; i < 3; ++i) {
     motors[i] = pwm[i];
   }
