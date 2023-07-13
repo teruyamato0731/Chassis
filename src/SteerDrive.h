@@ -40,11 +40,11 @@ struct SteerDrive {
   /// @param offset_rad 姿勢角
   void move(const Velocity& vel, float offset_rad = 0.0) {
     std::array<std::complex<float>, N> vels;
-    const std::complex<float> ang = std::polar<float>(vel.ang_rad, 0);
+    const std::complex<float> rotate = std::polar<float>(vel.ang_rad, 0);
     for(int i = 0; i < N; ++i) {
-      const std::complex<float> vel_fix =
-          std::polar<float>(std::hypot(vel.x_milli, vel.y_milli), -offset_rad - 2 * M_PI / N * i);
-      vels[i] = vel_fix - ang;
+      float ang = -offset_rad - M_PI / N * (2 * i + 1) + std::atan2(vel.y_milli, vel.x_milli);
+      const std::complex<float> vel_fix = std::polar<float>(std::hypot(vel.x_milli, vel.y_milli), ang);
+      vels[i] = vel_fix + rotate;
     }
     f_(std::move(vels));
   }
