@@ -24,10 +24,10 @@ TEST(STEER_DRIVE, MOVE_WITH_VEL) {
     EXPECT_FLOAT_EQ(1.0, abs(pow[1]));
     EXPECT_FLOAT_EQ(1.0, abs(pow[2]));
     EXPECT_FLOAT_EQ(1.0, abs(pow[3]));
-    EXPECT_FLOAT_EQ(0.0, arg(pow[0]));
-    EXPECT_FLOAT_EQ(-1.5707964, arg(pow[1]));
-    EXPECT_FLOAT_EQ(3.1415925, arg(pow[2]));
-    EXPECT_FLOAT_EQ(1.5707964, arg(pow[3]));
+    EXPECT_FLOAT_EQ(-0.78539819, arg(pow[0]));
+    EXPECT_FLOAT_EQ(-2.3561945, arg(pow[1]));
+    EXPECT_FLOAT_EQ(2.3561945, arg(pow[2]));
+    EXPECT_FLOAT_EQ(0.78539836, arg(pow[3]));
   }};
   steer.move(Velocity{1.0});
 }
@@ -38,10 +38,10 @@ TEST(STEER_DRIVE, MOVE_WITH_ANG) {
     EXPECT_FLOAT_EQ(1.0, abs(pow[1]));
     EXPECT_FLOAT_EQ(1.0, abs(pow[2]));
     EXPECT_FLOAT_EQ(1.0, abs(pow[3]));
-    EXPECT_FLOAT_EQ(-3.1415927, arg(pow[0]));
-    EXPECT_FLOAT_EQ(-3.1415927, arg(pow[1]));
-    EXPECT_FLOAT_EQ(3.1415927, arg(pow[2]));
-    EXPECT_FLOAT_EQ(3.1415927, arg(pow[3]));
+    EXPECT_FLOAT_EQ(0, arg(pow[0]));
+    EXPECT_FLOAT_EQ(0, arg(pow[1]));
+    EXPECT_FLOAT_EQ(0, arg(pow[2]));
+    EXPECT_FLOAT_EQ(0, arg(pow[3]));
   }};
   steer.move(Velocity{0.0, 0.0, 1.0});
 }
