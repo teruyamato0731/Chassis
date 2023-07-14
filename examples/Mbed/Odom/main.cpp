@@ -32,7 +32,7 @@ int main() {
     Velocity vel = (pos - pre_pos) / delta;
     pre_pos = pos;
 
-    printf("pos{x:%d,y:%d:,ang:%d}", pos.x_milli, pos.y_milli, pos.ang_rad * 180 / M_PI);
-    printf("vel{x:%d,y:%d:,ang:%d}", vel.x_milli, vel.y_milli, vel.ang_rad * 180 / M_PI);
+    printf("pos{x:%d,y:%d:,ang:%d}", (int)pos.x_milli, (int)pos.y_milli, (int)(pos.ang_rad * 180 / M_PI));
+    printf("vel{x:%d,y:%d:,ang:%d}", (int)vel.x_milli, (int)vel.y_milli, (int)(vel.ang_rad * 180 / M_PI));
   }
 }

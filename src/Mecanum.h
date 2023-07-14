@@ -6,6 +6,7 @@
 /// @license This project is released under the MIT License, see [LICENSE](https://github.com/teruyamato0731/Chassis/blob/main/LICENSE).
 #include <CoordinateUnit.h>
 
+#include <array>
 #include <cmath>
 #include <functional>
 #include <utility>
@@ -18,7 +19,7 @@ namespace rct {
 /// @brief メカナムの制御を行うクラス。
 struct Mecanum {
   /// @brief コンストラクタ。callback関数をセットする。
-  /// @tparam F 関数型。引数に const float (&)[N] を受け取り、返り値が void であること。
+  /// @tparam F 関数型。引数に std::array<float, 4> を受け取り、返り値が void であること。
   /// @param f callback関数
   template<class F>
   Mecanum(F&& f) : f_{std::forward<F>(f)} {}
@@ -41,7 +42,7 @@ struct Mecanum {
   }
 
  private:
-  std::function<void(const float (&)[4])> f_;
+  std::function<void(std::array<float, 4>)> f_;
 };
 
 /// @}

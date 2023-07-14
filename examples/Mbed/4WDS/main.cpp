@@ -11,7 +11,7 @@ using namespace rct;
 Motor motors[4] = {{D8, D9}, {D10, D11}, {D12, D13}, {D14, D15}};
 PwmOut servo[4] = {D4, D5, D6, D7};
 /// [construct]
-SteerDrive<4> steer{[](const std::complex<float> (&cmp)[4]) {
+SteerDrive<4> steer{[](std::array<std::complex<float>, 4> cmp) {
   for(int i = 0; i < 4; ++i) {
     motors[i] = abs(cmp[i]);
     servo[i] = arg(cmp[i]);

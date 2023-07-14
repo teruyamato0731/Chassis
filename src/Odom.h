@@ -33,11 +33,11 @@ struct Odom {
   /// @brief エンコーダの変位の変化量を積分し、自己位置を計算する。
   /// @param dif_val 変位の変化量
   void integrate(const int (&dif_val)[N]) {
-    constexpr float k = 2 * M_PI / N;
+    constexpr float pi_N = M_PI / N;
     const float tmp_rad = pos_.ang_rad;
     for(int i = 0; i < N; ++i) {
-      pos_.x_milli += dif_val[i] * cos(i * k + tmp_rad);
-      pos_.y_milli += dif_val[i] * sin(i * k + tmp_rad);
+      pos_.x_milli += dif_val[i] * cos((2 * i + 1) * pi_N + tmp_rad);
+      pos_.y_milli += dif_val[i] * sin((2 * i + 1) * pi_N + tmp_rad);
       pos_.ang_rad += dif_val[i];
     }
   }

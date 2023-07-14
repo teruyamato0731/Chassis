@@ -15,7 +15,7 @@ using namespace rct;
 Timer timer;
 Odom<3> odom{};
 Motor motors[3] = {{D10, D11}, {D12, D13}, {D12, D13}};
-ChassisAuto<Omni<3>> chassis{[](const float (&pwm)[3]) {
+ChassisAuto<Omni<3>> chassis{[](std::array<float,3> pwm) {
                                for(int i = 0; i < 3; ++i) {
                                  motors[i] = pwm[i];
                                }
@@ -41,7 +41,6 @@ int main() {
     pre = now;
   }
 }
-
 
 /// @brief hoge
 /// @param dst hoge
