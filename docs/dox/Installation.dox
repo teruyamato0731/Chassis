@@ -5,7 +5,7 @@ PIOライブラリマネージャーより[インストール](https://registry.
 platformio.iniに[下記のように](\ref snippets/platformio.ini) `lib_deps` を追記すればよい。
 
 ```
-lib_deps = teruyamato0731/Chassis
+lib_deps = teruyamato0731/Chassis @ $projectnumber
 ```
 
 ## Arduino IDE

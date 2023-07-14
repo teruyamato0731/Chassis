@@ -20,7 +20,7 @@ jobs:
     timeout-minutes: 5
     outputs:
       release_type: ${{ steps.tag-version.outputs.release_type }}
-      previous_tag: ${{ steps.tag-version.outputs.previous_tag }}
+      previous_version: ${{ steps.tag-version.outputs.previous_version }}
       new_tag: ${{ steps.tag-version.outputs.new_tag }}
       new_version: ${{ steps.tag-version.outputs.new_version }}
       changelog: ${{ steps.tag-version.outputs.changelog }}
@@ -33,8 +33,8 @@ jobs:
           default_bump: false
           dry_run: true  # tagはRelease作成時つける
 
-  devcontainers-ci:
-    name: build devcontainer
+  build-devcontainer:
+    name: Build devcontainer
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
@@ -49,12 +49,11 @@ jobs:
         with:
           imageName: ghcr.io/teruyamato0731/chassis-devcontainer
           cacheFrom: ghcr.io/teruyamato0731/chassis-devcontainer
-          refFilterForPush: 'refs/heads/main'
           skipContainerUserIdUpdate: true
 
   create-release:
     name: Create Release  # Releaseを作成
-    needs: [unit-test, bump-version, devcontainers-ci]
+    needs: [unit-test, bump-version, build-devcontainer]
     # unit-test成功時のみ バージョンがあがるときのみ
     if: ${{ needs.unit-test.result == 'success' && needs.bump-version.outputs.release_type != false }}
     uses: ./.github/workflows/create-release.yml
@@ -67,12 +66,12 @@ jobs:
 
   pages-deploy:
     name: Doxygen Deploy Action  # github.ioにデプロイ
-    needs: [unit-test, bump-version, devcontainers-ci]
+    needs: [unit-test, bump-version, build-devcontainer]
     # unit-testの成否によらずデプロイする
-    if: ${{ needs.unit-test.result != 'canceled' && needs.bump-version.result == 'success' && needs.devcontainers-ci.result == 'success' }}
+    if: ${{ needs.unit-test.result != 'canceled' && needs.bump-version.result == 'success' && needs.build-devcontainer.result == 'success' }}
     uses: ./.github/workflows/doxygen-gh-pages.yml
     with:
-      # unit-test成功 && バージョンがあがるとき new_tag
-      # unit-test失敗 || Bumpなしのとき previous_tag
+      # unit-test成功 && バージョンがあがるとき new_version
+      # unit-test失敗 || Bumpなしのとき previous_version
       project_version: ${{ (needs.unit-test.result == 'success' && needs.bump-version.outputs.release_type != false &&
-                            needs.bump-version.outputs.new_tag) || needs.bump-version.outputs.previous_tag }}
+                            needs.bump-version.outputs.new_version) || needs.bump-version.outputs.previous_version }}
