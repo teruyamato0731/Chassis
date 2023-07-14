@@ -1,4 +1,4 @@
-name: Doxygen Deploy Action
+name: Doxygen Deploy
 on:
   # mainから呼び出す
   workflow_call:
@@ -8,7 +8,8 @@ on:
         type: string
 
 jobs:
-  deploy:
+  doxygen-deploy:
+    name: Doxygen Deploy
     runs-on: ubuntu-22.04
     # 二重実行を防ぐ
     concurrency:
