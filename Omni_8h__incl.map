@@ -1,9 +1,10 @@
 <map id="src/Omni.h" name="src/Omni.h">
-<area shape="rect" id="node1" title="オムニの制御を行う Omni クラスを提供する。" alt="" coords="269,5,361,31"/>
+<area shape="rect" id="node1" title="オムニの制御を行う Omni クラスを提供する。" alt="" coords="294,5,386,31"/>
 <area shape="rect" id="node2" href="$CoordinateUnit_8h.html" title="座標、速度を表す構造体 CoordinateUnit を提供する。" alt="" coords="101,79,233,104"/>
 <area shape="rect" id="node4" title=" " alt="" coords="247,152,310,177"/>
-<area shape="rect" id="node6" title=" " alt="" coords="313,79,399,104"/>
-<area shape="rect" id="node7" title=" " alt="" coords="423,79,483,104"/>
+<area shape="rect" id="node6" title=" " alt="" coords="312,79,368,104"/>
+<area shape="rect" id="node7" title=" " alt="" coords="393,79,479,104"/>
+<area shape="rect" id="node8" title=" " alt="" coords="503,79,563,104"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,152,72,177"/>
 <area shape="rect" id="node5" title=" " alt="" coords="97,152,223,177"/>
 </map>

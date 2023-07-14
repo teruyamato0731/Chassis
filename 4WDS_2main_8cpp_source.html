@@ -119,7 +119,7 @@ $(document).ready(function(){initNavTree('4WDS_2main_8cpp_source.html',''); init
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>Motor motors[4] = {{D8, D9}, {D10, D11}, {D12, D13}, {D14, D15}};</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>PwmOut servo[4] = {D4, D5, D6, D7};</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="4WDS_2main_8cpp.html#a53a6e8623301df28553072cec0ba584c">   14</a></span><a class="code hl_struct" href="structrct_1_1SteerDrive.html">SteerDrive&lt;4&gt;</a> <a class="code hl_variable" href="4WDS_2main_8cpp.html#a53a6e8623301df28553072cec0ba584c">steer</a>{[](<span class="keyword">const</span> std::complex&lt;float&gt; (&amp;cmp)[4]) {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="4WDS_2main_8cpp.html#a53a6e8623301df28553072cec0ba584c">   14</a></span><a class="code hl_struct" href="structrct_1_1SteerDrive.html">SteerDrive&lt;4&gt;</a> <a class="code hl_variable" href="4WDS_2main_8cpp.html#a53a6e8623301df28553072cec0ba584c">steer</a>{[](std::array&lt;std::complex&lt;float&gt;, 4&gt; cmp) {</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 4; ++i) {</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    motors[i] = abs(cmp[i]);</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    servo[i] = arg(cmp[i]);</div>
@@ -139,7 +139,7 @@ $(document).ready(function(){initNavTree('4WDS_2main_8cpp_source.html',''); init
 <div class="ttc" id="aSteerDrive_8h_html"><div class="ttname"><a href="SteerDrive_8h.html">SteerDrive.h</a></div><div class="ttdoc">N輪独立ステアリングの制御を行う SteerDrive クラスを提供する。</div></div>
 <div class="ttc" id="anamespacerct_html"><div class="ttname"><a href="namespacerct.html">rct</a></div><div class="ttdoc">robot control library</div><div class="ttdef"><b>Definition:</b> <a href="Chassis_8h_source.html#l00016">Chassis.h:16</a></div></div>
 <div class="ttc" id="astructrct_1_1CoordinateUnit_html"><div class="ttname"><a href="structrct_1_1CoordinateUnit.html">rct::CoordinateUnit</a></div><div class="ttdoc">座標、速度を示す構造体。 rct::Coordinate, rct::Velocity</div><div class="ttdef"><b>Definition:</b> <a href="CoordinateUnit_8h_source.html#l00028">CoordinateUnit.h:28</a></div></div>
-<div class="ttc" id="astructrct_1_1SteerDrive_html"><div class="ttname"><a href="structrct_1_1SteerDrive.html">rct::SteerDrive</a></div><div class="ttdoc">N輪独立ステアリング駆動機</div><div class="ttdef"><b>Definition:</b> <a href="SteerDrive_8h_source.html#l00022">SteerDrive.h:22</a></div></div>
+<div class="ttc" id="astructrct_1_1SteerDrive_html"><div class="ttname"><a href="structrct_1_1SteerDrive.html">rct::SteerDrive</a></div><div class="ttdoc">N輪独立ステアリング駆動機</div><div class="ttdef"><b>Definition:</b> <a href="SteerDrive_8h_source.html#l00023">SteerDrive.h:23</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

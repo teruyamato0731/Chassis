@@ -123,18 +123,18 @@ Include dependency graph for main.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="4WDS_2main_8cpp__incl.png" border="0" usemap="#aexamples_2Mbed_24WDS_2main_8cpp" alt=""/></div>
 <map name="aexamples_2Mbed_24WDS_2main_8cpp" id="aexamples_2Mbed_24WDS_2main_8cpp">
-<area shape="rect" title="4輪独立ステアリングの制御例" alt="" coords="322,5,491,45"/>
-<area shape="rect" title=" " alt="" coords="134,93,277,119"/>
-<area shape="rect" href="SteerDrive_8h.html" title="N輪独立ステアリングの制御を行う SteerDrive クラスを提供する。" alt="" coords="301,93,403,119"/>
-<area shape="rect" title=" " alt="" coords="427,93,498,119"/>
-<area shape="rect" title=" " alt="" coords="523,93,579,119"/>
-<area shape="rect" href="CoordinateUnit_8h.html" title="座標、速度を表す構造体 CoordinateUnit を提供する。" alt="" coords="101,167,233,192"/>
-<area shape="rect" title=" " alt="" coords="247,240,310,265"/>
-<area shape="rect" title=" " alt="" coords="313,167,391,192"/>
-<area shape="rect" title=" " alt="" coords="415,167,502,192"/>
-<area shape="rect" title=" " alt="" coords="526,167,586,192"/>
-<area shape="rect" title=" " alt="" coords="5,240,72,265"/>
-<area shape="rect" title=" " alt="" coords="97,240,223,265"/>
+<area shape="rect" title="4輪独立ステアリングの制御例" alt="" coords="145,5,315,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,148,119"/>
+<area shape="rect" href="SteerDrive_8h.html" title="N輪独立ステアリングの制御を行う SteerDrive クラスを提供する。" alt="" coords="224,93,327,119"/>
+<area shape="rect" title=" " alt="" coords="25,167,81,192"/>
+<area shape="rect" title=" " alt="" coords="351,93,421,119"/>
+<area shape="rect" href="CoordinateUnit_8h.html" title="座標、速度を表す構造体 CoordinateUnit を提供する。" alt="" coords="105,167,237,192"/>
+<area shape="rect" title=" " alt="" coords="252,240,315,265"/>
+<area shape="rect" title=" " alt="" coords="313,167,392,192"/>
+<area shape="rect" title=" " alt="" coords="416,167,503,192"/>
+<area shape="rect" title=" " alt="" coords="527,167,587,192"/>
+<area shape="rect" title=" " alt="" coords="10,240,77,265"/>
+<area shape="rect" title=" " alt="" coords="101,240,228,265"/>
 </map>
 </div>
 </div>
@@ -228,7 +228,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">{[](<span class="keyword">const</span> std::complex&lt;float&gt; (&amp;cmp)[4]) {</div>
+<b>Initial value:</b><div class="fragment"><div class="line">{[](std::array&lt;std::complex&lt;float&gt;, 4&gt; cmp) {</div>
 <div class="line">  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 4; ++i) {</div>
 <div class="line">    motors[i] = abs(cmp[i]);</div>
 <div class="line">    servo[i] = arg(cmp[i]);</div>

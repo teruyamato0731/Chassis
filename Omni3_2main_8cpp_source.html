@@ -118,7 +118,7 @@ $(document).ready(function(){initNavTree('Omni3_2main_8cpp_source.html',''); ini
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacerct.html">rct</a>;</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>Motor motors[3] = {{D10, D11}, {D12, D13}, {D12, D13}};</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="Omni3_2main_8cpp.html#a349d7f8ff34809c52535ab7bd591e5fa">   13</a></span><a class="code hl_struct" href="structrct_1_1Omni.html">Omni&lt;3&gt;</a> <a class="code hl_variable" href="Omni3_2main_8cpp.html#a349d7f8ff34809c52535ab7bd591e5fa">omni</a>{[](<span class="keyword">const</span> float (&amp;pwm)[3]) {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="Omni3_2main_8cpp.html#a349d7f8ff34809c52535ab7bd591e5fa">   13</a></span><a class="code hl_struct" href="structrct_1_1Omni.html">Omni&lt;3&gt;</a> <a class="code hl_variable" href="Omni3_2main_8cpp.html#a349d7f8ff34809c52535ab7bd591e5fa">omni</a>{[](std::array&lt;float, 3&gt; pwm) {</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 3; ++i) {</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    motors[i] = pwm[i];</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  }</div>
@@ -137,7 +137,7 @@ $(document).ready(function(){initNavTree('Omni3_2main_8cpp_source.html',''); ini
 <div class="ttc" id="aOmni_8h_html"><div class="ttname"><a href="Omni_8h.html">Omni.h</a></div><div class="ttdoc">オムニの制御を行う Omni クラスを提供する。</div></div>
 <div class="ttc" id="anamespacerct_html"><div class="ttname"><a href="namespacerct.html">rct</a></div><div class="ttdoc">robot control library</div><div class="ttdef"><b>Definition:</b> <a href="Chassis_8h_source.html#l00016">Chassis.h:16</a></div></div>
 <div class="ttc" id="astructrct_1_1CoordinateUnit_html"><div class="ttname"><a href="structrct_1_1CoordinateUnit.html">rct::CoordinateUnit</a></div><div class="ttdoc">座標、速度を示す構造体。 rct::Coordinate, rct::Velocity</div><div class="ttdef"><b>Definition:</b> <a href="CoordinateUnit_8h_source.html#l00028">CoordinateUnit.h:28</a></div></div>
-<div class="ttc" id="astructrct_1_1Omni_html"><div class="ttname"><a href="structrct_1_1Omni.html">rct::Omni</a></div><div class="ttdoc">N輪オムニの制御を行うクラス。</div><div class="ttdef"><b>Definition:</b> <a href="Omni_8h_source.html#l00024">Omni.h:24</a></div></div>
+<div class="ttc" id="astructrct_1_1Omni_html"><div class="ttname"><a href="structrct_1_1Omni.html">rct::Omni</a></div><div class="ttdoc">N輪オムニの制御を行うクラス。</div><div class="ttdef"><b>Definition:</b> <a href="Omni_8h_source.html#l00025">Omni.h:25</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
