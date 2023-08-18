@@ -29,9 +29,18 @@ struct ChassisPid {
   ChassisPid(F&& f, const PidGain& vel_gain) : t_{std::forward<F>(f)}, vel_pid_{vel_gain} {}
 
   /// @copydoc Chassis::pid_move
-  void pid_move(const Velocity& tag_vel, const Velocity& now_vel, const std::chrono::microseconds& delta_time) {
+  void pid_move(const Velocity& tag_vel, const Velocity& now_vel, const std::chrono::microseconds& delta_time,
+                const float offset_rad = {}) {
     const auto out_vel = vel_pid_.calc(tag_vel, now_vel, delta_time);
-    t_.move(out_vel);
+    t_.move(out_vel, offset_rad);
+  }
+
+  auto move(const Velocity& vel, const float offset_rad = {}) {
+    t_.move(vel, offset_rad);
+  }
+
+  auto refresh() {
+    return vel_pid_.refresh();
   }
 
  private:
