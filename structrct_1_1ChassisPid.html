@@ -40,7 +40,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Chassis<span id="projectnumber">&#160;v2.0.0</span>
+   <div id="projectname">Chassis<span id="projectnumber">&#160;v2.1.0</span>
    </div>
    <div id="projectbrief">Chassisはロボコンでの足回り制御を行うためのC++ライブラリである。</div>
   </td>
@@ -122,9 +122,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a925ae1f72e9eec9f7f4b73f3b40db251"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structrct_1_1ChassisPid.html#a925ae1f72e9eec9f7f4b73f3b40db251">ChassisPid</a> (F &amp;&amp;f, const <a class="el" href="structrct_1_1PidGain.html">PidGain</a> &amp;vel_gain)</td></tr>
 <tr class="memdesc:a925ae1f72e9eec9f7f4b73f3b40db251"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ。T型をfで初期化し、変位と速度のPIDゲインをセットする。  <br /></td></tr>
 <tr class="separator:a925ae1f72e9eec9f7f4b73f3b40db251"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7be13ec288b7106e0a714e015414884"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrct_1_1ChassisPid.html#ad7be13ec288b7106e0a714e015414884">pid_move</a> (const <a class="el" href="group__unit.html#gaabe37c4ee5b7ecf0e9fe3ec1a3ff6594">Velocity</a> &amp;tag_vel, const <a class="el" href="group__unit.html#gaabe37c4ee5b7ecf0e9fe3ec1a3ff6594">Velocity</a> &amp;now_vel, const std::chrono::microseconds &amp;delta_time)</td></tr>
-<tr class="memdesc:ad7be13ec288b7106e0a714e015414884"><td class="mdescLeft">&#160;</td><td class="mdescRight">手動操縦用。速度のPID制御を行い、出力をT型のcalcに渡す    <br /></td></tr>
-<tr class="separator:ad7be13ec288b7106e0a714e015414884"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f675588c673413ca0909895a0c41859"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrct_1_1ChassisPid.html#a7f675588c673413ca0909895a0c41859">pid_move</a> (const <a class="el" href="group__unit.html#gaabe37c4ee5b7ecf0e9fe3ec1a3ff6594">Velocity</a> &amp;tag_vel, const <a class="el" href="group__unit.html#gaabe37c4ee5b7ecf0e9fe3ec1a3ff6594">Velocity</a> &amp;now_vel, const std::chrono::microseconds &amp;delta_time, const float offset_rad={})</td></tr>
+<tr class="memdesc:a7f675588c673413ca0909895a0c41859"><td class="mdescLeft">&#160;</td><td class="mdescRight">手動操縦用。速度のPID制御を行い、出力をT型のcalcに渡す    <br /></td></tr>
+<tr class="separator:a7f675588c673413ca0909895a0c41859"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad25f8251f4b9d069a8b638f1d316c29f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrct_1_1ChassisPid.html#ad25f8251f4b9d069a8b638f1d316c29f">move</a> (const <a class="el" href="group__unit.html#gaabe37c4ee5b7ecf0e9fe3ec1a3ff6594">Velocity</a> &amp;vel, const float offset_rad={})</td></tr>
+<tr class="separator:ad25f8251f4b9d069a8b638f1d316c29f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc8cdd3d4e0cfdcf558cd08b179f46e3"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrct_1_1ChassisPid.html#acc8cdd3d4e0cfdcf558cd08b179f46e3">refresh</a> ()</td></tr>
+<tr class="separator:acc8cdd3d4e0cfdcf558cd08b179f46e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class T&gt;<br />
@@ -188,8 +192,40 @@ template&lt;class F &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad7be13ec288b7106e0a714e015414884" name="ad7be13ec288b7106e0a714e015414884"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7be13ec288b7106e0a714e015414884">&#9670;&#160;</a></span>pid_move()</h2>
+<a id="ad25f8251f4b9d069a8b638f1d316c29f" name="ad25f8251f4b9d069a8b638f1d316c29f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad25f8251f4b9d069a8b638f1d316c29f">&#9670;&#160;</a></span>move()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="structrct_1_1ChassisPid.html">rct::ChassisPid</a>&lt; T &gt;::move </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__unit.html#gaabe37c4ee5b7ecf0e9fe3ec1a3ff6594">Velocity</a> &amp;&#160;</td>
+          <td class="paramname"><em>vel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>offset_rad</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ChassisPid_8h_source.html#l00038">38</a> of file <a class="el" href="ChassisPid_8h_source.html">ChassisPid.h</a>.</p>
+
+</div>
+</div>
+<a id="a7f675588c673413ca0909895a0c41859" name="a7f675588c673413ca0909895a0c41859"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f675588c673413ca0909895a0c41859">&#9670;&#160;</a></span>pid_move()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -212,7 +248,13 @@ template&lt;class T &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::chrono::microseconds &amp;&#160;</td>
-          <td class="paramname"><em>delta_time</em>&#160;</td>
+          <td class="paramname"><em>delta_time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>offset_rad</em> = <code>{}</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -234,6 +276,27 @@ template&lt;class T &gt; </div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="ChassisPid_8h_source.html#l00032">32</a> of file <a class="el" href="ChassisPid_8h_source.html">ChassisPid.h</a>.</p>
+
+</div>
+</div>
+<a id="acc8cdd3d4e0cfdcf558cd08b179f46e3" name="acc8cdd3d4e0cfdcf558cd08b179f46e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc8cdd3d4e0cfdcf558cd08b179f46e3">&#9670;&#160;</a></span>refresh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="structrct_1_1ChassisPid.html">rct::ChassisPid</a>&lt; T &gt;::refresh </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ChassisPid_8h_source.html#l00042">42</a> of file <a class="el" href="ChassisPid_8h_source.html">ChassisPid.h</a>.</p>
 
 </div>
 </div>
