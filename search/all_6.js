@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['kd_0',['kd',['../structrct_1_1PidGain.html#ae1be5f7e2dbdd00d571d5ed851b51eb0',1,'rct::PidGain']]],
-  ['ki_1',['ki',['../structrct_1_1PidGain.html#adfc47a0273907847247ff4ef0f70de66',1,'rct::PidGain']]],
-  ['kp_2',['kp',['../structrct_1_1PidGain.html#ac53b9ca87cdb6ecebdec24101b8861fb',1,'rct::PidGain']]]
+  ['get_0',['get',['../structrct_1_1Odom.html#adcace02ffd382f5080ccd903386a843b',1,'rct::Odom::get() const &amp;noexcept'],['../structrct_1_1Odom.html#a325e6f44474ff984e1e62474d9fe5e82',1,'rct::Odom::get() &amp;&amp;noexcept']]]
 ];

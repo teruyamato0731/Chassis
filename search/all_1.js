@@ -1,19 +1,6 @@
 var searchData=
 [
-  ['calc_0',['calc',['../structrct_1_1Pid.html#a9ed66bff08d476a3b55875d1591377d2',1,'rct::Pid']]],
-  ['chassisの使用方法_1',['Chassisの使用方法',['../Usage.html',1,'']]],
-  ['chassisの導入方法_2',['Chassisの導入方法',['../Installation.html',1,'']]],
-  ['chassis_3',['Chassis',['../structrct_1_1Chassis.html#aad9074e0628e691d887031af8f36b266',1,'rct::Chassis']]],
-  ['chassis_4',['chassis',['../group__chassis.html',1,'']]],
-  ['chassis_5',['Chassis',['../structrct_1_1Chassis.html',1,'rct']]],
-  ['chassis_2eh_6',['Chassis.h',['../Chassis_8h.html',1,'']]],
-  ['chassisauto_7',['ChassisAuto',['../structrct_1_1ChassisAuto.html#afe3cb230a4253c57ecf97c5a5bd270e3',1,'rct::ChassisAuto::ChassisAuto()'],['../structrct_1_1ChassisAuto.html',1,'rct::ChassisAuto&lt; T &gt;']]],
-  ['chassisauto_2eh_8',['ChassisAuto.h',['../ChassisAuto_8h.html',1,'']]],
-  ['chassispid_9',['ChassisPid',['../structrct_1_1ChassisPid.html#a925ae1f72e9eec9f7f4b73f3b40db251',1,'rct::ChassisPid::ChassisPid()'],['../structrct_1_1ChassisPid.html',1,'rct::ChassisPid&lt; T &gt;']]],
-  ['chassispid_2eh_10',['ChassisPid.h',['../ChassisPid_8h.html',1,'']]],
-  ['check_5freached_11',['check_reached',['../ChassisAuto_2main_8cpp.html#a889c52280c86b07e682cbc944dd20e76',1,'main.cpp']]],
-  ['coordinate_12',['Coordinate',['../group__unit.html#ga40d53736f06c8fe2c11b388d683a1d5d',1,'rct']]],
-  ['coordinateunit_13',['CoordinateUnit',['../structrct_1_1CoordinateUnit.html',1,'rct']]],
-  ['coordinateunit_2eh_14',['CoordinateUnit.h',['../CoordinateUnit_8h.html',1,'']]],
-  ['coordinateunit_3c_200_20_3e_15',['CoordinateUnit&lt; 0 &gt;',['../structrct_1_1CoordinateUnit.html',1,'rct']]]
+  ['ang_5frad_0',['ang_rad',['../structrct_1_1CoordinateUnit.html#a95cf5041b22d701ae7f29c742d99a7df',1,'rct::CoordinateUnit']]],
+  ['arduino_20ide_1',['Arduino IDE',['../Installation.html#autotoc_md1',1,'']]],
+  ['auto_5fmove_2',['auto_move',['../structrct_1_1Chassis.html#a15ea7b6b49f84891ca658a5b78851d02',1,'rct::Chassis::auto_move()'],['../structrct_1_1ChassisAuto.html#ac67ea76b5ae9155287d7126a90d2c036',1,'rct::ChassisAuto::auto_move()']]]
 ];

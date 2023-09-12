@@ -1,9 +1,11 @@
 var searchData=
 [
-  ['set_0',['set',['../structrct_1_1Odom.html#a8a47ba56784eb195b34508df914dbdc4',1,'rct::Odom::set()'],['../structrct_1_1Pwm.html#a8c7c6645dac8c0f1f40925fb409c7734',1,'rct::Pwm::set()']]],
-  ['set_5fpid_5fgain_1',['set_pid_gain',['../structrct_1_1Pid.html#a059a7d9693c998e090a37925554ad892',1,'rct::Pid']]],
-  ['size_2',['size',['../structrct_1_1Mecanum.html#a928b1ff7e935f4d53d2d80dca20a385d',1,'rct::Mecanum::size()'],['../structrct_1_1Odom.html#aaa38d49784ca19a3bae15b9da6f86256',1,'rct::Odom::size()'],['../structrct_1_1Omni.html#ae3534390dde84217e1f0cd7a001db0d1',1,'rct::Omni::size()'],['../structrct_1_1SteerDrive.html#aca889b54a7053cd281aa8e8ecd201311',1,'rct::SteerDrive::size()']]],
-  ['steer_3',['steer',['../4WDS_2main_8cpp.html#a53a6e8623301df28553072cec0ba584c',1,'main.cpp']]],
-  ['steerdrive_4',['SteerDrive',['../structrct_1_1SteerDrive.html',1,'rct::SteerDrive&lt; N &gt;'],['../structrct_1_1SteerDrive.html#a6e0d0e67f95f8262c1528025d5106714',1,'rct::SteerDrive::SteerDrive()']]],
-  ['steerdrive_2eh_5',['SteerDrive.h',['../SteerDrive_8h.html',1,'']]]
+  ['pid_0',['pid',['../structrct_1_1Pid.html',1,'rct::Pid&lt; T &gt;'],['../structrct_1_1Pid.html#aa9067283ace5f3b02b44282d77af922c',1,'rct::Pid::Pid()'],['../group__pid.html',1,'pid']]],
+  ['pid_2eh_1',['Pid.h',['../Pid_8h.html',1,'']]],
+  ['pid_3c_20rct_3a_3acoordinateunit_20_3e_2',['Pid&lt; rct::CoordinateUnit &gt;',['../structrct_1_1Pid.html',1,'rct']]],
+  ['pid_5fmove_3',['pid_move',['../structrct_1_1Chassis.html#a92534b814f457f51c6884b1d0c4f1984',1,'rct::Chassis::pid_move()'],['../structrct_1_1ChassisPid.html#a7f675588c673413ca0909895a0c41859',1,'rct::ChassisPid::pid_move()']]],
+  ['pidgain_4',['PidGain',['../structrct_1_1PidGain.html',1,'rct']]],
+  ['platform_20io_5',['Platform IO',['../Installation.html#autotoc_md0',1,'']]],
+  ['pwm_6',['pwm',['../structrct_1_1Pwm.html',1,'rct::Pwm'],['../structrct_1_1Pwm.html#a11cd99075f7db7e822e0b6a783cf1215',1,'rct::Pwm::Pwm()']]],
+  ['pwm_2eh_7',['Pwm.h',['../Pwm_8h.html',1,'']]]
 ];

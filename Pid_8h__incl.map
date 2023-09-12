@@ -1,5 +1,7 @@
 <map id="src/Pid.h" name="src/Pid.h">
-<area shape="rect" id="node1" title="PID制御を行う Pid クラスを提供する。" alt="" coords="52,5,129,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,79,72,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="97,79,189,104"/>
+<area shape="rect" id="Node000001" title="PID制御を行う Pid クラスを提供する。" alt="" coords="52,5,129,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,72,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="84,33,57,69,53,66,80,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="97,79,189,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="101,29,128,66,124,69,97,33"/>
 </map>

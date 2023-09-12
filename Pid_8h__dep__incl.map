@@ -1,8 +1,13 @@
 <map id="src/Pid.h" name="src/Pid.h">
-<area shape="rect" id="node1" title="PID制御を行う Pid クラスを提供する。" alt="" coords="275,5,352,31"/>
-<area shape="rect" id="node2" href="$Chassis_8h.html" title="足回りの自動制御を行う Chassis クラスを提供する。" alt="" coords="93,79,200,104"/>
-<area shape="rect" id="node4" href="$ChassisAuto_8h.html" title="足回りの位置のPID制御を行うChassisAutoを提供する。" alt="" coords="245,79,382,104"/>
-<area shape="rect" id="node6" href="$ChassisPid_8h.html" title="足回りの速度のPID制御を行うChassisPidを提供する。" alt="" coords="406,79,533,104"/>
-<area shape="rect" id="node3" href="$ChassisPid_2main_8cpp.html" title="速度PID制御" alt="" coords="5,152,205,192"/>
-<area shape="rect" id="node5" href="$ChassisAuto_2main_8cpp.html" title="自動制御" alt="" coords="229,152,440,192"/>
+<area shape="rect" id="Node000001" title="PID制御を行う Pid クラスを提供する。" alt="" coords="275,5,352,31"/>
+<area shape="rect" id="Node000002" href="$Chassis_8h.html" title="足回りの自動制御を行う Chassis クラスを提供する。" alt="" coords="93,79,200,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="275,38,175,81,173,76,273,34"/>
+<area shape="rect" id="Node000004" href="$ChassisAuto_8h.html" title="足回りの位置のPID制御を行うChassisAutoを提供する。" alt="" coords="245,79,382,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="316,44,316,79,311,79,311,44"/>
+<area shape="rect" id="Node000006" href="$ChassisPid_8h.html" title="足回りの速度のPID制御を行うChassisPidを提供する。" alt="" coords="406,79,533,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="352,34,445,76,443,81,350,39"/>
+<area shape="rect" id="Node000003" href="$ChassisPid_2main_8cpp.html" title="速度PID制御" alt="" coords="5,152,205,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="136,118,118,153,113,151,132,115"/>
+<area shape="rect" id="Node000005" href="$ChassisAuto_2main_8cpp.html" title="自動制御" alt="" coords="229,152,440,192"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="323,116,332,151,327,153,317,118"/>
 </map>

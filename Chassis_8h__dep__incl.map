@@ -1,4 +1,5 @@
 <map id="src/Chassis.h" name="src/Chassis.h">
-<area shape="rect" id="node1" title="足回りの自動制御を行う Chassis クラスを提供する。" alt="" coords="52,5,159,31"/>
-<area shape="rect" id="node2" href="$ChassisPid_2main_8cpp.html" title="速度PID制御" alt="" coords="5,79,205,119"/>
+<area shape="rect" id="Node000001" title="足回りの自動制御を行う Chassis クラスを提供する。" alt="" coords="52,5,159,31"/>
+<area shape="rect" id="Node000002" href="$ChassisPid_2main_8cpp.html" title="速度PID制御" alt="" coords="5,79,205,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,44,108,79,103,79,103,44"/>
 </map>

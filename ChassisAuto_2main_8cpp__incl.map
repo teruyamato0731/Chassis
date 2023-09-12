@@ -1,19 +1,46 @@
 <map id="examples/Mbed/ChassisAuto/main.cpp" name="examples/Mbed/ChassisAuto/main.cpp">
-<area shape="rect" id="node1" title="自動制御" alt="" coords="503,5,713,45"/>
-<area shape="rect" id="node2" title=" " alt="" coords="67,93,210,119"/>
-<area shape="rect" id="node3" href="$ChassisAuto_8h.html" title="足回りの位置のPID制御を行うChassisAutoを提供する。" alt="" coords="235,93,349,119"/>
-<area shape="rect" id="node12" href="$Odom_8h.html" title="オドメトリを行う Odom クラスを提供する。" alt="" coords="431,93,505,119"/>
-<area shape="rect" id="node13" href="$Omni_8h.html" title="オムニの制御を行う Omni クラスを提供する。" alt="" coords="537,93,607,119"/>
-<area shape="rect" id="node14" title=" " alt="" coords="620,167,676,192"/>
-<area shape="rect" id="node15" title=" " alt="" coords="701,167,787,192"/>
-<area shape="rect" id="node16" title=" " alt="" coords="732,93,847,119"/>
-<area shape="rect" id="node17" title=" " alt="" coords="871,93,942,119"/>
-<area shape="rect" id="node4" href="$CoordinateUnit_8h.html" title="座標、速度を表す構造体 CoordinateUnit を提供する。" alt="" coords="278,167,410,192"/>
-<area shape="rect" id="node5" title=" " alt="" coords="173,240,240,265"/>
-<area shape="rect" id="node6" title=" " alt="" coords="466,240,529,265"/>
-<area shape="rect" id="node8" href="$Pid_8h.html" title="PID制御を行う Pid クラスを提供する。" alt="" coords="97,167,151,192"/>
-<area shape="rect" id="node10" title=" " alt="" coords="5,167,72,192"/>
-<area shape="rect" id="node11" title=" " alt="" coords="434,167,494,192"/>
-<area shape="rect" id="node7" title=" " alt="" coords="281,240,407,265"/>
-<area shape="rect" id="node9" title=" " alt="" coords="57,240,149,265"/>
+<area shape="rect" id="Node000001" title="自動制御" alt="" coords="503,5,713,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="67,93,210,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="503,47,221,94,220,88,502,42"/>
+<area shape="rect" id="Node000003" href="$ChassisAuto_8h.html" title="足回りの位置のPID制御を行うChassisAutoを提供する。" alt="" coords="235,93,349,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="533,48,352,93,351,87,532,43"/>
+<area shape="rect" id="Node000012" href="$Odom_8h.html" title="オドメトリを行う Odom クラスを提供する。" alt="" coords="431,93,505,119"/>
+<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="576,48,502,89,500,84,573,43"/>
+<area shape="rect" id="Node000013" href="$Omni_8h.html" title="オムニの制御を行う Omni クラスを提供する。" alt="" coords="537,93,607,119"/>
+<area shape="poly" id="edge18_Node000001_Node000013" title=" " alt="" coords="602,47,586,82,581,79,597,44"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="620,167,676,192"/>
+<area shape="poly" id="edge26_Node000001_Node000014" title=" " alt="" coords="616,45,644,153,639,154,610,47"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="701,167,787,192"/>
+<area shape="poly" id="edge27_Node000001_Node000015" title=" " alt="" coords="627,44,726,154,722,158,623,48"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="732,93,847,119"/>
+<area shape="poly" id="edge24_Node000001_Node000016" title=" " alt="" coords="652,43,751,85,749,90,650,48"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="871,93,942,119"/>
+<area shape="poly" id="edge25_Node000001_Node000017" title=" " alt="" coords="680,43,859,89,857,95,679,48"/>
+<area shape="rect" id="Node000004" href="$CoordinateUnit_8h.html" title="座標、速度を表す構造体 CoordinateUnit を提供する。" alt="" coords="278,167,410,192"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="303,117,330,154,325,157,298,121"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="173,240,240,265"/>
+<area shape="poly" id="edge10_Node000003_Node000005" title=" " alt="" coords="273,121,247,141,224,168,213,197,209,226,204,225,208,196,219,165,243,137,270,117"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="466,240,529,265"/>
+<area shape="poly" id="edge11_Node000003_Node000006" title=" " alt="" coords="285,120,265,155,261,173,267,190,291,202,340,216,453,240,452,246,339,221,289,207,263,194,256,174,260,153,280,118"/>
+<area shape="rect" id="Node000008" href="$Pid_8h.html" title="PID制御を行う Pid クラスを提供する。" alt="" coords="97,167,151,192"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="266,121,165,164,163,159,264,116"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="5,167,72,192"/>
+<area shape="poly" id="edge12_Node000003_Node000010" title=" " alt="" coords="252,121,86,167,85,162,251,116"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="434,167,494,192"/>
+<area shape="poly" id="edge13_Node000003_Node000011" title=" " alt="" coords="321,116,424,159,422,164,319,121"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="323,194,242,236,240,231,321,190"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="370,190,461,232,459,237,368,194"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="281,240,407,265"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="347,192,347,226,341,226,341,192"/>
+<area shape="poly" id="edge8_Node000008_Node000005" title=" " alt="" coords="139,190,184,229,181,233,136,194"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="57,240,149,265"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="123,193,113,228,107,226,118,192"/>
+<area shape="poly" id="edge15_Node000012_Node000004" title=" " alt="" coords="449,121,377,162,375,157,447,116"/>
+<area shape="poly" id="edge16_Node000012_Node000006" title=" " alt="" coords="480,118,496,139,508,166,511,197,507,227,502,226,506,197,503,167,491,142,476,121"/>
+<area shape="poly" id="edge17_Node000012_Node000011" title=" " alt="" coords="470,119,468,153,463,153,465,119"/>
+<area shape="poly" id="edge19_Node000013_Node000004" title=" " alt="" coords="538,121,394,165,393,160,536,116"/>
+<area shape="poly" id="edge21_Node000013_Node000006" title=" " alt="" coords="568,120,512,229,507,226,564,118"/>
+<area shape="poly" id="edge23_Node000013_Node000011" title=" " alt="" coords="556,121,495,161,492,157,553,116"/>
+<area shape="poly" id="edge20_Node000013_Node000014" title=" " alt="" coords="586,117,627,155,624,159,582,121"/>
+<area shape="poly" id="edge22_Node000013_Node000015" title=" " alt="" coords="601,116,704,159,702,164,599,121"/>
 </map>
