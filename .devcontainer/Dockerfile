@@ -3,6 +3,7 @@ FROM mcr.microsoft.com/devcontainers/base:jammy
 RUN apt-get update && apt-get install -y \
   g++ \
   cmake \
+  python3-pip \
   python3-venv \
   graphviz \
   bash-completion \
@@ -13,7 +14,6 @@ RUN curl -fsSOL https://github.com/doxygen/doxygen/releases/download/Release_1_9
   && (cd doxygen-1.9.6 && make install) \
   && rm -r doxygen-1.9.6.linux.bin.tar.gz doxygen-1.9.6
 
-USER vscode
-RUN python3 -c "$(curl -fsSL https://raw.githubusercontent.com/platformio/platformio/master/scripts/get-platformio.py)" \
-  && sudo $HOME/.platformio/penv/bin/pio system completion install bash --path /etc/bash_completion.d/pio \
-  && echo 'export PATH=$PATH:$HOME/.platformio/penv/bin' >> ~/.bashrc
+RUN python3 -m pip install --no-cache-dir -U \
+  platformio
+RUN pio system completion install bash
