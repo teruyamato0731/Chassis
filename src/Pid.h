@@ -73,14 +73,14 @@ struct Pid {
   }
 
   /// @brief I値をリセットする。
-  void refresh(const T& init = T{}) noexcept {
+  void refresh(const T& init = T{}) noexcept(noexcept(T{})) {
     integral_ = T{};
     pre_ = init;
   }
 
   /// @brief ゲインをセットし、refreshを呼び出す。
   /// @param pid_gain PID制御のゲイン
-  void set_pid_gain(const PidGain& pid_gain) noexcept {
+  void set_pid_gain(const PidGain& pid_gain) noexcept(noexcept(refresh())) {
     pid_gain_ = pid_gain;
     refresh();
   }
