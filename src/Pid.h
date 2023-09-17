@@ -67,8 +67,8 @@ struct Pid {
     const float sec = std::chrono::duration<float>{delta_time}.count();
     const T proportional = dst - now;
     integral_ += proportional * sec;
-    const T differential = now - pre_ / sec;
-    pre_ = now;
+    const T differential = (proportional - pre_) / sec;
+    pre_ = proportional;
     return proportional * pid_gain_.kp + integral_ * pid_gain_.ki + differential * pid_gain_.kd;
   }
 
