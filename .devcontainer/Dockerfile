@@ -17,4 +17,4 @@ RUN curl -fsSOL https://www.doxygen.nl/files/doxygen-${VERSION}.linux.bin.tar.gz
 
 RUN python3 -m pip install --no-cache-dir -U \
   platformio
-RUN pio system completion install bash
+RUN pio system completion install bash --path /etc/bash_completion.d/platformio
