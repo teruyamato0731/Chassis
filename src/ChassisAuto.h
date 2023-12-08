@@ -17,6 +17,7 @@ namespace rct {
 /// @addtogroup chassis
 /// @{
 
+// TODO CRTP
 /// @brief 足回りの位置のPID制御を行う。
 /// @tparam T
 template<class T>
@@ -32,6 +33,16 @@ struct ChassisAuto {
   void auto_move(const Coordinate& dst, const Coordinate& pos, const std::chrono::microseconds& delta_time) {
     const auto out_vel = pos_pid_.calc(dst, pos, delta_time) / std::chrono::seconds{1};
     t_.move(out_vel);
+  }
+
+  // TODO
+  auto move(const Velocity& vel, const float offset_rad = {}) {
+    t_.move(vel, offset_rad);
+  }
+
+  // TODO
+  auto refresh() {
+    return vel_pid_.refresh();
   }
 
  private:

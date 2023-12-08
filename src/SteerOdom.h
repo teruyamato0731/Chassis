@@ -1,13 +1,9 @@
-#ifndef CHASSIS_ODOM_H_
-#define CHASSIS_ODOM_H_
-/// @file
-/// @brief オドメトリを行う Odom クラスを提供する。
-/// @copyright Copyright (c) 2022-2023 Yoshikawa Teru
-/// @license This project is released under the MIT License, see [LICENSE](https://github.com/teruyamato0731/Chassis/blob/main/LICENSE).
+#ifndef RCT_STEER_ODOM_H_
+#define RCT_STEER_ODOM_H_
+
 #include <CoordinateUnit.h>
 
-#include <cmath>
-#include <utility>
+#include <complex>
 
 namespace rct {
 
@@ -15,31 +11,29 @@ namespace rct {
 /// @defgroup localization localization
 /// @{
 
-/// @brief N個のエンコーダでオドメトリを行うクラス。
+
+/// @brief N輪独立ステアリングでオドメトリを行うクラス。
 /// @tparam N エンコーダ数。 N > 0 であること。
 template<int N>
-struct Odom {
+struct SteerOdom {
   static_assert(N > 0, "template parameter N must be greater than 0");
 
-  /// @brief コンストラクタ。現在位置を初期化する。
-  /// @param pos 現在位置
-  Odom(const Coordinate& pos = {}) : pos_{pos} {}
   /// @brief エンコーダ数を返す。
   /// @return Odom クラスの templateパラメータである N 定数を返す。
   static constexpr int size() noexcept {
     return N;
   }
 
-  // TODO std::array<int, N>
+  // TODO grid point
   /// @brief エンコーダの変位の変化量を積分し、自己位置を計算する。
-  /// @param dif_val 変位の変化量
-  void integrate(const int (&dif_val)[N]) {
+  /// @param dif_val 変位ベクトル
+  void integrate(std::complex<float> (&dif_val)[N]) {
     constexpr float pi_N = M_PI / N;
-    const float tmp_rad = pos_.ang_rad;
     for(int i = 0; i < N; ++i) {
-      pos_.x_milli += dif_val[i] * cos((2 * i + 1) * pi_N + tmp_rad);
-      pos_.y_milli += dif_val[i] * sin((2 * i + 1) * pi_N + tmp_rad);
-      pos_.ang_rad += dif_val[i];
+      auto rotated = dif_val[i] * std::polar<float>(1, (2 * i) * pi_N);
+      pos_.x_milli += rotated.real();
+      pos_.y_milli += rotated.imag();
+      pos_.ang_rad += dif_val[i].real();
     }
   }
 
@@ -68,4 +62,5 @@ struct Odom {
 
 }  // namespace rct
 
-#endif  // CHASSIS_ODOM_H_
+
+#endif  // RCT_STEER_ODOM_H_

@@ -28,7 +28,6 @@ Chassisを用いて手動制御、自己位置推定、自動制御を行う方�
 \snippet examples/Mbed/4WDS/main.cpp move
 
 ---
-<span class="next_section_button">[utilityモジュール](\ref utility)</span>
 
 - \ref index
 - \ref Installation

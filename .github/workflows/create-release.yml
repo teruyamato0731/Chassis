@@ -17,9 +17,14 @@ on:
         required: true
 
 jobs:
-  CreateRelease:
+  create-release:
+    name: Create Release
     runs-on: ubuntu-22.04
     timeout-minutes: 5
+    env:
+      NEW_TAG: ${{ inputs.new_tag }}
+      NEW_VERSION: ${{ inputs.new_version }}
+      PR_BRANCH: "release/${{ inputs.new_tag }}"
 
     steps:
       - uses: actions/checkout@v4
@@ -30,33 +35,33 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Set version
-        run: sed -i -e 's/[0-9]\+\.[0-9]\+\.[0-9]\+/${{ inputs.new_version }}/' library.properties library.json
+        run: sed -i -e 's/[0-9]\+\.[0-9]\+\.[0-9]\+/${NEW_VERSION}/' library.properties library.json
 
       - name: Push version
-        env:
-          branch: "release/${{ inputs.new_tag }}"
+        # script injection の可能性あり？
+        # inputなど を直接使用せずenvに設定して使う？
+        # https://docs.github.com/ja/actions/security-guides/security-hardening-for-github-actions#understanding-the-risk-of-script-injections
         run: |
-          git switch -c ${{ env.branch }}
+          git switch -c "${PR_BRANCH}"
           git add .
-          git commit -m "Bump version: ${{ inputs.new_tag }}"
-          git tag -a ${{ inputs.new_tag }} -m "Bump version: ${{ inputs.new_tag }}"
-          git push -u origin ${{ env.branch }}
-          git push origin ${{ inputs.new_tag }}
+          git commit -m "Bump version: ${NEW_TAG}"
+          git tag -a "${NEW_TAG}" -m "Bump version: ${NEW_TAG}"
+          git push -u origin "${PR_BRANCH}"
+          git push origin "${NEW_TAG}"
 
       - name: Create and merge Pull Request
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          branch: "release/${{ inputs.new_tag }}"
         run: |
-          gh pr create --base ${GITHUB_REF_NAME} --head ${{ env.branch }} --assignee ${GITHUB_ACTOR} -l "bump version" \
-             --title "Bump version: ${{ inputs.new_tag }}" --body 'Automated changes by [Bump Version](https://github.com/teruyamato0731/Chassis/actions/workflows/main.yml) GitHub action'
-          gh pr merge ${{ env.branch }} --merge --delete-branch
+          gh pr create --base "${GITHUB_REF_NAME}" --head "${PR_BRANCH}" --assignee "${GITHUB_ACTOR}" -l "bump version" \
+             --title "Bump version: ${NEW_TAG}" --body 'Automated changes by [Bump Version](https://github.com/teruyamato0731/Chassis/actions/workflows/main.yml) GitHub action'
+          gh pr merge "${PR_BRANCH}" --merge --delete-branch
 
       - uses: devcontainers/ci@v0.3
         with:
           cacheFrom: ghcr.io/teruyamato0731/chassis-devcontainer
           push: never
-          runCmd: pio pkg pack -o Chassis-${{ inputs.new_version }}.tar.gz && pio pkg publish --no-interactive
+          runCmd: pio pkg pack -o "Chassis-${NEW_VERSION}.tar.gz" && pio pkg publish --no-interactive
           env: |
             PLATFORMIO_AUTH_TOKEN=${{ secrets.PLATFORMIO_AUTH_TOKEN }}
 

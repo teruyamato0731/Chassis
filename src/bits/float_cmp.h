@@ -12,7 +12,7 @@ namespace rct {
 
 namespace impl {
 
-inline int float_cmp(const float a, const float b) {
+constexpr inline int float_cmp(const float a, const float b) {
   const auto eps = FLT_EPSILON * std::max({1.0f, std::abs(a), std::abs(b)});
   if(a > b + eps) {
     return 1;

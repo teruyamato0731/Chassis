@@ -9,6 +9,8 @@
 
 #include "bits/float_cmp.h"
 
+// TODO int16_t float/double vec+angle
+
 namespace rct {
 
 /// @addtogroup utility
@@ -38,25 +40,25 @@ struct CoordinateUnit {
 
   /// @{
   /// @brief 各種演算子を定義する。
-  CoordinateUnit& operator+=(const CoordinateUnit& obj) noexcept {
+  constexpr CoordinateUnit& operator+=(const CoordinateUnit& obj) noexcept {
     this->x_milli += obj.x_milli;
     this->y_milli += obj.y_milli;
     this->ang_rad += obj.ang_rad;
     return *this;
   }
-  CoordinateUnit& operator-=(const CoordinateUnit& obj) noexcept {
+  constexpr CoordinateUnit& operator-=(const CoordinateUnit& obj) noexcept {
     this->x_milli -= obj.x_milli;
     this->y_milli -= obj.y_milli;
     this->ang_rad -= obj.ang_rad;
     return *this;
   }
-  CoordinateUnit& operator*=(const float obj) noexcept {
+  constexpr CoordinateUnit& operator*=(const float obj) noexcept {
     this->x_milli *= obj;
     this->y_milli *= obj;
     this->ang_rad *= obj;
     return *this;
   }
-  CoordinateUnit& operator/=(const float obj) noexcept {
+  constexpr CoordinateUnit& operator/=(const float obj) noexcept {
     this->x_milli /= obj;
     this->y_milli /= obj;
     this->ang_rad /= obj;
@@ -76,7 +78,7 @@ using Velocity = CoordinateUnit<-1>;
 /// @param obj キャストするオブジェクト
 /// @return キャスト後のオブジェクト
 template<int M, int N>
-CoordinateUnit<M> unit_cast(const CoordinateUnit<N>& obj) {
+constexpr CoordinateUnit<M> unit_cast(const CoordinateUnit<N>& obj) {
   return *reinterpret_cast<const CoordinateUnit<M>*>(&obj);
 }
 
@@ -95,7 +97,7 @@ constexpr float distance(const Coordinate& p1, const Coordinate& p2) {
 /// @return a + t * (b - a);
 /// @note t == 0 の時 a, t == 1のとき bを返す。
 template<class T>
-constexpr T lerp(const T& a, const T& b, float t) noexcept {
+constexpr auto lerp(const T& a, const T& b, float t) noexcept -> decltype(a + t * (b - a)) {
   return a + t * (b - a);
 }
 
@@ -103,52 +105,52 @@ constexpr T lerp(const T& a, const T& b, float t) noexcept {
 /// @brief 演算子を定義 CoordinateUnit同士の加減算, floatとの乗除算, chrono::microsecondsとの乗除算
 /// @{
 template<int N>
-CoordinateUnit<N> operator+(const CoordinateUnit<N>& lhs, const CoordinateUnit<N>& rhs) {
+constexpr CoordinateUnit<N> operator+(const CoordinateUnit<N>& lhs, const CoordinateUnit<N>& rhs) {
   CoordinateUnit<N> nrv{lhs};
   nrv += rhs;
   return nrv;
 };
 template<int N>
-CoordinateUnit<N> operator-(const CoordinateUnit<N>& lhs, const CoordinateUnit<N>& rhs) {
+constexpr CoordinateUnit<N> operator-(const CoordinateUnit<N>& lhs, const CoordinateUnit<N>& rhs) {
   CoordinateUnit<N> nrv{lhs};
   nrv -= rhs;
   return nrv;
 };
 template<int N>
-CoordinateUnit<N> operator*(const CoordinateUnit<N>& lhs, const float rhs) {
+constexpr CoordinateUnit<N> operator*(const CoordinateUnit<N>& lhs, const float rhs) {
   auto nrv{lhs};
   nrv *= rhs;
   return nrv;
 };
 template<int N>
-CoordinateUnit<N> operator*(const float lhs, const CoordinateUnit<N>& rhs) {
+constexpr CoordinateUnit<N> operator*(const float lhs, const CoordinateUnit<N>& rhs) {
   return rhs * lhs;
 };
 template<int N>
-CoordinateUnit<N> operator/(const CoordinateUnit<N>& lhs, const float rhs) {
+constexpr CoordinateUnit<N> operator/(const CoordinateUnit<N>& lhs, const float rhs) {
   auto nrv{lhs};
   nrv /= rhs;
   return nrv;
 };
 template<int N>
-CoordinateUnit<N + 1> operator*(const CoordinateUnit<N>& obj, const std::chrono::microseconds& sec) {
+constexpr CoordinateUnit<N + 1> operator*(const CoordinateUnit<N>& obj, const std::chrono::microseconds& sec) {
   return unit_cast<N + 1>(obj * sec.count() * 1e-6);
 }
 template<int N>
-CoordinateUnit<N + 1> operator*(const std::chrono::microseconds& sec, const CoordinateUnit<N>& obj) {
+constexpr CoordinateUnit<N + 1> operator*(const std::chrono::microseconds& sec, const CoordinateUnit<N>& obj) {
   return obj * sec;
 }
 template<int N>
-CoordinateUnit<N - 1> operator/(const CoordinateUnit<N>& obj, const std::chrono::microseconds& sec) {
+constexpr CoordinateUnit<N - 1> operator/(const CoordinateUnit<N>& obj, const std::chrono::microseconds& sec) {
   return unit_cast<N - 1>(obj / sec.count() * 1e6);
 }
 template<int N>
-bool operator==(const CoordinateUnit<N>& lhs, const CoordinateUnit<N>& rhs) {
+constexpr bool operator==(const CoordinateUnit<N>& lhs, const CoordinateUnit<N>& rhs) {
   return impl::float_cmp(lhs.x_milli, rhs.x_milli) == 0 && impl::float_cmp(lhs.y_milli, rhs.y_milli) == 0 &&
          impl::float_cmp(lhs.ang_rad, rhs.ang_rad) == 0;
 }
 template<int N>
-bool operator!=(const CoordinateUnit<N>& lhs, const CoordinateUnit<N>& rhs) {
+constexpr bool operator!=(const CoordinateUnit<N>& lhs, const CoordinateUnit<N>& rhs) {
   return !(lhs == rhs);
 }
 /// @}  operator

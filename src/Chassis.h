@@ -21,7 +21,6 @@ namespace rct {
 
 /// @brief 足回りの自動制御を行うクラス。
 /// @tparam T 自動制御を行うクラス。
-/// [sni_ch]
 template<class T>
 struct Chassis {
   /// @brief コンストラクタ。T型をfで初期化し、変位と速度のPIDゲインをセットする。
@@ -39,7 +38,7 @@ struct Chassis {
   /// @param delta_time 前回呼び出しからの経過時間
   /// @param offset_rad 姿勢角
   void pid_move(const Velocity& tag_vel, const Velocity& now_vel, const std::chrono::microseconds& delta_time,
-                float offset_rad = 0.0) {
+                const float offset_rad = {}) {
     const auto out_vel = vel_pid_.calc(tag_vel, now_vel, delta_time);
     t_.move(out_vel, offset_rad);
   }
@@ -50,6 +49,17 @@ struct Chassis {
   void auto_move(const Coordinate& dst, const Coordinate& pos, const std::chrono::microseconds& delta_time) {
     const auto out_vel = pos_pid_.calc(dst, pos, delta_time) / std::chrono::seconds{1};
     t_.move(out_vel, pos.ang_rad);
+  }
+
+
+  // TODO
+  auto move(const Velocity& vel, const float offset_rad = {}) {
+    t_.move(vel, offset_rad);
+  }
+
+  // TODO
+  auto refresh() {
+    return vel_pid_.refresh();
   }
 
  private:

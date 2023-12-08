@@ -7,6 +7,9 @@
 #include <chrono>
 #include <type_traits>
 
+// TODO float double 切替え
+// TODO Nanを使用
+
 namespace rct {
 
 /// @brief 有用な機能群を提供する。
@@ -67,6 +70,9 @@ struct Pid {
     const T proportional = dst - now;
     integral_ += proportional * delta_time.count();
     const T differential = (proportional - pre_) / delta_time.count();
+    // if constexpr(std::is_floating_point_v<T>) {
+    //   if(std::isnan(differential)) differential = T{};
+    // }
     pre_ = proportional;
     return proportional * pid_gain_.kp + integral_ * pid_gain_.ki + differential * pid_gain_.kd;
   }
@@ -86,8 +92,8 @@ struct Pid {
 
  private:
   PidGain pid_gain_;
-  T integral_{};
   T pre_;
+  T integral_{};
 };
 
 /// @}  pid

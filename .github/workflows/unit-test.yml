@@ -13,13 +13,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  UnitTest:
+  unit-test:
+    name: Unit Test
     runs-on: ubuntu-22.04
-    # 二重実行を防ぐ
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
-      cancel-in-progress: true
-    timeout-minutes: 5
+    timeout-minutes: 10
 
     steps:
       - uses: actions/checkout@v4
@@ -42,6 +39,7 @@ jobs:
 
   arduino-lint:
     runs-on: ubuntu-22.04
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
       - uses: arduino/arduino-lint-action@v1
