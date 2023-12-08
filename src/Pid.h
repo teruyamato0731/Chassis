@@ -63,11 +63,10 @@ struct Pid {
   /// @param now 現在値
   /// @param delta_time 前回呼び出しからの経過時間
   /// @return T型 PIDの結果を返す。
-  T calc(const T& dst, const T& now, const std::chrono::microseconds& delta_time) {
-    const float sec = std::chrono::duration<float>{delta_time}.count();
+  T calc(const T& dst, const T& now, const std::chrono::duration<float>& delta_time) {
     const T proportional = dst - now;
-    integral_ += proportional * sec;
-    const T differential = (proportional - pre_) / sec;
+    integral_ += proportional * delta_time.count();
+    const T differential = (proportional - pre_) / delta_time.count();
     pre_ = proportional;
     return proportional * pid_gain_.kp + integral_ * pid_gain_.ki + differential * pid_gain_.kd;
   }
