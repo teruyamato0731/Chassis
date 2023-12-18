@@ -50,7 +50,7 @@ jobs:
           compliance: strict
           project-type: library
           report-file: arduino-lint.json
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: arduino-lint
           path: arduino-lint.json
